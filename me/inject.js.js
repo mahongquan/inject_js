@@ -1,4 +1,3 @@
-console.log("hi");
 const scriptLoader = ({ src, innerHTML }) => {
   if (src) {
     return new Promise((resolve, reject) => {
