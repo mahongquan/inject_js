@@ -1,0 +1,78 @@
+<div id="38524871_dropdown_content" class="common_drop_list_content common_drop_list_content_action" style="position: absolute; z-index: 1000; background: rgb(255, 255, 255) none repeat scroll 0% 0%; width: 118px; display: none;"><a class="text_overflow" tar="38524871" href="javascript:void(0)" value="" title="--查询条件--">--查询条件--</a><a class="text_overflow" tar="38524871" href="javascript:void(0)" value="subject" title="标题">标题</a><a class="text_overflow" tar="38524871" href="javascript:void(0)" value="importantLevel" title="重要程度">重要程度</a><a class="text_overflow" tar="38524871" href="javascript:void(0)" value="startMemberName" title="发起人">发起人</a><a class="text_overflow" tar="38524871" href="javascript:void(0)" value="createDate" title="发起时间">发起时间</a><a class="text_overflow" tar="38524871" href="javascript:void(0)" value="receiveDate" title="接收时间">接收时间</a></div>
+<a class="text_overflow" tar="38524871" href="javascript:void(0)" value="" title="--查询条件--">--查询条件--</a>
+<a class="text_overflow" tar="38524871" href="javascript:void(0)" value="subject" title="标题">标题</a>
+<a class="text_overflow" tar="38524871" href="javascript:void(0)" value="importantLevel" title="重要程度">重要程度</a>
+<a class="text_overflow" tar="38524871" href="javascript:void(0)" value="startMemberName" title="发起人">发起人</a><a class="text_overflow" tar="38524871" href="javascript:void(0)" value="createDate" title="发起时间">发起时间</a><a class="text_overflow" tar="38524871" href="javascript:void(0)" value="receiveDate" title="接收时间">接收时间</a>
+
+
+0: <span class="second_menu_item_name" onclick="showMenu('/seeyon/portal/spaceController.do?method=showThemSpace&themType=19','-7382284343554457562',2,'mainfrm','主题空间','T03_cooperation_work','-4751259066364441679')">
+​
+​​​​
+icon: ""
+​​​​
+id: "-7382284343554457562"
+​​​​
+items: null
+​​​​
+name: "主题空间"
+​​​​
+resourceCode: "T03_cooperation_work"
+​​​​
+sorted: false
+​​​​
+target: "mainfrm"
+​​​​
+url: "/portal/spaceController.do?method=showThemSpace&themType=19"
+​​​​
+__proto__: Object { … }
+​​​
+1: {…}
+​​​​
+icon: ""
+​​​​
+id: "-4140425781984149261"
+​​​​
+items: null
+​​​​
+name: "新建事项"
+​​​​
+resourceCode: "F01_newColl"
+​​​​
+sorted: false
+​​​​
+target: "mainfrm"
+​​​​
+url: "/collaboration/collaboration.do?method=newColl&rescode=F01_newColl"
+​​​​
+__proto__: Object { … }
+​​​
+2: {…}
+​​​​
+icon: ""
+​​​​
+id: "-8306075607604378311"
+​​​​
+items: null
+​​​​
+name: "待发事项"
+​​​​
+resourceCode: "F01_listWaitSend"
+​​​​
+sorted: false
+​​​​
+target: "mainfrm"
+​​​​
+url: "/collaboration/collaboration.do?method=listWaitSend"
+
+
+1: <span class="second_menu_item_name" onclick="showMenu('/seeyon/collaboration/collaboration.do?method=newColl&rescode=F01_newColl','-4140425781984149261',2,'mainfrm','新建事项','F01_newColl','-4751259066364441679')">
+​
+2: <span class="second_menu_item_name" onclick="showMenu('/seeyon/collaboration/collaboration.do?method=listWaitSend','-8306075607604378311',2,'mainfrm','待发事项','F01_listWaitSend','-4751259066364441679')">
+​
+3: <span class="second_menu_item_name" onclick="showMenu('/seeyon/collaboration/collaboration.do?method=listSent','3908880089061278395',2,'mainfrm','已发事项','F01_listSent','-4751259066364441679')">
+​
+4: <span class="second_menu_item_name" onclick="showMenu('/seeyon/collaboration/collaboration.do?method=listPending','-74745459456393211',2,'mainfrm','待办事项','F01_listPending','-4751259066364441679')">
+​
+5: <span class="second_menu_item_name" onclick="showMenu('/seeyon/collaboration/collaboration.do?method=listDone','-1170093474986179706',2,'mainfrm','已办事项','F01_listDone','-4751259066364441679')">
+​
+6: <span class="second_menu_item_name" onclick="showMenu('/seeyon/supervise/supervise.do?method=listSupervise&app=1','2272495001459507804',2,'mainfrm','督办事项','F01_supervise','-4751259066364441679')">
