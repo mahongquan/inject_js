@@ -1,4 +1,4 @@
-console.log(window.location.href);
+//console.log(window.location.href);
 const scriptLoader = ({src, innerHTML}) => {
     if (src) {
         return new Promise((resolve, reject) => {
@@ -226,6 +226,66 @@ newe.onclick = chazhao;
 });//loader 
 });//co
 }
+//http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=summary
+else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=summary")==0){
+  co(function*() {
+// 加载脚本
+//yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
+//yield scriptLoader({ src: '//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js' });
+
+// 检查jquery和jquery.cookie是否顺利注入。注意检查代码也要注入到页面环境
+scriptLoader({
+    innerHTML: `
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    `,
+});//loader
+});//co
+
+}//else
+
 //method=listPending&_resourceCode=F01_listPending
 else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=listPending")==0){
   co(function*() {
@@ -253,6 +313,25 @@ function chazhao() {
   var iframes=$(document).find(".search_btn");
   iframes.trigger("click");
 }
+function fujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var aid=$(row).find("td")[0];
+     var theid=$(aid).find("input").val();
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(theid+" "+subject.innerText);
+          }
+     }
+  }
+}
 var beastImage = document.getElementById("madiv1");
 console.log(beastImage);
 if (!beastImage) {
@@ -274,6 +353,11 @@ var newe = document.createElement("button");
 beastImage.appendChild(newe);
 newe.insertAdjacentText("afterBegin", "查找");
 newe.onclick = chazhao;
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "附件");
+newe.onclick = fujian;
+
 var newe = document.createTextNode(window.location.href);
 beastImage.appendChild(newe);
     `,
@@ -281,6 +365,46 @@ beastImage.appendChild(newe);
 });//co
 
 }//else
+else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/index.jsp")==0){
+  co(function*() {
+// 加载脚本
+//yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
+//yield scriptLoader({ src: '//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js' });
+
+// 检查jquery和jquery.cookie是否顺利注入。注意检查代码也要注入到页面环境
+scriptLoader({
+    innerHTML: `
+console.log("inject================")
+function login() {
+  $("#login_username").val("mahongquan");
+  $("#login_password").val("mhq730208");
+  $("#login_button")[0].click();
+}
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "登录");
+newe.onclick = login;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    `,
+});//loader
+});//co
+
+}//else
+
 //http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=newColl
 else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=newColl")==0){
   co(function*() {
