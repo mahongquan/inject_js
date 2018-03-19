@@ -52,21 +52,21 @@ document.addEventListener("click", (e) => {
     //   });
     // });
   } 
-  else if (menutxt == "inject") {
+  // else if (menutxt == "inject") {
 
-    browser.tabs.executeScript(null, {
-      file: "/content_scripts/doinject.js"
-    });
-    var gettingActiveTab = browser.tabs.query({
-      active: true,
-      currentWindow: true
-    });
-    gettingActiveTab.then((tabs) => {
-      browser.tabs.sendMessage(tabs[0].id, {
-        menu:browser.extension.getURL("me/inject.js")
-      });
-    });
-  }
+  //   browser.tabs.executeScript(null, {
+  //     file: "/content_scripts/doinject.js"
+  //   });
+  //   var gettingActiveTab = browser.tabs.query({
+  //     active: true,
+  //     currentWindow: true
+  //   });
+  //   gettingActiveTab.then((tabs) => {
+  //     browser.tabs.sendMessage(tabs[0].id, {
+  //       menu:browser.extension.getURL("me/inject.js")
+  //     });
+  //   });
+  // }
   else {
     //var chosenBeastURL = beastNameToURL(chosenBeast);
     browser.tabs.executeScript(null, {
