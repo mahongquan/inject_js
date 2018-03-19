@@ -9,18 +9,6 @@
   "icons": {
     "16": "images/icon.png"
   },
-  // "web_accessible_resources": [
-  //   "me/inject.js"
-  // ],
-  // "permissions": [
-  //   "activeTab"
-  // ],
-
-  // "browser_action": {
-  //   "default_icon": "images/icon.png",
-  //   "default_title": "Beastify",
-  //   "default_popup": "popup/choose_beast.html"
-  // },
   "content_scripts": [
     {
       "matches": ["*://oa.ncschina.com/seeyon/main.do*","*://oa.ncschina.com/seeyon/index.jsp*"],

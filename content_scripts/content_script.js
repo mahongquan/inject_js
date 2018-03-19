@@ -1,31 +1,31 @@
 console.log("hi");
-const scriptLoader = ({ src, innerHTML }) => {
-  if (src) {
-    return new Promise((resolve, reject) => {
-      const theScript = document.createElement('script');
-      theScript.src = src;
-      theScript.onload = () => {
-        resolve(theScript);
-      };
-      theScript.onerror = () => {
-        reject(`load ${src} failed`);
-      };
-      document.querySelector('*').appendChild(theScript);
-    });
-  }
-  const theScript = document.createElement('script');
-  theScript.innerHTML = innerHTML;
-  document.body.appendChild(theScript);
-  return theScript;
+const scriptLoader = ({src, innerHTML}) => {
+    if (src) {
+        return new Promise((resolve, reject) => {
+            const theScript = document.createElement('script');
+            theScript.src = src;
+            theScript.onload = () => {
+                resolve(theScript);
+            };
+            theScript.onerror = () => {
+                reject(`load ${src} failed`);
+            };
+            document.querySelector('*').appendChild(theScript);
+        });
+    }
+    const theScript = document.createElement('script');
+    theScript.innerHTML = innerHTML;
+    document.body.appendChild(theScript);
+    return theScript;
 }
 
-co(function *() {
-  // 加载脚本
-  //yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
-  //yield scriptLoader({ src: '//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js' });
+co(function*() {
+// 加载脚本
+//yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
+//yield scriptLoader({ src: '//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js' });
 
-  // 检查jquery和jquery.cookie是否顺利注入。注意检查代码也要注入到页面环境
-  scriptLoader({
+// 检查jquery和jquery.cookie是否顺利注入。注意检查代码也要注入到页面环境
+scriptLoader({
     innerHTML: `
 console.log("inject=================");
 
@@ -118,7 +118,7 @@ function login() {
 }
 
 function chazhao() {
-  console.log("chazhao");
+  console.log("chazhao========");
   var tofind = $("#mainput1").val();
   var iframeMain = document.getElementById('main');
   var mainw = iframeMain.contentWindow;
@@ -126,14 +126,16 @@ function chazhao() {
 
   var maindoc = iframeMain.contentWindow.document;
   var ma = $(maindoc)
-
+  var input1=ma.find(".search_input");
+  console.log(input1);
+  $(input1).val("test");
   //console.log(ma.find(".common_tabs"));
-  var area5 = $(ma.find(".common_drop_list_text"));
-  console.log(area5);
+  var condition = $(ma.find(".common_drop_list_text"));
+  console.log(condition);
 }
 console.log($.ctx);
 console.log("insertBeast")
-setTimeout(checkmenu, 1000);
+//setTimeout(checkmenu, 1000);
 var beastImage = document.getElementById("madiv1");
 console.log(beastImage);
 if (!beastImage) {
@@ -186,5 +188,5 @@ newe.onclick = chazhao;
 //console.assert(window.jQuery.cookie, 'jQuery.cookie is not defined');
 //console.log(window.jQuery.cookie);
     `,
-  });
+});
 });
