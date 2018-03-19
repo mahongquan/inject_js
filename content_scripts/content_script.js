@@ -120,18 +120,43 @@ function login() {
 function chazhao() {
   console.log("chazhao========");
   var tofind = $("#mainput1").val();
-  var iframeMain = document.getElementById('main');
-  var mainw = iframeMain.contentWindow;
-  console.log(mainw);
+  var iframes=$(main.document).find("select");
+  $(iframes[0]).css("display","inline");
+  $(iframes[0]).val("subject").trigger("change")
+  //$(iframes[0]).css("display","none");
+//subject_container
+var iframes=$(main.document).find("#subject_container");
+iframes.removeClass("hidden")
+var iframes=$(main.document).find(".search_input");
+iframes.val(tofind);
 
-  var maindoc = iframeMain.contentWindow.document;
-  var ma = $(maindoc)
-  var input1=ma.find(".search_input");
-  console.log(input1);
-  $(input1).val("test");
-  //console.log(ma.find(".common_tabs"));
-  var condition = $(ma.find(".common_drop_list_text"));
-  console.log(condition);
+var iframes=$(main.document).find(".search_btn");
+iframes.trigger("click");
+
+  // var iframes=$(main.document).find("iframe");
+  // $(iframes[0]).css("display","inline");
+  
+
+  // var contents=$(main.document).find(".common_drop_list_content");
+  // $(contents[0]).css("display","inline");
+
+  // var menus=$(contents[0]).find(".text_overflow");
+  // console.log(menus);
+  // $(menus[1]).trigger("click");  
+
+  // var iframeMain = document.getElementById('main');
+  // var mainw = iframeMain.contentWindow;
+  // console.log(mainw);
+
+  // var maindoc = iframeMain.contentWindow.document;
+  // var ma = $(maindoc)
+  // var input1=ma.find(".search_input");
+  // console.log(input1);
+  // $(input1).val("test");
+  // //console.log(ma.find(".common_tabs"));
+  // var condition = $(main.document).find(".common_drop_list_text")[0];
+  // //$(condition).trigger("mouseenter");
+  // console.log(condition);
 }
 console.log($.ctx);
 console.log("insertBeast")
