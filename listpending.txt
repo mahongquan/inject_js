@@ -1,4 +1,5 @@
-<td align=\"left\"><div style=\"text-align: left; width: 27.72px;\" class=\"text_overflow\"><input gridrowcheckbox=\"34280866_grid_classtag\" class=\"noClick\" row=\"3\" value=\"-1013267702093952225\" type=\"checkbox\"></div></td>
+<td align=\"left\"><div style=\"text-align: left; width: 27.72px;\" class=\"text_overflow\">
+<input gridrowcheckbox=\"34280866_grid_classtag\" class=\"noClick\" row=\"3\" value=\"-1013267702093952225\" type=\"checkbox\"></div></td>
 <td abbr=\"subject\" align=\"left\">
 <div style=\"text-align: left; width: 291.76px;\" class=\"text_overflow\" title=\"公积金提取通知\">公积金提取通知<span class=\"ico16 affix_16\"></span>
 </div>
