@@ -245,20 +245,20 @@ function getAid() {
 }   
 console.log(getAid());
 function downfujian() {
-  var table=$("#listPending");
-  //console.log(table);
+  var table=$("table");
+  console.log(table);
   var rows=table.find("tr");
   for(var i=0;i<rows.length;i++){
      var row=rows[i];
      //console.log(row);
-     var subject=$(row).find("td")[1];
+     // var subject=$(row).find("td")[1];
      
-     var span=$(subject).find("span");
-     if(span.length>0){
-          if(span.attr("class").indexOf("affix_16")!=-1){
-            console.log(subject.innerText);
-          }
-     }
+     // var span=$(subject).find("span");
+     // if(span.length>0){
+     //      if(span.attr("class").indexOf("affix_16")!=-1){
+     //        console.log(subject.innerText);
+     //      }
+     // }
   }
 }
 var beastImage = document.getElementById("madiv1");
