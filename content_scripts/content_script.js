@@ -226,6 +226,83 @@ newe.onclick = chazhao;
 });//loader 
 });//co
 }
+//http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=updateContentPage
+else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=updateContentPage")==0){
+  co(function*() {
+// 加载脚本
+//yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
+//yield scriptLoader({ src: '//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js' });
+
+// 检查jquery和jquery.cookie是否顺利注入。注意检查代码也要注入到页面环境
+scriptLoader({
+    innerHTML: `
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    `,
+});//loader
+});//co
+
+}//else
+
 //http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=summary
 else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=summary")==0){
   co(function*() {
