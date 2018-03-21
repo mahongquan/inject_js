@@ -1,4 +1,5 @@
 console.log(window.location.href);
+return;
 const scriptLoader = ({src, innerHTML}) => {
     if (src) {
         return new Promise((resolve, reject) => {
@@ -623,6 +624,11 @@ else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/fileUpload.d
         function upload(){
           checks();
         }
+        function formdata(){
+          console.log("formdata");
+          var data=new FormData($('#form_upload')[0]),
+          console.log(data);
+        }
         var beastImage = document.getElementById("madiv1");
         console.log(beastImage);
         if (!beastImage) {
@@ -638,6 +644,11 @@ else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/fileUpload.d
         beastImage.appendChild(newe);
         newe.insertAdjacentText("afterBegin", "upload");
         newe.onclick = upload;
+
+        var newe = document.createElement("button");
+        beastImage.appendChild(newe);
+        newe.insertAdjacentText("afterBegin", "formdata");
+        newe.onclick = formdata;
 
         var newe = document.createTextNode(window.location.href);
         beastImage.appendChild(newe);
