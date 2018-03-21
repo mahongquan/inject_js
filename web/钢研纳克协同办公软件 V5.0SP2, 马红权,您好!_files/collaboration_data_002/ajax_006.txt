@@ -1,0 +1,72 @@
+var newsIssueManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=newsIssueManager",
+     getAffairManager: function(){
+                  return this.ajaxCall(arguments,"getAffairManager");
+},
+     getAttachmentManager: function(){
+                  return this.ajaxCall(arguments,"getAttachmentManager");
+},
+     getColManager: function(){
+                  return this.ajaxCall(arguments,"getColManager");
+},
+     getFileManager: function(){
+                  return this.ajaxCall(arguments,"getFileManager");
+},
+     getNewsDataManager: function(){
+                  return this.ajaxCall(arguments,"getNewsDataManager");
+},
+     getNewsTypeManager: function(){
+                  return this.ajaxCall(arguments,"getNewsTypeManager");
+},
+     getNewsUtils: function(){
+                  return this.ajaxCall(arguments,"getNewsUtils");
+},
+     getOrgManager: function(){
+                  return this.ajaxCall(arguments,"getOrgManager");
+},
+     getSpaceManager: function(){
+                  return this.ajaxCall(arguments,"getSpaceManager");
+},
+     getUserMessageManager: function(){
+                  return this.ajaxCall(arguments,"getUserMessageManager");
+},
+     hasAuthority: function(){
+                  return this.ajaxCall(arguments,"hasAuthority");
+},
+     issueNews: function(){
+                  return this.ajaxCall(arguments,"issueNews");
+},
+     preIssue: function(){
+                  return this.ajaxCall(arguments,"preIssue");
+},
+     setAffairManager: function(){
+                  return this.ajaxCall(arguments,"setAffairManager");
+},
+     setAttachmentManager: function(){
+                  return this.ajaxCall(arguments,"setAttachmentManager");
+},
+     setColManager: function(){
+                  return this.ajaxCall(arguments,"setColManager");
+},
+     setFileManager: function(){
+                  return this.ajaxCall(arguments,"setFileManager");
+},
+     setNewsDataManager: function(){
+                  return this.ajaxCall(arguments,"setNewsDataManager");
+},
+     setNewsTypeManager: function(){
+                  return this.ajaxCall(arguments,"setNewsTypeManager");
+},
+     setNewsUtils: function(){
+                  return this.ajaxCall(arguments,"setNewsUtils");
+},
+     setOrgManager: function(){
+                  return this.ajaxCall(arguments,"setOrgManager");
+},
+     setSpaceManager: function(){
+                  return this.ajaxCall(arguments,"setSpaceManager");
+},
+     setUserMessageManager: function(){
+                  return this.ajaxCall(arguments,"setUserMessageManager");
+}
+});

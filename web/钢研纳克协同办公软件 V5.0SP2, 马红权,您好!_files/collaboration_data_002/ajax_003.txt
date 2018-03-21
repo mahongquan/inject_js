@@ -1,0 +1,90 @@
+var bulIssueManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=bulIssueManager",
+     getAffairManager: function(){
+                  return this.ajaxCall(arguments,"getAffairManager");
+},
+     getAttachmentManager: function(){
+                  return this.ajaxCall(arguments,"getAttachmentManager");
+},
+     getBulDataManager: function(){
+                  return this.ajaxCall(arguments,"getBulDataManager");
+},
+     getBulTypeManager: function(){
+                  return this.ajaxCall(arguments,"getBulTypeManager");
+},
+     getBulletinUtils: function(){
+                  return this.ajaxCall(arguments,"getBulletinUtils");
+},
+     getColManager: function(){
+                  return this.ajaxCall(arguments,"getColManager");
+},
+     getEdocManager: function(){
+                  return this.ajaxCall(arguments,"getEdocManager");
+},
+     getFileManager: function(){
+                  return this.ajaxCall(arguments,"getFileManager");
+},
+     getIssueScope: function(){
+                  return this.ajaxCall(arguments,"getIssueScope");
+},
+     getOrgManager: function(){
+                  return this.ajaxCall(arguments,"getOrgManager");
+},
+     getProcessLogManager: function(){
+                  return this.ajaxCall(arguments,"getProcessLogManager");
+},
+     getSpaceManager: function(){
+                  return this.ajaxCall(arguments,"getSpaceManager");
+},
+     getUserMessageManager: function(){
+                  return this.ajaxCall(arguments,"getUserMessageManager");
+},
+     hasAuthority: function(){
+                  return this.ajaxCall(arguments,"hasAuthority");
+},
+     issueBulletion: function(){
+                  return this.ajaxCall(arguments,"issueBulletion");
+},
+     issueEdocBulletion: function(){
+                  return this.ajaxCall(arguments,"issueEdocBulletion");
+},
+     preIssue: function(){
+                  return this.ajaxCall(arguments,"preIssue");
+},
+     setAffairManager: function(){
+                  return this.ajaxCall(arguments,"setAffairManager");
+},
+     setAttachmentManager: function(){
+                  return this.ajaxCall(arguments,"setAttachmentManager");
+},
+     setBulDataManager: function(){
+                  return this.ajaxCall(arguments,"setBulDataManager");
+},
+     setBulTypeManager: function(){
+                  return this.ajaxCall(arguments,"setBulTypeManager");
+},
+     setBulletinUtils: function(){
+                  return this.ajaxCall(arguments,"setBulletinUtils");
+},
+     setColManager: function(){
+                  return this.ajaxCall(arguments,"setColManager");
+},
+     setEdocManager: function(){
+                  return this.ajaxCall(arguments,"setEdocManager");
+},
+     setFileManager: function(){
+                  return this.ajaxCall(arguments,"setFileManager");
+},
+     setOrgManager: function(){
+                  return this.ajaxCall(arguments,"setOrgManager");
+},
+     setProcessLogManager: function(){
+                  return this.ajaxCall(arguments,"setProcessLogManager");
+},
+     setSpaceManager: function(){
+                  return this.ajaxCall(arguments,"setSpaceManager");
+},
+     setUserMessageManager: function(){
+                  return this.ajaxCall(arguments,"setUserMessageManager");
+}
+});

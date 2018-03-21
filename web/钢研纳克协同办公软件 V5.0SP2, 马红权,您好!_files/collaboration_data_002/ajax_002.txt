@@ -1,0 +1,69 @@
+var collaborationFormBindEventListener=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=collaborationFormBindEventListener",
+     CGLIB$SET_STATIC_CALLBACKS: function(){
+                  return this.ajaxCall(arguments,"CGLIB$SET_STATIC_CALLBACKS");
+},
+     CGLIB$SET_THREAD_CALLBACKS: function(){
+                  return this.ajaxCall(arguments,"CGLIB$SET_THREAD_CALLBACKS");
+},
+     CGLIB$findMethodProxy: function(){
+                  return this.ajaxCall(arguments,"CGLIB$findMethodProxy");
+},
+     afterHandler: function(){
+                  return this.ajaxCall(arguments,"afterHandler");
+},
+     checkBindEventBatch: function(){
+                  return this.ajaxCall(arguments,"checkBindEventBatch");
+},
+     createXMLStr: function(){
+                  return this.ajaxCall(arguments,"createXMLStr");
+},
+     getAllCollaborationEvent: function(){
+                  return this.ajaxCall(arguments,"getAllCollaborationEvent");
+},
+     getCallback: function(){
+                  return this.ajaxCall(arguments,"getCallback");
+},
+     getCallbacks: function(){
+                  return this.ajaxCall(arguments,"getCallbacks");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     init: function(){
+                  return this.ajaxCall(arguments,"init");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     newInstance: function(){
+                  return this.ajaxCall(arguments,"newInstance");
+},
+     preHandler: function(){
+                  return this.ajaxCall(arguments,"preHandler");
+},
+     setAffairManager: function(){
+                  return this.ajaxCall(arguments,"setAffairManager");
+},
+     setCallback: function(){
+                  return this.ajaxCall(arguments,"setCallback");
+},
+     setCallbacks: function(){
+                  return this.ajaxCall(arguments,"setCallbacks");
+},
+     setColManager: function(){
+                  return this.ajaxCall(arguments,"setColManager");
+},
+     setFormCacheManager: function(){
+                  return this.ajaxCall(arguments,"setFormCacheManager");
+},
+     setFormManager: function(){
+                  return this.ajaxCall(arguments,"setFormManager");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     startFormDevelopmentOfAdvCheck: function(){
+                  return this.ajaxCall(arguments,"startFormDevelopmentOfAdvCheck");
+}
+});

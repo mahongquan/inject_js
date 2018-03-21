@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title data-cke-title="所见即所得编辑器,fckedit">所见即所得编辑器,fckedit</title><style data-cke-temp="1">html{height:100% !important}
+img:-moz-broken{-moz-force-broken-image-icon:1;min-width:24px;min-height:24px}
+html{cursor:text;*cursor:auto}
+img,input,textarea{cursor:default}</style><link type="text/css" rel="stylesheet" href="collaboration_data/skin_002.css"><link type="text/css" rel="stylesheet" href="collaboration_data/skin.css"><link type="text/css" rel="stylesheet" href="collaboration_data/all-min.css"><link type="text/css" rel="stylesheet" href="collaboration_data/contents.css"><style data-cke-temp="1">.cke_editable{cursor:text}.cke_editable img,.cke_editable input,.cke_editable textarea{cursor:default}
+img.cke_flash{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/flash/images/placeholder.png?t=CAPD);background-position: center center;background-repeat: no-repeat;border: 1px solid #a9a9a9;width: 80px;height: 80px;}
+.cke_editable form{border: 1px dotted #FF0000;padding: 2px;}
+
+img.cke_hidden{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/forms/images/hiddenfield.gif?t=CAPD);background-position: center center;background-repeat: no-repeat;border: 1px solid #a9a9a9;width: 16px !important;height: 16px !important;}
+img.cke_iframe{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/iframe/images/placeholder.png?t=CAPD);background-position: center center;background-repeat: no-repeat;border: 1px solid #a9a9a9;width: 80px;height: 80px;}
+.cke_contents_ltr a.cke_anchor,.cke_contents_ltr a.cke_anchor_empty,.cke_editable.cke_contents_ltr a[name],.cke_editable.cke_contents_ltr a[data-cke-saved-name]{background:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/link/images/anchor.png?t=CAPD) no-repeat left center;border:1px dotted #00f;padding-left:18px;cursor:auto;}.cke_contents_ltr img.cke_anchor{background:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/link/images/anchor.png?t=CAPD) no-repeat left center;border:1px dotted #00f;width:16px;min-height:15px;height:1.15em;vertical-align:text-bottom;}.cke_contents_rtl a.cke_anchor,.cke_contents_rtl a.cke_anchor_empty,.cke_editable.cke_contents_rtl a[name],.cke_editable.cke_contents_rtl a[data-cke-saved-name]{background:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/link/images/anchor.png?t=CAPD) no-repeat right center;border:1px dotted #00f;padding-right:18px;cursor:auto;}.cke_contents_rtl img.cke_anchor{background:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/link/images/anchor.png?t=CAPD) no-repeat right center;border:1px dotted #00f;width:16px;min-height:15px;height:1.15em;vertical-align:text-bottom;}
+div.cke_pagebreak{background: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/pagebreak/images/pagebreak.gif?t=CAPD) no-repeat center center !important;clear: both !important;width:100% !important; _width:99.9% !important;border-top: #999999 1px dotted !important;border-bottom: #999999 1px dotted !important;padding:0 !important;height: 5px !important;cursor: default !important;}
+.cke_show_blocks  p,.cke_show_blocks  div,.cke_show_blocks  pre,.cke_show_blocks  address,.cke_show_blocks  blockquote,.cke_show_blocks  h1,.cke_show_blocks  h2,.cke_show_blocks  h3,.cke_show_blocks  h4,.cke_show_blocks  h5,.cke_show_blocks  h6{background-repeat: no-repeat;border: 1px dotted gray;padding-top: 8px;}.cke_show_blocks  p{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_p.png);}.cke_show_blocks  div{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_div.png);}.cke_show_blocks  pre{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_pre.png);}.cke_show_blocks  address{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_address.png);}.cke_show_blocks  blockquote{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_blockquote.png);}.cke_show_blocks  h1{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_h1.png);}.cke_show_blocks  h2{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_h2.png);}.cke_show_blocks  h3{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_h3.png);}.cke_show_blocks  h4{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_h4.png);}.cke_show_blocks  h5{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_h5.png);}.cke_show_blocks  h6{background-image: url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/showblocks/images/block_h6.png);}.cke_show_blocks.cke_contents_ltr p,.cke_show_blocks.cke_contents_ltr div,.cke_show_blocks.cke_contents_ltr pre,.cke_show_blocks.cke_contents_ltr address,.cke_show_blocks.cke_contents_ltr blockquote,.cke_show_blocks.cke_contents_ltr h1,.cke_show_blocks.cke_contents_ltr h2,.cke_show_blocks.cke_contents_ltr h3,.cke_show_blocks.cke_contents_ltr h4,.cke_show_blocks.cke_contents_ltr h5,.cke_show_blocks.cke_contents_ltr h6{background-position: top left;padding-left: 8px;}.cke_show_blocks.cke_contents_rtl p,.cke_show_blocks.cke_contents_rtl div,.cke_show_blocks.cke_contents_rtl pre,.cke_show_blocks.cke_contents_rtl address,.cke_show_blocks.cke_contents_rtl blockquote,.cke_show_blocks.cke_contents_rtl h1,.cke_show_blocks.cke_contents_rtl h2,.cke_show_blocks.cke_contents_rtl h3,.cke_show_blocks.cke_contents_rtl h4,.cke_show_blocks.cke_contents_rtl h5,.cke_show_blocks.cke_contents_rtl h6{background-position: top right;padding-right: 8px;}
+.cke_show_borders  table.cke_show_border,.cke_show_borders  table.cke_show_border > tr > td, .cke_show_borders  table.cke_show_border > tr > th,.cke_show_borders  table.cke_show_border > tbody > tr > td, .cke_show_borders  table.cke_show_border > tbody > tr > th,.cke_show_borders  table.cke_show_border > thead > tr > td, .cke_show_borders  table.cke_show_border > thead > tr > th,.cke_show_borders  table.cke_show_border > tfoot > tr > td, .cke_show_borders  table.cke_show_border > tfoot > tr > th{border : #d3d3d3 1px dotted}</style></head><body class="cke_editable cke_editable_themed cke_contents_ltr cke_show_borders" spellcheck="false" contenteditable="true"><div id="madiv1" style="background:#AAAAAA"><button>下载附件</button>http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=updateContentPage&amp;summaryId=-2977321418646535714</div><table style="width: 645px; border-collapse: collapse;" width="646" cellspacing="0" cellpadding="0" border="8"><colgroup><col style="width: 68px; text-align: center;"><col style="width: 116px; text-align: center;"><col style="width: 88px; text-align: center;"><col style="width: 166px; text-align: center;"><col style="width: 103px; text-align: center;"><col style="width: 105px; text-align: center;"></colgroup><tbody><tr style="height: 25px;" height="25"><td style="width: 645px; height: 25px; text-align: center;" colspan="6" height="25"><span style="font-size: 32px;">气体合同信息</span></td></tr><tr style="height: 19px;" height="19"><td style="width: 68px; height: 19px; text-align: center; border-top-style: none;" height="19">合同号</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">仪器编号</td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">4111808680</td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">仪器型号</td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">CS2800</td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">交货期</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">加密天数</td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">生效日期</td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;"><br></td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">用户名称</td><td style="width: 577px; text-align: center; border-right-color: black; border-right-width: 0.5pt; border-right-style: solid; border-left-style: none;" colspan="5"><br></td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">序号</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">工序</td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">负责人</td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">附件</td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">开始时间</td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">完工时间</td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">1</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">下载技术附件</td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;"><br></td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">2</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">排产</td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;"><br></td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">3</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">配货</td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;"><br></td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">4</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">机械组装</td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">赵忠</td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><span><a data-cke-saved-href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('5542055261723248779','application/msword','','','1','2018-03-16 12:38:44','4111808680.doc','80417de873c143ec909a20f4ec05398d');" href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('5542055261723248779','application/msword','','','1','2018-03-16%2012:38:44','4111808680.doc','80417de873c143ec909a20f4ec05398d');" attachmentid="5542055261723248779">4111808680.doc</a></span></td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">2018/3/10</td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">2018/3/10</td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">5</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">电气组装</td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">赵忠</td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><span><a data-cke-saved-href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('-3328162183263991892','application/msword','','','1','2018-03-16 12:39:47','4111808680.doc','f76eb19166fe2abf16e36f3ae2a4d755');" href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('-3328162183263991892','application/msword','','','1','2018-03-16%2012:39:47','4111808680.doc','f76eb19166fe2abf16e36f3ae2a4d755');" attachmentid="-3328162183263991892">4111808680.doc</a></span></td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">2018/3/12</td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">2018/3/12</td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">6</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">综合调试</td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;"><br></td></tr><tr style="height: 18px;" height="18"><td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">7</td><td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">出厂检验</td><td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;"><br></td><td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;"><br></td></tr></tbody></table><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url,"","width=500,height=500");    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><br><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script></body></html>

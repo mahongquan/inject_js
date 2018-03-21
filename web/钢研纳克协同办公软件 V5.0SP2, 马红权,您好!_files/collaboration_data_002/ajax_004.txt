@@ -1,0 +1,42 @@
+var phraseManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=phraseManager",
+     addorupdatePersonPhrase: function(){
+                  return this.ajaxCall(arguments,"addorupdatePersonPhrase");
+},
+     deleteAll: function(){
+                  return this.ajaxCall(arguments,"deleteAll");
+},
+     deletePersonPhrase: function(){
+                  return this.ajaxCall(arguments,"deletePersonPhrase");
+},
+     findCommonPhraseById: function(){
+                  return this.ajaxCall(arguments,"findCommonPhraseById");
+},
+     findPersonalPhraseById: function(){
+                  return this.ajaxCall(arguments,"findPersonalPhraseById");
+},
+     get: function(){
+                  return this.ajaxCall(arguments,"get");
+},
+     getAll: function(){
+                  return this.ajaxCall(arguments,"getAll");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     save: function(){
+                  return this.ajaxCall(arguments,"save");
+},
+     saveCommonPharse: function(){
+                  return this.ajaxCall(arguments,"saveCommonPharse");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     update: function(){
+                  return this.ajaxCall(arguments,"update");
+}
+});

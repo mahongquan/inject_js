@@ -1,0 +1,9 @@
+javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('-937757472596734433','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','','','1','2017-07-03 09:14:02','2016ERP进度表 (自动保存的).xlsx','e6fa3255d5a29c84251841775c96a7c1');
+
+
+
+javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('3903046416233546116','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','','','1','2017-12-29%2009:32:09','2017ERP%E8%BF%9B%E5%BA%A6%E8%A1%A8%20.xlsx','e6e0e7f8584040ed9b606faca26a95db');
+
+
+
+http://oa.ncschina.com/seeyon/fileDownload.do?method=download&fileId=-1408531954524142182&v=0ff6cbbce7e422bd65b9088542401882&createDate=2017-11-14&filename=285-%E8%A1%8C%E6%94%BF%E4%BF%9D%E5%8D%AB%E9%83%A8%C2%A0%E5%85%B3%E4%BA%8E%E5%BC%80%E9%80%9A%E6%8E%8C%E4%B8%8A%E5%8A%9E%E7%90%86%E4%BD%8F%E6%88%BF%E5%85%AC%E7%A7%AF%E9%87%91%E4%B8%9A%E5%8A%A1%E7%9A%84%E9%80%9A%E7%9F%A5.PDF

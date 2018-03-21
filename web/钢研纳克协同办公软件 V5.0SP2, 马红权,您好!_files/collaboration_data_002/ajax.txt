@@ -1,0 +1,111 @@
+var formRelationManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=formRelationManager",
+     RelationAuthorityBySummaryId: function(){
+                  return this.ajaxCall(arguments,"RelationAuthorityBySummaryId");
+},
+     createRelationRecordMap: function(){
+                  return this.ajaxCall(arguments,"createRelationRecordMap");
+},
+     dealAllMemberFieldRelation: function(){
+                  return this.ajaxCall(arguments,"dealAllMemberFieldRelation");
+},
+     dealEnumRelation: function(){
+                  return this.ajaxCall(arguments,"dealEnumRelation");
+},
+     dealMemberFieldRelation: function(){
+                  return this.ajaxCall(arguments,"dealMemberFieldRelation");
+},
+     dealMemberRelation: function(){
+                  return this.ajaxCall(arguments,"dealMemberRelation");
+},
+     dealMultiEnumRelation: function(){
+                  return this.ajaxCall(arguments,"dealMultiEnumRelation");
+},
+     dealRelationAttr: function(){
+                  return this.ajaxCall(arguments,"dealRelationAttr");
+},
+     deleteFormRelation: function(){
+                  return this.ajaxCall(arguments,"deleteFormRelation");
+},
+     deleteFormRelationList: function(){
+                  return this.ajaxCall(arguments,"deleteFormRelationList");
+},
+     getAuthById4Edit: function(){
+                  return this.ajaxCall(arguments,"getAuthById4Edit");
+},
+     getContentAllBean: function(){
+                  return this.ajaxCall(arguments,"getContentAllBean");
+},
+     getFieldBeanRelations: function(){
+                  return this.ajaxCall(arguments,"getFieldBeanRelations");
+},
+     getFieldToRelationStr: function(){
+                  return this.ajaxCall(arguments,"getFieldToRelationStr");
+},
+     getFormMasterDataIdByToModyleId: function(){
+                  return this.ajaxCall(arguments,"getFormMasterDataIdByToModyleId");
+},
+     getFormRelationMap: function(){
+                  return this.ajaxCall(arguments,"getFormRelationMap");
+},
+     getFormRelations: function(){
+                  return this.ajaxCall(arguments,"getFormRelations");
+},
+     getMemberColIds: function(){
+                  return this.ajaxCall(arguments,"getMemberColIds");
+},
+     getRefInputAttrOptions: function(){
+                  return this.ajaxCall(arguments,"getRefInputAttrOptions");
+},
+     getRefInputNameOptions: function(){
+                  return this.ajaxCall(arguments,"getRefInputNameOptions");
+},
+     getRelationAuthorityBySummaryId: function(){
+                  return this.ajaxCall(arguments,"getRelationAuthorityBySummaryId");
+},
+     getRelationFormStr: function(){
+                  return this.ajaxCall(arguments,"getRelationFormStr");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     hasRight4UserCol: function(){
+                  return this.ajaxCall(arguments,"hasRight4UserCol");
+},
+     isExistFieldToRelation: function(){
+                  return this.ajaxCall(arguments,"isExistFieldToRelation");
+},
+     isExistRelation: function(){
+                  return this.ajaxCall(arguments,"isExistRelation");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     isRelationData: function(){
+                  return this.ajaxCall(arguments,"isRelationData");
+},
+     saveOrUpdateRelationRecord: function(){
+                  return this.ajaxCall(arguments,"saveOrUpdateRelationRecord");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     transFormFieldRelation: function(){
+                  return this.ajaxCall(arguments,"transFormFieldRelation");
+},
+     transFormRelation: function(){
+                  return this.ajaxCall(arguments,"transFormRelation");
+},
+     transFormRelation4SysType: function(){
+                  return this.ajaxCall(arguments,"transFormRelation4SysType");
+},
+     transFormRelationRecord: function(){
+                  return this.ajaxCall(arguments,"transFormRelationRecord");
+},
+     updateRelationAuthority: function(){
+                  return this.ajaxCall(arguments,"updateRelationAuthority");
+},
+     updateRelationRecord: function(){
+                  return this.ajaxCall(arguments,"updateRelationRecord");
+}
+});

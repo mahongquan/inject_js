@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html class="h100b over_hidden"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript">
+  var _ctxPath = '/seeyon', _ctxServer = 'http://oa.ncschina.com:80/seeyon';
+  var _locale = 'zh_CN',_isDevelop = false,_sessionid = '86B803F624B0E08392187F341D16FBFF',_isModalDialog = false;
+  
+  var _resourceCode = "";
+  var seeyonProductId="2";
+</script>
+<link rel="stylesheet" href="-9095585739310150737_D_data/all-min.css">
+
+<link rel="stylesheet" href="-9095585739310150737_D_data/skin_002.css">
+
+
+<script type="text/javascript" src="i18n_zh_CN.js"></script>
+
+<script type="text/javascript" src="-9095585739310150737_D_data/all-min.js"></script>
+
+<script type="text/javascript" src="-9095585739310150737_D_data/calendar-zh_CN.js"></script>
+
+<script type="text/javascript" src="-9095585739310150737_D_data/calEvent_data/main.htm"></script>
+<script type="text/javascript">
+$.ctx._currentPathId = 'collaboration_collaboration_updateContentPage';
+$.ctx._pageSize = 20;
+$.ctx.fillmaps = null;
+</script>
+<script type="text/javascript" src="-9095585739310150737_D_data/ajax.txt"></script>
+
+
+
+
+	<style>
+	.stadic_head_height{
+		height:30px;
+	}
+	.stadic_body_top_bottom{
+		bottom: 0px;
+ 		top: 30px;
+	}
+</style>
+<script type="text/javascript">
+    var isSubmitOperation; //直接离开窗口做出提示的标记位
+    var operationObj;
+    $(document).ready(function(){
+        //debugger;
+        //if($.browser.msie && ($.browser.version=='7.0' || $.browser.version=='8.0')){
+            operationObj =  getA8Top().updataContentOBJ;
+        //}else{
+		   // operationObj = window.dialogArguments;
+        //}
+    	$("#dataDiv").css("overflow","visible");
+    	//工具栏
+        $("#toolbars").toolbar({
+            toolbar: [{
+                id: "saveDialog",
+                name: "保存并退出",//保存并退出
+                className: "ico16 save_up_16",
+                click:saveUpdateContent
+            },  {
+                id: "exitDialog",
+                name: "取消",//取消
+                className: "ico16 revoked_process_16",
+                click:exitCancel
+            }]
+        });
+        try{
+        if(operationObj[1]){
+	        //alert(window.dialogArguments[1]);
+	        $.content.setContent(operationObj[1]);
+        }}catch(e){}
+    });
+    function saveUpdateContent(){
+        var content = replaceAll($.content.getContent(),'comp','');
+    	operationObj[0].componentDiv.$.content.setContent(content);
+    	operationObj[0].setFlagto1();
+        window.parentDialogObj["dialogUpdate"].close();
+    }
+    function replaceAll(htm, a, b) {
+      return htm.replace(new RegExp(a, "gm"), b);
+    }
+    function exitCancel(){
+    	operationObj[0].setFlagto0();
+        var confirm = $.confirm({
+            'msg':"确定离开该页面吗？",
+            ok_fn: function () {
+                window.parentDialogObj["dialogUpdate"].close();
+            },
+            cancel_fn:function(){
+            }
+        });
+    }
+
+
+</script>
+<style>.cke{visibility:hidden;}</style><script type="text/javascript" src="collaboration_data/config.js" charset="utf-8"></script><link rel="stylesheet" type="text/css" href="collaboration_data/editor_gecko.css"><script type="text/javascript" src="collaboration_data/zh-cn.js" charset="utf-8"></script><script type="text/javascript" src="collaboration_data/plugin.js" charset="utf-8"></script><script type="text/javascript" src="collaboration_data/zh-cn_002.js" charset="utf-8"></script><script type="text/javascript" src="collaboration_data/styles.js" charset="utf-8"></script><script type="text/javascript" src="collaboration_data/ctpassociate.js" charset="utf-8"></script><link rel="stylesheet" type="text/css" href="collaboration_data/dialog.css"></head>
+<body class="h100b over_hidden" onpageshow='event.persisted&amp;&amp;(function(){var x=CKEDITOR.instances,d,i;for(i in x){d=x[i].document;if(d){d.$.designMode="off";d.$.designMode="on";}}})();'>
+<div id="madiv1" style="background:#AAAAAA"><button>下载附件</button>http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=updateContentPage&amp;summaryId=-2977321418646535714</div><form class="h100b" method="post" id="sendForm" name="sendForm" action="collaboration.do?method=saveContent">
+	<div class="stadic_layout">
+		<div class="stadic_layout_head stadic_head_height">
+            <div id="toolbars"><div class="common_toolbar_box clearfix" style="_display:inline; border-top-width:0px;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-color:#b6b6b6;border-style:solid;"><div id="toolbar_83640306" class="toolbar_l clearfix"><a href="javascript:void(0)" id="saveDialog_a"><em id="saveDialog_em" class="ico16 save_up_16"></em><span id="saveDialog_span" class="menu_span">保存并退出</span></a><em class="seperate margin_lr_5"></em><a href="javascript:void(0)" id="exitDialog_a"><em id="exitDialog_em" class="ico16 revoked_process_16"></em><span id="exitDialog_span" class="menu_span">取消</span></a></div></div></div>
+        </div>
+		<div id="dataDiv" class="stadic_layout_body stadic_body_top_bottom" style="height: 10px; background-color: rgb(237, 237, 237); overflow: visible;">
+			
+
+
+
+
+
+
+<style type="text/css">
+.browse_class span {
+	color: blue;
+}
+.xdTableHeader TD {
+	min-height: 10px;
+}
+.radio_com {
+	margin-right: 0px;
+}
+.xdTextBox {
+	BORDER-BOTTOM: #dcdcdc 1pt solid;
+	min-height: 12px;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #dcdcdc 1pt solid;
+	BACKGROUND-COLOR: window;
+	DISPLAY: inline-block;
+	WHITE-SPACE: nowrap;
+	COLOR: windowtext;
+	OVERFLOW: hidden;
+	BORDER-TOP: #dcdcdc 1pt solid;
+	BORDER-RIGHT: #dcdcdc 1pt solid;
+}
+.xdRichTextBox {
+	font-size: 12px;
+	BORDER-BOTTOM: #dcdcdc 1pt solid;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #dcdcdc 1pt solid;
+	BACKGROUND-COLOR: window;
+	FONT-STYLE: normal;
+	min-height: 12px;
+	display: inline-block;
+	WORD-WRAP: break-word;
+	COLOR: windowtext;
+	BORDER-TOP: #dcdcdc 1pt solid;
+	BORDER-RIGHT: #dcdcdc 1pt solid;
+	TEXT-DECORATION: none;
+}
+
+span.xdRichTextBox{
+	VERTICAL-ALIGN: bottom !important;
+}
+span.design_class{
+	vertical-align: bottom;
+}
+span.edit_class{
+	vertical-align: bottom;
+}
+.mainbodyDiv div,.mainbodyDiv input,.mainbodyDiv textarea,.mainbodyDiv p,.mainbodyDiv th,.mainbodyDiv td,.mainbodyDiv ul,.mainbodyDiv li{
+	font-family: inherit;
+	layout-grid-mode : none;
+}
+span.biggerThanMax{
+	background-color:yellow;
+}
+.insert_pic_16{
+	margin-top:2px;
+}
+
+.xdRichTextBox span{
+    overflow:auto;
+}
+
+</style>
+
+
+
+<div id="mainbodyDiv" class="mainbodyDiv" style="width:100%;height:100%;">
+
+
+	
+
+    <!-- 表单多视图页签输出 -->
+    
+        
+        <div style="height:0px"><input id="inputPosition" style="border:0px;width:0.01px;height:0.01px" onfocus="javascript:return false;" onclick="return false;" type="text"></div>
+            <input id="_currentDiv" value="0" type="hidden">
+            
+           		
+           			
+		            	<div id="mainbodyHtmlDiv_0" class="content_text" style="padding-bottom:0px;word-break:break-all;height:98%;">               
+			                <textarea id="fckedit" style="display: none; visibility: hidden;" class="comp" comp="type:'editor',contentType:'html'" comptype="editor" editorreadystate="complete">&lt;table
+ width="646" style="width: 645px; border-collapse: collapse;" border="8"
+ cellSpacing="0" cellPadding="0"&gt;&lt;colgroup&gt;&lt;col 
+style="width: 68px; text-align: center;"&gt;&lt;col style="width: 116px;
+ text-align: center;"&gt;&lt;col style="width: 88px; text-align: 
+center;"&gt;&lt;col style="width: 166px; text-align: center;"&gt;&lt;col
+ style="width: 103px; text-align: center;"&gt;&lt;col style="width: 
+105px; text-align: center;"&gt;&lt;/colgroup&gt;&lt;tbody&gt;&lt;tr 
+height="25" style="height: 25px;"&gt;&lt;td height="25" style="width: 
+645px; height: 25px; text-align: center;" colSpan="6"&gt;&lt;span 
+style="font-size: 
+32px;"&gt;气体合同信息&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr height="19" 
+style="height: 19px;"&gt;&lt;td height="19" style="width: 68px; height: 
+19px; text-align: center; border-top-style: 
+none;"&gt;合同号&lt;/td&gt;&lt;td style="width: 116px; text-align: center; 
+border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 88px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;仪器编号&lt;/td&gt;&lt;td style="width: 166px; text-align: center;
+ border-top-style: none; border-left-style: 
+none;"&gt;4111808680&lt;/td&gt;&lt;td style="width: 103px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;仪器型号&lt;/td&gt;&lt;td style="width: 105px; text-align: center;
+ border-top-style: none; border-left-style: 
+none;"&gt;CS2800&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" style="height: 
+18px;"&gt;&lt;td height="18" style="width: 68px; height: 18px; 
+text-align: center; border-top-style: none;"&gt;交货期&lt;/td&gt;&lt;td 
+style="width: 116px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 
+88px; text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;加密天数&lt;/td&gt;&lt;td style="width: 166px; text-align: center;
+ border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 103px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;生效日期&lt;/td&gt;&lt;td style="width: 105px; text-align: center;
+ border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" 
+style="height: 18px;"&gt;&lt;td height="18" style="width: 68px; height: 
+18px; text-align: center; border-top-style: 
+none;"&gt;用户名称&lt;/td&gt;&lt;td style="width: 577px; text-align: center;
+ border-right-color: black; border-right-width: 0.5pt; 
+border-right-style: solid; border-left-style: none;" 
+colSpan="5"&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" 
+style="height: 18px;"&gt;&lt;td height="18" style="width: 68px; height: 
+18px; text-align: center; border-top-style: 
+none;"&gt;序号&lt;/td&gt;&lt;td style="width: 116px; text-align: center; 
+border-top-style: none; border-left-style: none;"&gt;工序&lt;/td&gt;&lt;td
+ style="width: 88px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;负责人&lt;/td&gt;&lt;td style="width: 166px; 
+text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;附件&lt;/td&gt;&lt;td style="width: 103px; text-align: center; 
+border-top-style: none; border-left-style: 
+none;"&gt;开始时间&lt;/td&gt;&lt;td style="width: 105px; text-align: center;
+ border-top-style: none; border-left-style: 
+none;"&gt;完工时间&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" style="height: 
+18px;"&gt;&lt;td height="18" style="width: 68px; height: 18px; 
+text-align: center; border-top-style: none;"&gt;1&lt;/td&gt;&lt;td 
+style="width: 116px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;下载技术附件&lt;/td&gt;&lt;td style="width: 88px;
+ text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 166px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 103px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 105px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" 
+style="height: 18px;"&gt;&lt;td height="18" style="width: 68px; height: 
+18px; text-align: center; border-top-style: none;"&gt;2&lt;/td&gt;&lt;td
+ style="width: 116px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;排产&lt;/td&gt;&lt;td style="width: 88px; 
+text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 166px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 103px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 105px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" 
+style="height: 18px;"&gt;&lt;td height="18" style="width: 68px; height: 
+18px; text-align: center; border-top-style: none;"&gt;3&lt;/td&gt;&lt;td
+ style="width: 116px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;配货&lt;/td&gt;&lt;td style="width: 88px; 
+text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 166px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 103px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 105px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" 
+style="height: 18px;"&gt;&lt;td height="18" style="width: 68px; height: 
+18px; text-align: center; border-top-style: none;"&gt;4&lt;/td&gt;&lt;td
+ style="width: 116px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;机械组装&lt;/td&gt;&lt;td style="width: 88px; 
+text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;赵忠&lt;/td&gt;&lt;td style="width: 166px; text-align: center; 
+border-top-style: none; border-left-style: none;"&gt;&lt;span&gt;&lt;a 
+href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('5542055261723248779','application/msword','','','1','2018-03-16
+ 12:38:44','4111808680.doc','80417de873c143ec909a20f4ec05398d');" 
+attachmentid="5542055261723248779"&gt;4111808680.doc&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td
+ style="width: 103px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;2018/3/10&lt;/td&gt;&lt;td style="width: 
+105px; text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;2018/3/10&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" 
+style="height: 18px;"&gt;&lt;td height="18" style="width: 68px; height: 
+18px; text-align: center; border-top-style: none;"&gt;5&lt;/td&gt;&lt;td
+ style="width: 116px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;电气组装&lt;/td&gt;&lt;td style="width: 88px; 
+text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;赵忠&lt;/td&gt;&lt;td style="width: 166px; text-align: center; 
+border-top-style: none; border-left-style: none;"&gt;&lt;span&gt;&lt;a 
+href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('-3328162183263991892','application/msword','','','1','2018-03-16
+ 12:39:47','4111808680.doc','f76eb19166fe2abf16e36f3ae2a4d755');" 
+attachmentid="-3328162183263991892"&gt;4111808680.doc&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td
+ style="width: 103px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;2018/3/12&lt;/td&gt;&lt;td style="width: 
+105px; text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;2018/3/12&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" 
+style="height: 18px;"&gt;&lt;td height="18" style="width: 68px; height: 
+18px; text-align: center; border-top-style: none;"&gt;6&lt;/td&gt;&lt;td
+ style="width: 116px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;综合调试&lt;/td&gt;&lt;td style="width: 88px; 
+text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 166px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 103px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 105px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr height="18" 
+style="height: 18px;"&gt;&lt;td height="18" style="width: 68px; height: 
+18px; text-align: center; border-top-style: none;"&gt;7&lt;/td&gt;&lt;td
+ style="width: 116px; text-align: center; border-top-style: none; 
+border-left-style: none;"&gt;出厂检验&lt;/td&gt;&lt;td style="width: 88px; 
+text-align: center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 166px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 103px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;td style="width: 105px; text-align: 
+center; border-top-style: none; border-left-style: 
+none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</textarea><div id="cke_fckedit" class="cke_1 cke cke_reset cke_chrome cke_editor_fckedit cke_ltr cke_browser_gecko cke_focus" dir="ltr" role="application" aria-labelledby="cke_fckedit_arialbl" lang="zh-cn"><span id="cke_fckedit_arialbl" class="cke_voice_label">所见即所得编辑器</span><div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; -moz-user-select: none;"><span id="cke_5" class="cke_voice_label">工具栏</span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_5" onmousedown="return false;"><span id="cke_7" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span id="cke_6" class="cke_combo cke_combo__font  cke_combo_off" role="presentation"><span id="cke_6_label" class="cke_combo_label">字体</span><a class="cke_combo_button" hidefocus="true" title="字体" tabindex="-1" role="button" aria-labelledby="cke_6_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(2,event,this);" onmousedown="return CKEDITOR.tools.callFunction(4,event);" onfocus="return CKEDITOR.tools.callFunction(3,event);" onclick="CKEDITOR.tools.callFunction(1,this);return false;"><span id="cke_6_text" class="cke_combo_text cke_combo_inlinelabel">字体</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span id="cke_8" class="cke_combo cke_combo__fontsize  cke_combo_off" role="presentation"><span id="cke_8_label" class="cke_combo_label">大小</span><a class="cke_combo_button" hidefocus="true" title="大小" tabindex="-1" role="button" aria-labelledby="cke_8_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(6,event,this);" onmousedown="return CKEDITOR.tools.callFunction(8,event);" onfocus="return CKEDITOR.tools.callFunction(7,event);" onclick="CKEDITOR.tools.callFunction(5,this);return false;"><span id="cke_8_text" class="cke_combo_text cke_combo_inlinelabel">大小</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_9" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_10" class="cke_button cke_button__bold cke_button_off " title="加粗" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_10_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(9,event);" onfocus="return CKEDITOR.tools.callFunction(10,event);" onmousedown="return CKEDITOR.tools.callFunction(11,event);" onclick="CKEDITOR.tools.callFunction(12,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -32px;">&nbsp;</span><span id="cke_10_label" class="cke_button_label cke_button__bold_label">加粗</span></a><a id="cke_11" class="cke_button cke_button__italic cke_button_off " title="倾斜" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_11_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(13,event);" onfocus="return CKEDITOR.tools.callFunction(14,event);" onmousedown="return CKEDITOR.tools.callFunction(15,event);" onclick="CKEDITOR.tools.callFunction(16,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -64px;">&nbsp;</span><span id="cke_11_label" class="cke_button_label cke_button__italic_label">倾斜</span></a><a id="cke_12" class="cke_button cke_button__underline cke_button_off " title="下划线" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_12_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(17,event);" onfocus="return CKEDITOR.tools.callFunction(18,event);" onmousedown="return CKEDITOR.tools.callFunction(19,event);" onclick="CKEDITOR.tools.callFunction(20,this);return false;"><span class="cke_button_icon cke_button__underline_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -192px;">&nbsp;</span><span id="cke_12_label" class="cke_button_label cke_button__underline_label">下划线</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_13" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_14" class="cke_button cke_button__justifyleft cke_button_off " title="左对齐" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_14_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(21,event);" onfocus="return CKEDITOR.tools.callFunction(22,event);" onmousedown="return CKEDITOR.tools.callFunction(23,event);" onclick="CKEDITOR.tools.callFunction(24,this);return false;"><span class="cke_button_icon cke_button__justifyleft_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -1600px;">&nbsp;</span><span id="cke_14_label" class="cke_button_label cke_button__justifyleft_label">左对齐</span></a><a id="cke_15" class="cke_button cke_button__justifycenter  cke_button_on" title="居中" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(25,event);" onfocus="return CKEDITOR.tools.callFunction(26,event);" onmousedown="return CKEDITOR.tools.callFunction(27,event);" onclick="CKEDITOR.tools.callFunction(28,this);return false;"><span class="cke_button_icon cke_button__justifycenter_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -1568px;">&nbsp;</span><span id="cke_15_label" class="cke_button_label cke_button__justifycenter_label">居中</span></a><a id="cke_16" class="cke_button cke_button__justifyright cke_button_off " title="右对齐" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(29,event);" onfocus="return CKEDITOR.tools.callFunction(30,event);" onmousedown="return CKEDITOR.tools.callFunction(31,event);" onclick="CKEDITOR.tools.callFunction(32,this);return false;"><span class="cke_button_icon cke_button__justifyright_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -1632px;">&nbsp;</span><span id="cke_16_label" class="cke_button_label cke_button__justifyright_label">右对齐</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_17" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_18" class="cke_button cke_button__textcolor cke_button_off " title="文本颜色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_18_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(33,event);" onfocus="return CKEDITOR.tools.callFunction(34,event);" onmousedown="return CKEDITOR.tools.callFunction(35,event);" onclick="CKEDITOR.tools.callFunction(36,this);return false;"><span class="cke_button_icon cke_button__textcolor_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -544px;">&nbsp;</span><span id="cke_18_label" class="cke_button_label cke_button__textcolor_label">文本颜色</span><span class="cke_button_arrow"></span></a><a id="cke_19" class="cke_button cke_button__bgcolor cke_button_off " title="背景颜色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_19_label" aria-haspopup="true" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(37,event);" onfocus="return CKEDITOR.tools.callFunction(38,event);" onmousedown="return CKEDITOR.tools.callFunction(39,event);" onclick="CKEDITOR.tools.callFunction(40,this);return false;"><span class="cke_button_icon cke_button__bgcolor_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -512px;">&nbsp;</span><span id="cke_19_label" class="cke_button_label cke_button__bgcolor_label">背景颜色</span><span class="cke_button_arrow"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_20" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_21" class="cke_button cke_button__numberedlist cke_button_off " title="编号列表" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_21_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(41,event);" onfocus="return CKEDITOR.tools.callFunction(42,event);" onmousedown="return CKEDITOR.tools.callFunction(43,event);" onclick="CKEDITOR.tools.callFunction(44,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -768px;">&nbsp;</span><span id="cke_21_label" class="cke_button_label cke_button__numberedlist_label">编号列表</span></a><a id="cke_22" class="cke_button cke_button__bulletedlist cke_button_off " title="项目列表" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_22_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(45,event);" onfocus="return CKEDITOR.tools.callFunction(46,event);" onmousedown="return CKEDITOR.tools.callFunction(47,event);" onclick="CKEDITOR.tools.callFunction(48,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -704px;">&nbsp;</span><span id="cke_22_label" class="cke_button_label cke_button__bulletedlist_label">项目列表</span></a><a id="cke_23" class="cke_button cke_button__outdent cke_button_disabled" title="减少缩进量" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_23_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(49,event);" onfocus="return CKEDITOR.tools.callFunction(50,event);" onmousedown="return CKEDITOR.tools.callFunction(51,event);" onclick="CKEDITOR.tools.callFunction(52,this);return false;"><span class="cke_button_icon cke_button__outdent_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -896px;">&nbsp;</span><span id="cke_23_label" class="cke_button_label cke_button__outdent_label">减少缩进量</span></a><a id="cke_24" class="cke_button cke_button__indent cke_button_off " title="增加缩进量" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_24_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(53,event);" onfocus="return CKEDITOR.tools.callFunction(54,event);" onmousedown="return CKEDITOR.tools.callFunction(55,event);" onclick="CKEDITOR.tools.callFunction(56,this);return false;"><span class="cke_button_icon cke_button__indent_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -832px;">&nbsp;</span><span id="cke_24_label" class="cke_button_label cke_button__indent_label">增加缩进量</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_25" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_26" class="cke_button cke_button__image cke_button_off " title="图象" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_26_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(57,event);" onfocus="return CKEDITOR.tools.callFunction(58,event);" onmousedown="return CKEDITOR.tools.callFunction(59,event);" onclick="CKEDITOR.tools.callFunction(60,this);return false;"><span class="cke_button_icon cke_button__image_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -1504px;">&nbsp;</span><span id="cke_26_label" class="cke_button_label cke_button__image_label">图象</span></a><a id="cke_27" class="cke_button cke_button__flash cke_button_off " title="Flash" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_27_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(61,event);" onfocus="return CKEDITOR.tools.callFunction(62,event);" onmousedown="return CKEDITOR.tools.callFunction(63,event);" onclick="CKEDITOR.tools.callFunction(64,this);return false;"><span class="cke_button_icon cke_button__flash_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -1024px;">&nbsp;</span><span id="cke_27_label" class="cke_button_label cke_button__flash_label">Flash</span></a><a id="cke_28" class="cke_button cke_button__ctpassociate cke_button_off " title="插入关联" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_28_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(65,event);" onfocus="return CKEDITOR.tools.callFunction(66,event);" onmousedown="return CKEDITOR.tools.callFunction(67,event);" onclick="CKEDITOR.tools.callFunction(68,this);return false;"><span class="cke_button_icon cke_button__ctpassociate_icon" style="background-image:url(/seeyon/common/ckeditor/plugins/ctpassociate/images/associate.png?t=CAPD);background-position:0 undefinedpx;">&nbsp;</span><span id="cke_28_label" class="cke_button_label cke_button__ctpassociate_label">插入关联</span></a><a id="cke_29" class="cke_button cke_button__table cke_button_off " title="表格" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_29_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(69,event);" onfocus="return CKEDITOR.tools.callFunction(70,event);" onmousedown="return CKEDITOR.tools.callFunction(71,event);" onclick="CKEDITOR.tools.callFunction(72,this);return false;"><span class="cke_button_icon cke_button__table_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -2464px;">&nbsp;</span><span id="cke_29_label" class="cke_button_label cke_button__table_label">表格</span></a><a id="cke_30" class="cke_button cke_button__horizontalrule cke_button_off " title="插入水平线" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_30_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(73,event);" onfocus="return CKEDITOR.tools.callFunction(74,event);" onmousedown="return CKEDITOR.tools.callFunction(75,event);" onclick="CKEDITOR.tools.callFunction(76,this);return false;"><span class="cke_button_icon cke_button__horizontalrule_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -1440px;">&nbsp;</span><span id="cke_30_label" class="cke_button_label cke_button__horizontalrule_label">插入水平线</span></a><a id="cke_31" class="cke_button cke_button__link cke_button_off " title="插入/编辑超链接" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_31_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(77,event);" onfocus="return CKEDITOR.tools.callFunction(78,event);" onmousedown="return CKEDITOR.tools.callFunction(79,event);" onclick="CKEDITOR.tools.callFunction(80,this);return false;"><span class="cke_button_icon cke_button__link_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -1728px;">&nbsp;</span><span id="cke_31_label" class="cke_button_label cke_button__link_label">插入/编辑超链接</span></a><a id="cke_32" class="cke_button cke_button__unlink cke_button_disabled" title="取消超链接" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_32_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(81,event);" onfocus="return CKEDITOR.tools.callFunction(82,event);" onmousedown="return CKEDITOR.tools.callFunction(83,event);" onclick="CKEDITOR.tools.callFunction(84,this);return false;"><span class="cke_button_icon cke_button__unlink_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -1760px;">&nbsp;</span><span id="cke_32_label" class="cke_button_label cke_button__unlink_label">取消超链接</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_33" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_34" class="cke_button cke_button__undo cke_button_disabled" title="撤消" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_34_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(85,event);" onfocus="return CKEDITOR.tools.callFunction(86,event);" onmousedown="return CKEDITOR.tools.callFunction(87,event);" onclick="CKEDITOR.tools.callFunction(88,this);return false;"><span class="cke_button_icon cke_button__undo_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -2592px;">&nbsp;</span><span id="cke_34_label" class="cke_button_label cke_button__undo_label">撤消</span></a><a id="cke_35" class="cke_button cke_button__redo cke_button_disabled" title="重做" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_35_label" aria-haspopup="false" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.tools.callFunction(89,event);" onfocus="return CKEDITOR.tools.callFunction(90,event);" onmousedown="return CKEDITOR.tools.callFunction(91,event);" onclick="CKEDITOR.tools.callFunction(92,this);return false;"><span class="cke_button_icon cke_button__redo_icon" style="background-image:url(http://oa.ncschina.com/seeyon/common/ckeditor/plugins/icons.png?t=CAPD);background-position:0 -2528px;">&nbsp;</span><span id="cke_35_label" class="cke_button_label cke_button__redo_label">重做</span></a></span><span class="cke_toolbar_end"></span></span></span></span><div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: 592px;"><span id="cke_40" class="cke_voice_label">按 ALT+0 获得帮助</span><iframe style="width: 786px; height: 100%;" class="cke_wysiwyg_frame cke_reset" aria-describedby="cke_40" title="所见即所得编辑器,fckedit" src="collaboration_data/collaboration.htm" tabindex="0" allowtransparency="true" frameborder="0"></iframe></div></div></div>
+			            </div>
+		            
+		            
+	            
+            
+            
+            	<!-- 转发的表单正文需要引入form.css用以保持样式不变 -->
+            	    
+            
+            
+            <div id="mainbodyDataDiv_0" style="display: none">
+                <input id="id" name="id" value="-7786262457325238490" type="hidden"> 
+                <input id="createId" name="createId" value="-2147742594505095138" type="hidden">
+                <input id="createDate" name="createDate" value="2018-03-20 08:00:18.337" type="hidden">
+                <input id="modifyId" name="modifyId" value="" type="hidden">
+                <input id="modifyDate" name="modifyDate" value="" type="hidden">
+                <input id="moduleType" name="moduleType" value="1" type="hidden">
+                <input id="moduleId" name="moduleId" value="-2977321418646535714" type="hidden">
+                <input id="contentType" name="contentType" value="10" type="hidden">
+                <input id="moduleTemplateId" name="moduleTemplateId" value="" type="hidden">
+                <input id="contentTemplateId" name="contentTemplateId" value="" type="hidden">
+                <input id="sort" name="sort" value="0" type="hidden">
+                <input id="title" name="title" value="4111808680(CS2800)" type="hidden">
+                <textarea style="display:none" id="content" name="content">&lt;table&nbsp;width="646"&nbsp;style="width:&nbsp;645px;&nbsp;border-collapse:&nbsp;collapse;"&nbsp;border="8"&nbsp;cellSpacing="0"&nbsp;cellPadding="0"&gt;&lt;br/&gt;
+	&lt;colgroup&gt;&lt;br/&gt;		
+&lt;col&nbsp;style="width:&nbsp;68px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+	&lt;/colgroup&gt;&lt;br/&gt;	&lt;tbody&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="25"&nbsp;style="height:&nbsp;25px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="25"&nbsp;style="width:&nbsp;645px;&nbsp;height:&
+nbsp;25px;&nbsp;text-align:&nbsp;center;"&nbsp;colSpan="6"&gt;&lt;span&
+nbsp;style="font-size:&nbsp;32px;"&gt;气体合同信息&lt;/span&gt;&lt;/td&gt;&lt;
+br/&gt;		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="19"&nbsp;style="height:&nbsp;19px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="19"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;
+19px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-
+style:&nbsp;none;"&gt;合同号&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;仪器编
+号&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;4111808680&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;仪器型号&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;CS2800&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;
+18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-
+style:&nbsp;none;"&gt;交货期&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;加密天
+数&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;生效日期&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;
+18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-
+style:&nbsp;none;"&gt;用户名称&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;577px;&nbsp;text-align:&nbsp;center;&nbsp;border-right-color:&nbsp;black;&nbsp;border-right-width:&nbsp;0.5pt;&nbsp;border-right-style:&nbsp;solid;&nbsp;border-left-style:&nbsp;none;"&nbsp;colSpan="5"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;
+18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-
+style:&nbsp;none;"&gt;序号&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;工序&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;负责
+人&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;附件&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;开始时间&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;完工时间&lt;/td&gt;&lt;br/&gt;		&lt;/tr&gt;&lt;br/&gt;
+		&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;1&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;下载技术附件&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;2&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;排产&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;3&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;配货&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;4&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;机械组装&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;赵
+忠&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&lt;span&gt;&lt;a&nbsp;href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('5542055261723248779','application/msword','','','1','2018-03-16&nbsp;12:38:44','4111808680.doc','883f2287798c40a23e546ace61f5cdf6','v_5542055261723248779_v');"&nbsp;attachmentid="5542055261723248779"&gt;4111808680.doc&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;2018/3/10&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;2018/3/10&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;5&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;电气组装&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;赵
+忠&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&lt;span&gt;&lt;a&nbsp;href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('-3328162183263991892','application/msword','','','1','2018-03-16&nbsp;12:39:47','4111808680.doc','74b3ff042851674d53ac0ef14b0e4c15','v_-3328162183263991892_v');"&nbsp;attachmentid="-3328162183263991892"&gt;4111808680.doc&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;2018/3/12&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;2018/3/12&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;6&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;综合调试&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;7&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;出厂检验&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;	
+&lt;/tbody&gt;&lt;br/&gt;&lt;/table&gt;&lt;br/&gt;</textarea>
+                <input id="rightId" name="rightId" value="" type="hidden">
+                <input id="status" name="status" value="STATUS_RESPONSE_VIEW" type="hidden">
+                <input id="viewState" name="viewState" value="1" type="hidden">
+                <input id="contentDataId" name="contentDataId" value="" type="hidden">
+            </div>
+    </div>
+    
+        
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var _wfctxPath = '/seeyon';
+  var _ctxPath = '/seeyon';
+  var _wfcurrentUserId = '7298597487386510009'+'';
+</script>
+<script type="text/javascript" src="collaboration_data_002/workflowDesigner_ajax.js"></script>
+
+<script type="text/javascript" src="collaboration_data_002/workflowDesigner_api-min.js"></script>
+
+
+<div id="workflow_definition" style="display: none">
+    <input id="process_desc_by" type="hidden">
+    <input id="process_xml" type="hidden">
+    <input id="readyObjectJSON" type="hidden">
+    <input id="workflow_data_flag" name="workflow_data_flag" value="WORKFLOW_SEEYON" type="hidden">
+    <input id="process_info" type="hidden">
+    <input id="process_info_selectvalue" type="hidden">
+    <input id="process_subsetting" type="hidden">
+    <input id="moduleType" value="1" type="hidden">
+    <input id="workflow_newflow_input" type="hidden">
+    <input id="process_rulecontent" type="hidden">
+    <input id="workflow_node_peoples_input" type="hidden">
+    <input id="workflow_node_condition_input" type="hidden">
+    <input id="processId" value="-1" type="hidden">
+    <input id="caseId" value="-1" type="hidden">
+    <input id="subObjectId" value="-1" type="hidden">
+    <input id="currentNodeId" value="-1" type="hidden">
+    <input id="process_message_data" type="hidden">
+</div>
+<script type="text/javascript">
+  $.content.getWorkflowDomains = function(moduleType, domains) {
+    if (!domains)
+      domains = [];
+    $("#workflow_definition #moduleType").val(moduleType);
+    domains.push("workflow_definition");
+    return domains;
+  };
+
+</script>
+    
+    
+    
+    <script type="text/javascript">
+        //表单签章相关,hw.js中需要用到
+        var hwVer = '6,6,0,294';
+        var webRoot = _ctxPath;
+        var htmOcxUserName = $.ctx.CurrentUser.name;
+    </script>
+    <script type="text/javascript" src="collaboration_data_002/collaboration_data/isignaturehtml.js"></script>
+    <script type="text/javascript" src="collaboration_data_002/collaboration_data/hw.js"></script>
+    
+     
+    <div id="iSignatureHtmlDiv" style="height:0;overflow:hidden;"><object id="SignatureControl" classid="clsid:D85C89BE-263C-472D-9B6B-5264CD85B36E" viewastext="" height="0" width="0"><param name="ServiceUrl" value="http://oa.ncschina.com:80/seeyon/isignaturehtmlservlet"><param name="AutoSave" value="False"><param name="MenuDeleteSign" value="false"></object></div>
+    <script language="javascript" for="SignatureControl" event="EventOnSign(DocumentId,SignSn,KeySn,Extparam,EventId,Ext1)">
+    
+      if(EventId = 4 ){
+        CalculatePosition();
+        SignatureControl.EventResult = true;
+      }
+    </script>
+    <script type="text/javascript">
+     
+      window.onresize = function (){
+          moveISignatureOnResize();
+      } 
+      
+      window.onbeforeunload=cbfun;
+      function cbfun(){
+          try{releaseISignatureHtmlObj();}catch(e){}
+          if(typeof(beforeCloseCheck) =='function'){
+             return beforeCloseCheck();
+          }
+      }
+      window.onunload = function (){
+    	  try{unLoadHtmlHandWrite();}catch(e){}
+      }
+      
+      window.onload = function(){
+          if($("#contentType").val() == 20){//表单页面初始化
+              //onload事件还在单元格还没全部显示出来之前就开始执行了，所以需要延时  By：zhangc
+              setTimeout("initFormContent(false,false);",280);
+          	  //ie7下新建表单协同页面，横向滚动条看不见，将height调成96%
+              if(document.all&&"1"=="1"&&"1"=="1"){
+                  var browser=navigator.appName;
+                  var b_version=navigator.appVersion;
+                  var version=b_version.split(";");
+                  var trim_Version=version[1].replace(/[ ]/g,"");
+                  if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0"){
+                      $("#mainbodyDiv").css("height","96%");
+                  }
+              }
+              $("#attachmentArea",$(".content_text")).addClass("hidden");
+          }else if($("#contentType").val()==10){
+        	  //转发的表单正文中有<span><pre></pre><span>这种格式的，如果css都有height会导致里面的内容显示超出标签，解决方法是设置height为auto
+        	  $("pre.prestyle").each(function(){
+        		  if($(this).parent("span").hasClass("xdRichTextBox")){
+        			  $(this).css("height","auto");
+        			  $(this).parent("span").css("height","auto");
+        		  }
+        	  });
+          }
+         if($("#contentType").val()==10 || $("#contentType").val() == 20){//只有在表单和html的时候才加载
+            loadSignatures('','');
+            //老数据中html正文的mainbodyHtmlDiv_中有隐藏的mainbodyDataDiv_ 导致不能正常保存正文
+            $("div[id^='mainbodyHtmlDiv_']").each(function(){
+            	$(this).find("div[id^='mainbodyDataDiv_']").remove();
+            })
+         }
+      };
+      </script>
+    
+    
+	<script type="text/javascript">
+		var mtCfg = [{"mainbodyType":10,"name":"标准正文"},{"mainbodyType":41,"name":"Word正文"},{"mainbodyType":42,"name":"Excel正文"},{"mainbodyType":43,"name":"Wps文字"},{"mainbodyType":44,"name":"Wps表格"}];
+		var useWorkflow = "true";
+		
+		var wfItemId = '-1';
+		var wfProcessId = '-1';
+		var wfActivityId = '-1';
+		var CurrentUserId = '7298597487386510009';
+		var wfCaseId = '-1';
+		var loginAccount = '-9095585739310150737';
+		var moduleTypeName = 'collaboration';
+		
+	</script>
+	<script type="text/javascript" src="collaboration_data_002/collaboration_data/content.js"></script>
+	
+
+
+
+
+		</div>
+	</div>
+</form>	
+
+<script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url,"","width=500,height=500");    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><div tabindex="-1" style="position: fixed; z-index: 10000; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.5; width: 1022px; height: 671px;" class="cke_dialog_background_cover"></div><div class="cke cke_reset_all cke_1 cke_editor_fckedit_dialog" dir="ltr" role="dialog" aria-labelledby="cke_dialog_title_50" style="display: block;" lang="zh-cn"><table class="cke_dialog cke_browser_gecko cke_ltr cke_single_page" style="position: fixed; top: 199px; left: 300px; z-index: 10010;" role="presentation"><tbody><tr><td role="presentation"><div class="cke_dialog_body" role="presentation"><div id="cke_dialog_title_50" class="cke_dialog_title" role="presentation" style="-moz-user-select: none;">插入关联</div><a id="cke_dialog_close_button_50" class="cke_dialog_close_button" href="javascript:void(0)" title="关闭" role="button" style="-moz-user-select: none;"><span class="cke_label">X</span></a><div id="cke_dialog_tabs_50" class="cke_dialog_tabs" role="tablist"><a class="cke_dialog_tab cke_dialog_tab_selected" cke_first="" title="关联链接" id="cke_info_67" tabindex="-1" hidefocus="true" role="tab" style="-moz-user-select: none;">关联链接</a></div><table class="cke_dialog_contents" role="presentation"><tbody><tr><td id="cke_dialog_contents_50" class="cke_dialog_contents_body" role="presentation" style="width: 400px; height: 180px;"><div role="tabpanel" id="cke_66_uiElement" class="cke_dialog_ui_vbox cke_dialog_page_contents" style="width: 100%;" aria-labelledby="cke_info_67" name="info" aria-hidden="false"><table role="presentation" style="width:100%;" align="left" cellspacing="0" border="0"><tbody><tr><td role="presentation" class="cke_dialog_ui_vbox_child"><div role="presentation" id="cke_56_uiElement" class="cke_dialog_ui_select" style="width:200px"><label class="cke_dialog_ui_labeled_label" id="cke_55_label" for="cke_54_select">关联类型</label><div class="cke_dialog_ui_labeled_content" role="presentation"><div class="cke_dialog_ui_input_select" role="presentation"><select id="cke_54_select" class="cke_dialog_ui_input_select" aria-labelledby="cke_55_label" style="width:200px"><option value="1"> 关联文档</option><option value="3" selected="selected"> 上传附件</option></select></div></div></div></td></tr><tr><td role="presentation" class="cke_dialog_ui_vbox_child"><table role="presentation" id="cke_62_uiElement" class="cke_dialog_ui_hbox"><tbody><tr class="cke_dialog_ui_hbox"><td class="cke_dialog_ui_hbox_first" role="presentation" style="width:75%"><div role="presentation" id="cke_59_uiElement" class="cke_dialog_ui_text" style="width: 100%"><label class="cke_dialog_ui_labeled_label cke_required" id="cke_58_label" for="cke_57_textInput">关联链接</label><div class="cke_dialog_ui_labeled_content" role="presentation"><div class="cke_dialog_ui_input_text" role="presentation"><input class="cke_dialog_ui_input_text" id="cke_57_textInput" aria-labelledby="cke_58_label" aria-required="true" readonly="true" title="book.json" value="book.json" type="text"></div></div></div></td><td class="cke_dialog_ui_hbox_last" role="presentation" style="width: 25%; vertical-align: bottom;"><a style="-moz-user-select: none;" href="javascript:void(0)" title="设置" hidefocus="true" class="cke_dialog_ui_button" role="button" aria-labelledby="cke_60_label" id="cke_61_uiElement"><span id="cke_60_label" class="cke_dialog_ui_button">设置</span></a></td></tr></tbody></table></td></tr><tr><td role="presentation" class="cke_dialog_ui_vbox_child"><div role="presentation" id="cke_65_uiElement" class="cke_dialog_ui_select" style="width:200px; display:none"><label class="cke_dialog_ui_labeled_label" id="cke_64_label" for="cke_63_select">弹出模式</label><div class="cke_dialog_ui_labeled_content" role="presentation"><div class="cke_dialog_ui_input_select" role="presentation"><select id="cke_63_select" class="cke_dialog_ui_input_select" aria-labelledby="cke_64_label" style="width:200px; display:none"><option value="1" selected="selected"> 在新窗口中打开</option><option value="2"> 在原位置打开</option></select></div></div></div></td></tr></tbody></table></div></td></tr><tr><td id="cke_dialog_footer_50" class="cke_dialog_footer" role="presentation"><div class="cke_resizer cke_resizer_vertical cke_resizer_ltr" title="拖拽以改变尺寸" onmousedown="CKEDITOR.tools.callFunction(94, event )">◢</div><table role="presentation" id="cke_73_uiElement" class="cke_dialog_ui_hbox cke_dialog_footer_buttons"><tbody><tr class="cke_dialog_ui_hbox"><td class="cke_dialog_ui_hbox_first" role="presentation"><a style="-moz-user-select: none;" href="javascript:void(0)" title="确定" hidefocus="true" class="cke_dialog_ui_button cke_dialog_ui_button_ok" role="button" aria-labelledby="cke_69_label" id="cke_70_uiElement"><span id="cke_69_label" class="cke_dialog_ui_button">确定</span></a></td><td class="cke_dialog_ui_hbox_last" role="presentation"><a style="-moz-user-select: none;" href="javascript:void(0)" title="取消" hidefocus="true" class="cke_dialog_ui_button cke_dialog_ui_button_cancel" role="button" aria-labelledby="cke_71_label" id="cke_72_uiElement"><span id="cke_71_label" class="cke_dialog_ui_button">取消</span></a></td></tr></tbody></table></td></tr></tbody></table></div></td></tr></tbody></table></div><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+//定义window.showModalDialog如果它不存在    
+//console.log(window.showModalDialog);
+        if(window.showModalDialog == undefined){    
+            window.showModalDialog = function(url){   
+                // if(window.hasOpenWindow){    
+                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
+                //     window.myNewWindow.focus();    
+                // }    
+                //window.hasOpenWindow = true;    
+                window.myNewWindow = window.open(url);    
+            }    
+        }   
+        function showModal(){  
+            window.showModalDialog("http://www.baidu.com");  
+        }  
+// console.log(window);
+// console.log(window.showModalDialog);
+var beastImage = document.getElementById("madiv1");
+//console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script></body></html>

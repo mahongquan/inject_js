@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html style="height:100%;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript">
+  var _ctxPath = '/seeyon', _ctxServer = 'http://oa.ncschina.com:80/seeyon';
+  var _locale = 'zh_CN',_isDevelop = false,_sessionid = '86B803F624B0E08392187F341D16FBFF',_isModalDialog = false;
+  
+  var _resourceCode = "";
+  var seeyonProductId="2";
+</script>
+<link rel="stylesheet" href="../-9095585739310150737_D_data/all-min.css">
+
+<link rel="stylesheet" href="../-9095585739310150737_D_data/skin_002.css">
+
+
+<script type="text/javascript" src="../i18n_zh_CN.js"></script>
+
+<script type="text/javascript" src="../-9095585739310150737_D_data/all-min.js"></script>
+
+<script type="text/javascript" src="../-9095585739310150737_D_data/calendar-zh_CN.js"></script>
+
+<script type="text/javascript" src="../-9095585739310150737_D_data/calEvent_data/main.htm"></script>
+<script type="text/javascript">
+$.ctx._currentPathId = 'collaboration_collaboration_componentPage';
+$.ctx._pageSize = 20;
+$.ctx.fillmaps = null;
+</script>
+<script type="text/javascript" src="../-9095585739310150737_D_data/ajax.txt"></script>
+
+
+
+
+<script type="text/javascript">
+<!--
+$(function(){
+    $("#cc #mainbodyDiv").css("overflow",'visible');
+    if("10"=='20'){
+        try{
+            if(getFlowDealOpinion().length>0){
+              parent.$("#isHidden").attr("disabled",true);
+            } 
+        }catch(e){
+        }
+       $("#cc").css("width",'auto');
+    }else if("10"=='41' 
+        || "10"=='42' 
+        || "10"=='43' 
+        || "10"=='44' 
+        || "10"=='45'){
+         $("#cc").attr("style",'height:500px;width:100%;margin-bottom:2px;');
+         $(".content_text").css("padding-top",'0px').css("padding-left",'5px').css("padding-right",'0px').css("padding-bottom",'0px');
+    } else if ("10"=='10') {
+        $("#cc").css("overflow",'auto');
+    }
+    $(parent.window.document.getElementById("content_workFlow")).css("visibility","visible");
+
+setTimeout(function(){
+    var _ccc = document.getElementById('cc');
+    var _cccScrollWidth = parseInt(_ccc.scrollWidth);
+	var _cccClientWidth = parseInt(_ccc.clientWidth);
+    
+    if("10"=='20'){
+        var _htmlWidth = parseInt(document.documentElement.scrollWidth);
+        var _bodyWidth = parseInt(document.body.clientWidth);
+        if(_bodyWidth<_htmlWidth){
+            _ccc.style.width = (_htmlWidth+35)+"px";
+        }
+    }else{
+    	if(_cccScrollWidth>_cccClientWidth){
+    		_ccc.style.width = (_cccScrollWidth+35)+"px";
+    		$('#display_content_view').width(_cccScrollWidth+35).css("margin","0 auto");
+            $(".content_view").css("height","");
+    	}
+    }
+},100);
+
+function setOfficeHeight() {
+    setTimeout(function(){ 
+        try{
+        	var docIframe = document.frames["officeTransIframe"].document.frames["htmlFrame"];
+        	if ($(docIframe).size() > 0) {
+            	var docIframeHeight = docIframe.document.body.clientHeight;
+            	$("#cc").css("height",parseInt(docIframeHeight+50)+'px');
+            	//Office转换后的正文，当宽度比外层的iframe宽的时候，设置外层iframe的宽度，避免出现滚动条
+            	var docIframeWidth=docIframe.document.body.clientWidth;
+            	var tableWidth=$("table",docIframe.document).width();
+				if(docIframeWidth<tableWidth){
+					$("#cc").css("width",parseInt(tableWidth+100)+'px');
+				}
+        	}
+        }catch(e){
+            setOfficeHeight(); 
+        }
+    },300);
+}
+
+setOfficeHeight();
+//正文加载完毕的时候,关闭加载项
+window.parent.colseProce();
+
+
+//让转发的表单中的关联文档可以查看
+var isFromTransform = 'false';
+if(isFromTransform == 'true'){
+	var html =  $("#cc")[0].innerHTML;
+	html = html.replace(/openDetailURL/gm ,'openDetailUR4ForwardForm');
+	$("#cc")[0].innerHTML  = html;
+}
+});
+function openDetailUR4ForwardForm(url){
+	url = url.replace(/baseApp=2/,"baseApp=1");
+	url = url.replace(/baseObjectId=(.\d+)&/,"baseObjectId="+parent.summaryId+"&");
+	openDetailURL(url);
+}
+var officecanPrint =  parent.officecanPrint;
+var canEdit = parent.canEdit;
+//-->
+</script>
+</head>
+<body style="height:100%;background:#afafaf;">
+<div id="madiv1" style="background:#AAAAAA">http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=componentPage&amp;affairId=-7446790413358313791&amp;rightId=&amp;canFavorite=true&amp;readonly=false&amp;openFrom=listPending&amp;docResId=&amp;docId=&amp;baseObjectId=&amp;baseApp=&amp;fromEditor=&amp;eventId=&amp;relativeProcessId=&amp;processId=#</div><div class="content_view" style="height:100%;">
+<ul class="view_ul align_left content_view" id="display_content_view">
+    <li id="cc" class="view_li" style="margin-bottom: 2px; min-width: 786px; overflow: auto;">
+        
+
+
+
+
+
+
+<style type="text/css">
+.browse_class span {
+	color: blue;
+}
+.xdTableHeader TD {
+	min-height: 10px;
+}
+.radio_com {
+	margin-right: 0px;
+}
+.xdTextBox {
+	BORDER-BOTTOM: #dcdcdc 1pt solid;
+	min-height: 12px;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #dcdcdc 1pt solid;
+	BACKGROUND-COLOR: window;
+	DISPLAY: inline-block;
+	WHITE-SPACE: nowrap;
+	COLOR: windowtext;
+	OVERFLOW: hidden;
+	BORDER-TOP: #dcdcdc 1pt solid;
+	BORDER-RIGHT: #dcdcdc 1pt solid;
+}
+.xdRichTextBox {
+	font-size: 12px;
+	BORDER-BOTTOM: #dcdcdc 1pt solid;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #dcdcdc 1pt solid;
+	BACKGROUND-COLOR: window;
+	FONT-STYLE: normal;
+	min-height: 12px;
+	display: inline-block;
+	WORD-WRAP: break-word;
+	COLOR: windowtext;
+	BORDER-TOP: #dcdcdc 1pt solid;
+	BORDER-RIGHT: #dcdcdc 1pt solid;
+	TEXT-DECORATION: none;
+}
+
+span.xdRichTextBox{
+	VERTICAL-ALIGN: bottom !important;
+}
+span.design_class{
+	vertical-align: bottom;
+}
+span.edit_class{
+	vertical-align: bottom;
+}
+.mainbodyDiv div,.mainbodyDiv input,.mainbodyDiv textarea,.mainbodyDiv p,.mainbodyDiv th,.mainbodyDiv td,.mainbodyDiv ul,.mainbodyDiv li{
+	font-family: inherit;
+	layout-grid-mode : none;
+}
+span.biggerThanMax{
+	background-color:yellow;
+}
+.insert_pic_16{
+	margin-top:2px;
+}
+
+.xdRichTextBox span{
+    overflow:auto;
+}
+
+</style>
+
+
+
+<div id="mainbodyDiv" class="mainbodyDiv" style="width: 100%; height: 100%; overflow: visible;">
+
+
+	
+
+    <!-- 表单多视图页签输出 -->
+    
+        
+        <div style="height:0px"><input id="inputPosition" style="border:0px;width:0.01px;height:0.01px" onfocus="javascript:return false;" onclick="return false;" type="text"></div>
+            <input id="_currentDiv" value="0" type="hidden">
+            
+           		
+           			
+		            	<div id="mainbodyHtmlDiv_0" class="content_text" style="padding-bottom:0px;word-break:break-all;height:98%;">               
+			                <table style="width: 645px; border-collapse: collapse;" width="646" cellspacing="0" cellpadding="0" border="8">
+	<colgroup>
+		<col style="width: 68px; text-align: center;">
+		<col style="width: 116px; text-align: center;">
+		<col style="width: 88px; text-align: center;">
+		<col style="width: 166px; text-align: center;">
+		<col style="width: 103px; text-align: center;">
+		<col style="width: 105px; text-align: center;">
+	</colgroup>
+	<tbody>
+		<tr style="height: 25px;" height="25">
+			<td style="width: 645px; height: 25px; text-align: center;" colspan="6" height="25"><span style="font-size: 32px;">气体合同信息</span></td>
+		</tr>
+		<tr style="height: 19px;" height="19">
+			<td style="width: 68px; height: 19px; text-align: center; border-top-style: none;" height="19">合同号</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">仪器编号</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">4111808680</td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">仪器型号</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">CS2800</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">交货期</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">加密天数</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">生效日期</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">用户名称</td>
+			<td style="width: 577px; text-align: center; border-right-color: black; border-right-width: 0.5pt; border-right-style: solid; border-left-style: none;" colspan="5">&nbsp;</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">序号</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">工序</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">负责人</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">附件</td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">开始时间</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">完工时间</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">1</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">下载技术附件</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">2</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">排产</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">3</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">配货</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">4</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">机械组装</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">赵忠</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><span><a href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('5542055261723248779','application/msword','','','1','2018-03-16%2012:38:44','4111808680.doc','80417de873c143ec909a20f4ec05398d');" attachmentid="5542055261723248779">4111808680.doc</a></span></td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">2018/3/10</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">2018/3/10</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">5</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">电气组装</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">赵忠</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;"><span><a href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('-3328162183263991892','application/msword','','','1','2018-03-16%2012:39:47','4111808680.doc','f76eb19166fe2abf16e36f3ae2a4d755');" attachmentid="-3328162183263991892">4111808680.doc</a></span></td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">2018/3/12</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">2018/3/12</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">6</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">综合调试</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+		</tr>
+		<tr style="height: 18px;" height="18">
+			<td style="width: 68px; height: 18px; text-align: center; border-top-style: none;" height="18">7</td>
+			<td style="width: 116px; text-align: center; border-top-style: none; border-left-style: none;">出厂检验</td>
+			<td style="width: 88px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 166px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 103px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+			<td style="width: 105px; text-align: center; border-top-style: none; border-left-style: none;">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+			            </div>
+		            
+		            
+	            
+            
+            
+            	<!-- 转发的表单正文需要引入form.css用以保持样式不变 -->
+            	    
+            
+            
+            <div id="mainbodyDataDiv_0" style="display: none">
+                <input id="id" name="id" value="-7786262457325238490" type="hidden"> 
+                <input id="createId" name="createId" value="-2147742594505095138" type="hidden">
+                <input id="createDate" name="createDate" value="2018-03-20 08:00:18.337" type="hidden">
+                <input id="modifyId" name="modifyId" value="" type="hidden">
+                <input id="modifyDate" name="modifyDate" value="" type="hidden">
+                <input id="moduleType" name="moduleType" value="1" type="hidden">
+                <input id="moduleId" name="moduleId" value="-2977321418646535714" type="hidden">
+                <input id="contentType" name="contentType" value="10" type="hidden">
+                <input id="moduleTemplateId" name="moduleTemplateId" value="" type="hidden">
+                <input id="contentTemplateId" name="contentTemplateId" value="" type="hidden">
+                <input id="sort" name="sort" value="0" type="hidden">
+                <input id="title" name="title" value="4111808680(CS2800)" type="hidden">
+                <textarea style="display:none" id="content" name="content">&lt;table&nbsp;width="646"&nbsp;style="width:&nbsp;645px;&nbsp;border-collapse:&nbsp;collapse;"&nbsp;border="8"&nbsp;cellSpacing="0"&nbsp;cellPadding="0"&gt;&lt;br/&gt;
+	&lt;colgroup&gt;&lt;br/&gt;		
+&lt;col&nbsp;style="width:&nbsp;68px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+		
+&lt;col&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;"&gt;&lt;br/&gt;
+	&lt;/colgroup&gt;&lt;br/&gt;	&lt;tbody&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="25"&nbsp;style="height:&nbsp;25px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="25"&nbsp;style="width:&nbsp;645px;&nbsp;height:&
+nbsp;25px;&nbsp;text-align:&nbsp;center;"&nbsp;colSpan="6"&gt;&lt;span&
+nbsp;style="font-size:&nbsp;32px;"&gt;气体合同信息&lt;/span&gt;&lt;/td&gt;&lt;
+br/&gt;		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="19"&nbsp;style="height:&nbsp;19px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="19"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;
+19px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-
+style:&nbsp;none;"&gt;合同号&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;仪器编
+号&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;4111808680&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;仪器型号&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;CS2800&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;
+18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-
+style:&nbsp;none;"&gt;交货期&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;加密天
+数&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;生效日期&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;
+18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-
+style:&nbsp;none;"&gt;用户名称&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;577px;&nbsp;text-align:&nbsp;center;&nbsp;border-right-color:&nbsp;black;&nbsp;border-right-width:&nbsp;0.5pt;&nbsp;border-right-style:&nbsp;solid;&nbsp;border-left-style:&nbsp;none;"&nbsp;colSpan="5"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;
+18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-
+style:&nbsp;none;"&gt;序号&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;工序&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;负责
+人&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;附件&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;开始时间&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;完工时间&lt;/td&gt;&lt;br/&gt;		&lt;/tr&gt;&lt;br/&gt;
+		&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;1&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;下载技术附件&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;2&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;排产&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;3&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;配货&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;4&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;机械组装&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;赵
+忠&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&lt;span&gt;&lt;a&nbsp;href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('5542055261723248779','application/msword','','','1','2018-03-16&nbsp;12:38:44','4111808680.doc','883f2287798c40a23e546ace61f5cdf6','v_5542055261723248779_v');"&nbsp;attachmentid="5542055261723248779"&gt;4111808680.doc&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;2018/3/10&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;2018/3/10&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;5&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;电气组装&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;
+border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;赵
+忠&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&lt;span&gt;&lt;a&nbsp;href="javascript:if(typeof(openEditorAssociate)!='undefined')openEditorAssociate('-3328162183263991892','application/msword','','','1','2018-03-16&nbsp;12:39:47','4111808680.doc','74b3ff042851674d53ac0ef14b0e4c15','v_-3328162183263991892_v');"&nbsp;attachmentid="-3328162183263991892"&gt;4111808680.doc&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;2018/3/12&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;2018/3/12&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;6&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;综合调试&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;		
+&lt;tr&nbsp;height="18"&nbsp;style="height:&nbsp;18px;"&gt;&lt;br/&gt;		
+	
+&lt;td&nbsp;height="18"&nbsp;style="width:&nbsp;68px;&nbsp;height:&nbsp;18px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;"&gt;7&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;116px;&nbsp;text-align:&nbsp;center;&
+nbsp;border-top-style:&nbsp;none;&nbsp;border-left-
+style:&nbsp;none;"&gt;出厂检验&lt;/td&gt;&lt;br/&gt;			
+&lt;td&nbsp;style="width:&nbsp;88px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;166px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;103px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+			
+&lt;td&nbsp;style="width:&nbsp;105px;&nbsp;text-align:&nbsp;center;&nbsp;border-top-style:&nbsp;none;&nbsp;border-left-style:&nbsp;none;"&gt;&amp;nbsp;&lt;/td&gt;&lt;br/&gt;
+		&lt;/tr&gt;&lt;br/&gt;	
+&lt;/tbody&gt;&lt;br/&gt;&lt;/table&gt;&lt;br/&gt;</textarea>
+                <input id="rightId" name="rightId" value="" type="hidden">
+                <input id="status" name="status" value="STATUS_RESPONSE_VIEW" type="hidden">
+                <input id="viewState" name="viewState" value="1" type="hidden">
+                <input id="contentDataId" name="contentDataId" value="" type="hidden">
+            </div>
+    </div>
+    
+        
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var _wfctxPath = '/seeyon';
+  var _ctxPath = '/seeyon';
+  var _wfcurrentUserId = '7298597487386510009'+'';
+</script>
+<script type="text/javascript" src="workflowDesigner_ajax.js"></script>
+
+<script type="text/javascript" src="workflowDesigner_api-min.js"></script>
+
+
+<div id="workflow_definition" style="display: none">
+    <input id="process_desc_by" type="hidden">
+    <input id="process_xml" type="hidden">
+    <input id="readyObjectJSON" type="hidden">
+    <input id="workflow_data_flag" name="workflow_data_flag" value="WORKFLOW_SEEYON" type="hidden">
+    <input id="process_info" type="hidden">
+    <input id="process_info_selectvalue" type="hidden">
+    <input id="process_subsetting" type="hidden">
+    <input id="moduleType" value="1" type="hidden">
+    <input id="workflow_newflow_input" type="hidden">
+    <input id="process_rulecontent" type="hidden">
+    <input id="workflow_node_peoples_input" type="hidden">
+    <input id="workflow_node_condition_input" type="hidden">
+    <input id="processId" value="-1" type="hidden">
+    <input id="caseId" value="-1" type="hidden">
+    <input id="subObjectId" value="-1" type="hidden">
+    <input id="currentNodeId" value="-1" type="hidden">
+    <input id="process_message_data" type="hidden">
+</div>
+<script type="text/javascript">
+  $.content.getWorkflowDomains = function(moduleType, domains) {
+    if (!domains)
+      domains = [];
+    $("#workflow_definition #moduleType").val(moduleType);
+    domains.push("workflow_definition");
+    return domains;
+  };
+
+</script>
+    
+    
+    
+    <script type="text/javascript">
+        //表单签章相关,hw.js中需要用到
+        var hwVer = '6,6,0,294';
+        var webRoot = _ctxPath;
+        var htmOcxUserName = $.ctx.CurrentUser.name;
+    </script>
+    <script type="text/javascript" src="collaboration_data/isignaturehtml.js"></script>
+    <script type="text/javascript" src="collaboration_data/hw.js"></script>
+    
+     
+    <div id="iSignatureHtmlDiv" style="height:0;overflow:hidden;"><object id="SignatureControl" classid="clsid:D85C89BE-263C-472D-9B6B-5264CD85B36E" viewastext="" height="0" width="0"><param name="ServiceUrl" value="http://oa.ncschina.com:80/seeyon/isignaturehtmlservlet"><param name="AutoSave" value="False"><param name="MenuDeleteSign" value="true"></object></div>
+    <script language="javascript" for="SignatureControl" event="EventOnSign(DocumentId,SignSn,KeySn,Extparam,EventId,Ext1)">
+    
+      if(EventId = 4 ){
+        CalculatePosition();
+        SignatureControl.EventResult = true;
+      }
+    </script>
+    <script type="text/javascript">
+     
+      window.onresize = function (){
+          moveISignatureOnResize();
+      } 
+      
+      window.onbeforeunload=cbfun;
+      function cbfun(){
+          try{releaseISignatureHtmlObj();}catch(e){}
+          if(typeof(beforeCloseCheck) =='function'){
+             return beforeCloseCheck();
+          }
+      }
+      window.onunload = function (){
+    	  try{unLoadHtmlHandWrite();}catch(e){}
+      }
+      
+      window.onload = function(){
+          if($("#contentType").val() == 20){//表单页面初始化
+              //onload事件还在单元格还没全部显示出来之前就开始执行了，所以需要延时  By：zhangc
+              setTimeout("initFormContent(false,false);",280);
+          	  //ie7下新建表单协同页面，横向滚动条看不见，将height调成96%
+              if(document.all&&"2"=="1"&&"1"=="1"){
+                  var browser=navigator.appName;
+                  var b_version=navigator.appVersion;
+                  var version=b_version.split(";");
+                  var trim_Version=version[1].replace(/[ ]/g,"");
+                  if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0"){
+                      $("#mainbodyDiv").css("height","96%");
+                  }
+              }
+              $("#attachmentArea",$(".content_text")).addClass("hidden");
+          }else if($("#contentType").val()==10){
+        	  //转发的表单正文中有<span><pre></pre><span>这种格式的，如果css都有height会导致里面的内容显示超出标签，解决方法是设置height为auto
+        	  $("pre.prestyle").each(function(){
+        		  if($(this).parent("span").hasClass("xdRichTextBox")){
+        			  $(this).css("height","auto");
+        			  $(this).parent("span").css("height","auto");
+        		  }
+        	  });
+          }
+         if($("#contentType").val()==10 || $("#contentType").val() == 20){//只有在表单和html的时候才加载
+            loadSignatures('-2977321418646535714','true');
+            //老数据中html正文的mainbodyHtmlDiv_中有隐藏的mainbodyDataDiv_ 导致不能正常保存正文
+            $("div[id^='mainbodyHtmlDiv_']").each(function(){
+            	$(this).find("div[id^='mainbodyDataDiv_']").remove();
+            })
+         }
+      };
+      </script>
+    
+    
+	<script type="text/javascript">
+		var mtCfg = [{"mainbodyType":10,"name":"标准正文"},{"mainbodyType":41,"name":"Word正文"},{"mainbodyType":42,"name":"Excel正文"},{"mainbodyType":43,"name":"Wps文字"},{"mainbodyType":44,"name":"Wps表格"}];
+		var useWorkflow = "true";
+		
+		var wfItemId = '-1';
+		var wfProcessId = '-1';
+		var wfActivityId = '-1';
+		var CurrentUserId = '7298597487386510009';
+		var wfCaseId = '-1';
+		var loginAccount = '-9095585739310150737';
+		var moduleTypeName = 'collaboration';
+		
+	</script>
+	<script type="text/javascript" src="collaboration_data/content.js"></script>
+	
+
+
+
+
+    </li>
+    <!--附言区域-->
+    
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="../-9095585739310150737_D_data/pending_data/ajax.txt"></script>
+<script type="text/javascript" charset="UTF-8" src="collaboration_data/comment.js"></script>
+<script type="text/javascript">
+var openForm = 'listPending';
+var _currentUserName = "马红权";
+var contentAffairId = "-7446790413358313791";
+</script>
+
+    
+    
+    
+    
+    
+    
+    <li style="margin-bottom:2px">
+        <div id="_commentAllDiv">
+        
+            <!-- 查看原协同意见   隐藏原协同意见  -->
+            <div class="view_li clearfix" style="text-align: right"><a style="font-size:12px;padding-right:5px;" id="comment_forward_region_btn" showtxt="查看原协同意见" hidetxt="隐藏原协同意见">隐藏原协同意见</a>
+            </div>
+            <div id="commentForwardDiv" style="line-height: 20px">
+            
+                <ul id="comment_forward_region" class="view_li">
+                    <div class="font_bold margin_l_10 font_size12">第1次转发</div>
+                    <div style="width: 98%;"><hr style="margin-left:15px;border-bottom: 1px solid #b6b6b6;" align="center"></div>
+                    
+                        
+                    
+                    <div class="processing_view font_size12 padding_b_10">
+                        
+                            
+                            <span class="view_li" style="margin-bottom: -2px;padding-bottom: -2px;">
+                            <span class="title font_bold">处理人意见区（共5条）</span>
+                            <div class="content font_size12">
+                                
+                                    <h3 class="per_title clearfix">
+                                        <span class="title font_size12" style="margin-bottom: auto;">
+                                            <a onclick="showPropleCard('-1776922041554153963')" class="padding_l_5" id="commentSearchCreate1">史春源</a>&nbsp;&nbsp;&nbsp;&nbsp;已阅&nbsp;&nbsp;&nbsp;&nbsp;
+                                            
+                                            <span>2017-12-29 13:11</span>
+                                        </span>
+                                    </h3>
+                                    <ul>
+                                    <li style="margin:0px;">
+                                        <span class="content_in font_size12"></span>
+                                        <span id="replyContent_-8839800484521227548" class="display_none">
+                                            <h4>回复意见</h4>
+                                            
+                                        </span>
+                                    </li>
+                                    
+                                    
+                                    </ul>
+                                
+                                    <h3 class="per_title clearfix">
+                                        <span class="title font_size12" style="margin-bottom: auto;">
+                                            <a onclick="showPropleCard('-1498192678241549556')" class="padding_l_5" id="commentSearchCreate2">连志强</a>&nbsp;&nbsp;&nbsp;&nbsp;已阅&nbsp;&nbsp;&nbsp;&nbsp;
+                                            
+                                            <span>2017-12-29 13:59</span>
+                                        </span>
+                                    </h3>
+                                    <ul>
+                                    <li style="margin:0px;">
+                                        <span class="content_in font_size12"></span>
+                                        <span id="replyContent_7996505170754948034" class="display_none">
+                                            <h4>回复意见</h4>
+                                            
+                                        </span>
+                                    </li>
+                                    
+                                    
+                                    </ul>
+                                
+                                    <h3 class="per_title clearfix">
+                                        <span class="title font_size12" style="margin-bottom: auto;">
+                                            <a onclick="showPropleCard('-804972381899897036')" class="padding_l_5" id="commentSearchCreate3">高冀深</a>&nbsp;&nbsp;&nbsp;&nbsp;已阅&nbsp;&nbsp;&nbsp;&nbsp;
+                                            
+                                            <span>2018-03-02 14:06</span>
+                                        </span>
+                                    </h3>
+                                    <ul>
+                                    <li style="margin:0px;">
+                                        <span class="content_in font_size12"></span>
+                                        <span id="replyContent_-7767939831178706821" class="display_none">
+                                            <h4>回复意见</h4>
+                                            
+                                        </span>
+                                    </li>
+                                    
+                                    
+                                    </ul>
+                                
+                                    <h3 class="per_title clearfix">
+                                        <span class="title font_size12" style="margin-bottom: auto;">
+                                            <a onclick="showPropleCard('1374322634212593270')" class="padding_l_5" id="commentSearchCreate4">赵忠</a>&nbsp;&nbsp;&nbsp;&nbsp;已阅&nbsp;&nbsp;&nbsp;&nbsp;
+                                            
+                                            <span>2018-03-16 12:40</span>
+                                        </span>
+                                    </h3>
+                                    <ul>
+                                    <li style="margin:0px;">
+                                        <span class="content_in font_size12"></span>
+                                        <span id="replyContent_2238394112515722495" class="display_none">
+                                            <h4>回复意见</h4>
+                                            
+                                        </span>
+                                    </li>
+                                    
+                                    
+                                    </ul>
+                                
+                                    <h3 class="per_title clearfix">
+                                        <span class="title font_size12" style="margin-bottom: auto;">
+                                            <a onclick="showPropleCard('-804972381899897036')" class="padding_l_5" id="commentSearchCreate5">高冀深</a>&nbsp;&nbsp;&nbsp;&nbsp;已阅&nbsp;&nbsp;&nbsp;&nbsp;
+                                            
+                                            <span>2018-03-16 12:48</span>
+                                        </span>
+                                    </h3>
+                                    <ul>
+                                    <li style="margin:0px;">
+                                        <span class="content_in font_size12"></span>
+                                        <span id="replyContent_6555273801198161350" class="display_none">
+                                            <h4>回复意见</h4>
+                                            
+                                        </span>
+                                    </li>
+                                    
+                                    
+                                    </ul>
+                                
+                            </div>
+                            </span>
+                            
+                        
+                    </div>
+                </ul> 
+            
+            </div>
+            </div></li>
+            
+            
+            
+          
+            <li id="replyContent_sender" class="view_li padding_b_10" style="margin-bottom:2px">
+                <span class="title font_bold">发起人附言</span>
+                
+                <div id="replyContent_sender_content" class="content font_size12" style="word-break: normal; word-wrap:break-word; text-justify: auto; text-align: justify;">
+                    <ul>
+                    
+                    
+                    </ul>
+                </div>
+            </li>
+            
+            <li class="view_li padding_b_10" id="currentComment" style="margin-bottom:2px">
+            <span class="title font_bold font_size12">处理人意见区（共0条）</span>
+               <div class="processing_view font_size12" style="line-height: 20px;">
+                <div class="content">
+                    
+                </div>
+                </div>
+            </li>
+            
+            <div id="comment_pushMessageToMembers_dialog" class="hidden">
+                <div class="clearfix">
+                    <ul class="common_search right">
+                        <li id="inputBorder" class="common_search_input"> 
+                            查询： <input id="comment_pushMessageToMembers_dialog_searchBox" name="pushMessageSearch" class="search_input" type="text"></li> 
+                        <li><a id="comment_pushMessageToMembers_dialog_searchBtn" class="common_button common_button_gray search_buttonHand"><em></em></a></li> 
+                    </ul> 
+                </div>
+                <div class="clearfix" style="padding-top:5px">
+                    <table id="comment_pushMessageToMembers_grid" class="only_table border_all" width="100%" cellspacing="0" cellpadding="0">
+                        <thead>
+                           <tr style="background-color: #F6F6F6;">
+                            <th style="text-align: center;width:20px;" valign="middle"><input class="checkclass padding_t_5" id="checkAll" type="checkbox"></th>
+                            <th align="left">名称</th>
+                            <th>&nbsp;</th>
+                          </tr>
+                        </thead>
+                        <tbody id="comment_pushMessageToMembers_tbody">
+                        
+                            <tr class="_pm_fixed" memberid="-2147742594505095138" align="center">
+                                <td class="border_t"><input class="checkclass" value="3481897125086187333" membername="吴振宁" memberid="-2147742594505095138" type="checkbox"></td>
+                                <td class="border_t" align="left">吴振宁</td>
+                                
+                                <td class="border_t" align="left">发起人</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </ul></div>
+    
+ 
+
+
+
+<div id="commentHTMLDiv" style="display: none">
+    <input id="pid" value="{comment.id}" type="hidden">
+    <input id="clevel" value="{comment.clevel}" type="hidden">
+    <input id="path" type="hidden">
+    <input id="moduleType" value="{comment.moduleType}" type="hidden">
+    <input id="moduleId" value="{comment.moduleId}" type="hidden">
+    <input id="ctype" value="1" type="hidden">
+    <input id="affairId" value="-7446790413358313791" type="hidden">
+    <input id="pushMessageToMembers" value="[[&quot;{comment.pushMsgAffairId}&quot;,&quot;{comment.createId}&quot;]]" type="hidden">
+    <input id="title" name="title" value="4111808680(CS2800)" type="hidden">
+    <div class="common_txtbox clearfix">
+        <!-- 意见回复 -->
+        <textarea id="content" name="content" cols="20" rows="5"></textarea>
+    </div>
+    <div class="clearfix">
+        <table style="border:0;width: 100%">
+            <tbody><tr>
+            <td width="10%" nowrap="nowrap"><span class="green">500个字以内</span></td>
+            <td align="right" width="90%" nowrap="nowrap">
+                <table style="border:0">
+                    <tbody><tr>
+                        <td nowrap="nowrap">
+                            
+                                <span class="left" baseaction="UploadAttachment"><span class="hand color_blue" onclick="insertAttachmentPoi('reply_attach_{comment.id}');">插入附件</span></span>
+                            
+                            
+                        </td>
+                        <td nowrap="nowrap">
+                            <span>
+                                <label class="hand">
+                                <input id="hidden" class="radio_com" name="hidden" value="true" onclick="_commentHidden(this);" type="checkbox">意见隐藏</label>
+                            </span>
+                            <span style="display:none;width:130px;">
+                                <label>不包括：</label>
+                                <span class="margin_r_5">
+                                    <input id="showToIdText" name="showToIdTex" style="width: 72px;" value="吴振宁" onclick="showToIdSelectPeople('{comment.id}')" type="text">
+                                    <input id="showToId" name="showToId" value="Member|-2147742594505095138" type="hidden">
+                                </span>
+                            </span>
+                        </td>
+                        <td nowrap="nowrap">
+                            <div class="margin_r_5">
+                                <div class="left"><label class="margin_r_5 hand"><input id="pushMessage" class="radio_com" name="pushMessage" value="true" onclick="_pushMessageHidden(this);" type="checkbox">消息推送</label></div>
+                                <div style="display:none" id="reply_pushMessage_div_{comment.id}" class="display_inline right">
+                                    <input id="reply_pushMessage_{comment.id}" onclick="pushMessageToMembers($(this),$('#reply_{comment.id} #pushMessageToMembers'),null,'{comment.createId}','-7446790413358313791')" style="width:66px;" type="text">
+                                </div>
+                            </div>
+                         </td>
+                         <td nowrap="nowrap">
+                            <a style="width:25px;margin-bottom: 0px;" class="common_button common_button_gray" name="buttonsure" onclick="commentReply('{comment.id}',this)">提交</a>
+                            <a style="width:25px;margin-bottom: 0px;" onclick="commentHideReply('{comment.id}')" class="common_button common_button_gray">取消</a>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+            </tr>
+        </tbody></table>
+    </div>
+    <!-- 附件 -->
+    <div id="attachmentTRreply_attach_{comment.id}" style="display: none" class="clearFlow">
+        <div class="color_black left margin_r_5 font_bold" style="margin-top:2px;">附件：(<span id="attachmentNumberDivreply_attach_{comment.id}" style="margin-right: 0px"></span>)</div>
+        <div id="reply_attach_{comment.id}" style="display:none;float: right;" isgrid="true" class="comp" comp="type:'fileupload',canFavourite:true,applicationCategory:'{comment.moduleType}',attachmentTrId:'reply_attach_{comment.id}',canDeleteOriginalAtts:false" comptype="fileupload"></div><div id="attachmentAreareply_attach_{comment.id}" style="overflow: auto;;height: auto;" requrl="/seeyon/fileUpload.do?type=0&amp;applicationCategory={comment.moduleType}&amp;extensions=&amp;maxSize=&amp;isEncrypt=&amp;popupTitleKey=&amp;attachmentTrId=reply_attach_{comment.id}"></div><div style="display:none;"><iframe name="downloadFileFrame" id="downloadFileFrame" height="0" frameborder="0" width="0"></iframe></div>
+    </div>
+    
+    <div id="attachment2TRreply_attach_{comment.id}" style="display: none" class="clearFlow">
+        <div class="color_black left margin_r_5 font_bold" style="margin-top:2px;">关联：(<span id="attachment2NumberDivreply_attach_{comment.id}" style="margin-right: 0px"></span>)</div>
+        <div id="reply_assdoc_{comment.id}" style="display:none;float:right;" isgrid="true" class="comp" comp="type:'assdoc',canFavourite:true,attachmentTrId:'reply_attach_{comment.id}',modids:'1,3',applicationCategory:'{comment.moduleType}',referenceId:'-2977321418646535714',canDeleteOriginalAtts:false" comptype="assdoc"></div><div id="attachment2Areareply_attach_{comment.id}" poi="reply_attach_{comment.id}" requesturl="/seeyon/ctp/common/associateddoc/assdocFrame.do?isBind=1,3&amp;referenceId=-2977321418646535714&amp;applicationCategory={comment.moduleType}&amp;poi=reply_attach_{comment.id}" style="overflow: auto;max-height: 36pxmin-height: 20px;"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var _sscounter = '6';
+var  _commentTotal = parseInt(_sscounter) - 1;
+</script>
+<style>
+.selectMemberName{
+  background-color: #f00;
+}
+</style>
+
+
+
+<script>
+console.log("inject================")
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+console.log("inject================")
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+console.log("inject================")
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+console.log("inject================")
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+console.log("inject================")
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+console.log("inject================")
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script></body></html>

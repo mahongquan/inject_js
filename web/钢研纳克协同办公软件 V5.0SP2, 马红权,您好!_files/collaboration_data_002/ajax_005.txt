@@ -1,0 +1,96 @@
+var formQueryResultManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=formQueryResultManager",
+     deleteMyQuery: function(){
+                  return this.ajaxCall(arguments,"deleteMyQuery");
+},
+     existsMyQuery: function(){
+                  return this.ajaxCall(arguments,"existsMyQuery");
+},
+     getMyQueryList: function(){
+                  return this.ajaxCall(arguments,"getMyQueryList");
+},
+     getMyQueryList4Tree: function(){
+                  return this.ajaxCall(arguments,"getMyQueryList4Tree");
+},
+     getQueryList4Tree: function(){
+                  return this.ajaxCall(arguments,"getQueryList4Tree");
+},
+     getQueryResult: function(){
+                  return this.ajaxCall(arguments,"getQueryResult");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     listMyQuery: function(){
+                  return this.ajaxCall(arguments,"listMyQuery");
+},
+     listQuery: function(){
+                  return this.ajaxCall(arguments,"listQuery");
+},
+     listQuerySectionResult: function(){
+                  return this.ajaxCall(arguments,"listQuerySectionResult");
+},
+     saveMyQuery: function(){
+                  return this.ajaxCall(arguments,"saveMyQuery");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     setShowField: function(){
+                  return this.ajaxCall(arguments,"setShowField");
+},
+     toFormQueryBean: function(){
+                  return this.ajaxCall(arguments,"toFormQueryBean");
+}
+});
+var ctpMainbodyManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=ctpMainbodyManager",
+     deleteById: function(){
+                  return this.ajaxCall(arguments,"deleteById");
+},
+     deleteContentAllByModuleId: function(){
+                  return this.ajaxCall(arguments,"deleteContentAllByModuleId");
+},
+     getContentHandler: function(){
+                  return this.ajaxCall(arguments,"getContentHandler");
+},
+     getContentList: function(){
+                  return this.ajaxCall(arguments,"getContentList");
+},
+     getContentListByContentDataIdAndModuleType: function(){
+                  return this.ajaxCall(arguments,"getContentListByContentDataIdAndModuleType");
+},
+     getContentListByModuleIdAndModuleType: function(){
+                  return this.ajaxCall(arguments,"getContentListByModuleIdAndModuleType");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     saveOrUpdateContentAll: function(){
+                  return this.ajaxCall(arguments,"saveOrUpdateContentAll");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     testContentList: function(){
+                  return this.ajaxCall(arguments,"testContentList");
+},
+     transContentNewResponse: function(){
+                  return this.ajaxCall(arguments,"transContentNewResponse");
+},
+     transContentSaveOrUpdate: function(){
+                  return this.ajaxCall(arguments,"transContentSaveOrUpdate");
+},
+     transContentViewResponse: function(){
+                  return this.ajaxCall(arguments,"transContentViewResponse");
+},
+     updateContentTitle: function(){
+                  return this.ajaxCall(arguments,"updateContentTitle");
+}
+});

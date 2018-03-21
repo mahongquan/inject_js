@@ -1,0 +1,41 @@
+-----------------------------45871743419686
+Content-Disposition: form-data; name="type"
+
+0
+-----------------------------45871743419686
+Content-Disposition: form-data; name="extensions"
+
+
+-----------------------------45871743419686
+Content-Disposition: form-data; name="applicationCategory"
+
+1
+-----------------------------45871743419686
+Content-Disposition: form-data; name="destDirectory"
+
+
+-----------------------------45871743419686
+Content-Disposition: form-data; name="destFilename"
+
+
+-----------------------------45871743419686
+Content-Disposition: form-data; name="maxSize"
+
+
+-----------------------------45871743419686
+Content-Disposition: form-data; name="isEncrypt"
+
+true
+-----------------------------45871743419686
+Content-Disposition: form-data; name="firstSave"
+
+true
+-----------------------------45871743419686
+Content-Disposition: form-data; name="callback"
+
+addCkEditorAttachment
+-----------------------------45871743419686
+Content-Disposition: form-data; name="file1"; filename="ntuser.ini"
+Content-Type: application/octet-stream
+
+ÿþ

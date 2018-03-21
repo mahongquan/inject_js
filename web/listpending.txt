@@ -1,0 +1,13 @@
+<td align=\"left\"><div style=\"text-align: left; width: 27.72px;\" class=\"text_overflow\">
+<input gridrowcheckbox=\"34280866_grid_classtag\" class=\"noClick\" row=\"3\" value=\"-1013267702093952225\" type=\"checkbox\"></div></td>
+<td abbr=\"subject\" align=\"left\">
+<div style=\"text-align: left; width: 291.76px;\" class=\"text_overflow\" title=\"公积金提取通知\">公积金提取通知<span class=\"ico16 affix_16\"></span>
+</div>
+</td>
+<td abbr=\"startMemberName\" align=\"left\"><div style=\"text-align: left; width: 56.01px;\" class=\"text_overflow\" title=\"连志强\">连志强</div></td>
+<td abbr=\"startDate\" align=\"left\"><div style=\"text-align: left; width: 84.3px;\" class=\"text_overflow\" title=\"2017-11-14&nbsp;10:05\">2017-11-14&nbsp;10:05</div></td>
+<td abbr=\"receiveTime\" align=\"left\"><div style=\"text-align: left; width: 84.3px;\" class=\"text_overflow\" title=\"2017-11-14&nbsp;10:05\">2017-11-14&nbsp;10:05</div></td>
+<td abbr=\"nodeDeadLineName\" align=\"left\"><div style=\"text-align: left; width: 74.87px;\" class=\"text_overflow\" title=\"无\">无</div></td>
+<td abbr=\"hastenTimes\" align=\"left\"><div style=\"text-align: left; width: 74.87px;\" class=\"text_overflow\" title=\"0\">0</div></td>
+<td align=\"left\"><div style=\"text-align: left; width: 74.87px;\" class=\"text_overflow\"><span class=\"ico16 viewed_16\" title=\"已读\"></span></div></td>
+<td align=\"left\"><div style=\"text-align: left; width: 74.87px;\" class=\"text_overflow\"><a class=\"ico16 view_log_16 noClick\" href=\"javascript:void(0)\" onclick=\"showDetailLogDialog(&quot;4085634460292105540&quot;,&quot;4507434134722858918&quot;,2)\"></a></div></td>

@@ -1,0 +1,270 @@
+var formManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=formManager",
+     CGLIB$SET_STATIC_CALLBACKS: function(){
+                  return this.ajaxCall(arguments,"CGLIB$SET_STATIC_CALLBACKS");
+},
+     CGLIB$SET_THREAD_CALLBACKS: function(){
+                  return this.ajaxCall(arguments,"CGLIB$SET_THREAD_CALLBACKS");
+},
+     CGLIB$findMethodProxy: function(){
+                  return this.ajaxCall(arguments,"CGLIB$findMethodProxy");
+},
+     addOrDelDataSubBean: function(){
+                  return this.ajaxCall(arguments,"addOrDelDataSubBean");
+},
+     calcAll: function(){
+                  return this.ajaxCall(arguments,"calcAll");
+},
+     canEdit: function(){
+                  return this.ajaxCall(arguments,"canEdit");
+},
+     checkDataLock: function(){
+                  return this.ajaxCall(arguments,"checkDataLock");
+},
+     checkDataLockForEdit: function(){
+                  return this.ajaxCall(arguments,"checkDataLockForEdit");
+},
+     checkDelete: function(){
+                  return this.ajaxCall(arguments,"checkDelete");
+},
+     checkFormula4EchoSetting: function(){
+                  return this.ajaxCall(arguments,"checkFormula4EchoSetting");
+},
+     checkLock: function(){
+                  return this.ajaxCall(arguments,"checkLock");
+},
+     dealFormRelation: function(){
+                  return this.ajaxCall(arguments,"dealFormRelation");
+},
+     dealMemberFieldRelation: function(){
+                  return this.ajaxCall(arguments,"dealMemberFieldRelation");
+},
+     dealMultiEnumRelation: function(){
+                  return this.ajaxCall(arguments,"dealMultiEnumRelation");
+},
+     delFormData: function(){
+                  return this.ajaxCall(arguments,"delFormData");
+},
+     doTrigger: function(){
+                  return this.ajaxCall(arguments,"doTrigger");
+},
+     getCallback: function(){
+                  return this.ajaxCall(arguments,"getCallback");
+},
+     getCallbacks: function(){
+                  return this.ajaxCall(arguments,"getCallbacks");
+},
+     getCategory2HTML: function(){
+                  return this.ajaxCall(arguments,"getCategory2HTML");
+},
+     getCategoryListByMyAccount: function(){
+                  return this.ajaxCall(arguments,"getCategoryListByMyAccount");
+},
+     getCollSubjuet: function(){
+                  return this.ajaxCall(arguments,"getCollSubjuet");
+},
+     getContentList: function(){
+                  return this.ajaxCall(arguments,"getContentList");
+},
+     getDataMasterBeanById: function(){
+                  return this.ajaxCall(arguments,"getDataMasterBeanById");
+},
+     getEditingForm: function(){
+                  return this.ajaxCall(arguments,"getEditingForm");
+},
+     getFieldHTML: function(){
+                  return this.ajaxCall(arguments,"getFieldHTML");
+},
+     getFieldHTML4Select: function(){
+                  return this.ajaxCall(arguments,"getFieldHTML4Select");
+},
+     getFlowTemplateCategoryListByMyAccount: function(){
+                  return this.ajaxCall(arguments,"getFlowTemplateCategoryListByMyAccount");
+},
+     getForm: function(){
+                  return this.ajaxCall(arguments,"getForm");
+},
+     getFormBindDesignManager: function(){
+                  return this.ajaxCall(arguments,"getFormBindDesignManager");
+},
+     getFormByFormCode: function(){
+                  return this.ajaxCall(arguments,"getFormByFormCode");
+},
+     getFormCategoryListByMyAccount: function(){
+                  return this.ajaxCall(arguments,"getFormCategoryListByMyAccount");
+},
+     getFormDataDAO: function(){
+                  return this.ajaxCall(arguments,"getFormDataDAO");
+},
+     getFormDataManager: function(){
+                  return this.ajaxCall(arguments,"getFormDataManager");
+},
+     getFormListManager: function(){
+                  return this.ajaxCall(arguments,"getFormListManager");
+},
+     getFormMasterDataListByFormId: function(){
+                  return this.ajaxCall(arguments,"getFormMasterDataListByFormId");
+},
+     getFormRelationManager: function(){
+                  return this.ajaxCall(arguments,"getFormRelationManager");
+},
+     getFormTableNumber: function(){
+                  return this.ajaxCall(arguments,"getFormTableNumber");
+},
+     getFormTableValueSignDAO: function(){
+                  return this.ajaxCall(arguments,"getFormTableValueSignDAO");
+},
+     getFormTriggerManager: function(){
+                  return this.ajaxCall(arguments,"getFormTriggerManager");
+},
+     getJsonSubDataById: function(){
+                  return this.ajaxCall(arguments,"getJsonSubDataById");
+},
+     getLock: function(){
+                  return this.ajaxCall(arguments,"getLock");
+},
+     getLockManager: function(){
+                  return this.ajaxCall(arguments,"getLockManager");
+},
+     getPrintFormHTML: function(){
+                  return this.ajaxCall(arguments,"getPrintFormHTML");
+},
+     getSessioMasterDataBean: function(){
+                  return this.ajaxCall(arguments,"getSessioMasterDataBean");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     getTemplateManager: function(){
+                  return this.ajaxCall(arguments,"getTemplateManager");
+},
+     getUnFlowFormBindList: function(){
+                  return this.ajaxCall(arguments,"getUnFlowFormBindList");
+},
+     getUnflowBasicList: function(){
+                  return this.ajaxCall(arguments,"getUnflowBasicList");
+},
+     getViewList: function(){
+                  return this.ajaxCall(arguments,"getViewList");
+},
+     hasDifferSubTable: function(){
+                  return this.ajaxCall(arguments,"hasDifferSubTable");
+},
+     hasFormInCategory: function(){
+                  return this.ajaxCall(arguments,"hasFormInCategory");
+},
+     hasRight4UserCol: function(){
+                  return this.ajaxCall(arguments,"hasRight4UserCol");
+},
+     isEnabled: function(){
+                  return this.ajaxCall(arguments,"isEnabled");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     isRelationData: function(){
+                  return this.ajaxCall(arguments,"isRelationData");
+},
+     lockFormData: function(){
+                  return this.ajaxCall(arguments,"lockFormData");
+},
+     mergeFormData: function(){
+                  return this.ajaxCall(arguments,"mergeFormData");
+},
+     newInstance: function(){
+                  return this.ajaxCall(arguments,"newInstance");
+},
+     preExcCondition: function(){
+                  return this.ajaxCall(arguments,"preExcCondition");
+},
+     preExcFormula: function(){
+                  return this.ajaxCall(arguments,"preExcFormula");
+},
+     procDefaultValue: function(){
+                  return this.ajaxCall(arguments,"procDefaultValue");
+},
+     procFormParam: function(){
+                  return this.ajaxCall(arguments,"procFormParam");
+},
+     putSessioMasterDataBean: function(){
+                  return this.ajaxCall(arguments,"putSessioMasterDataBean");
+},
+     refreshFormData: function(){
+                  return this.ajaxCall(arguments,"refreshFormData");
+},
+     removeDeeDataCache: function(){
+                  return this.ajaxCall(arguments,"removeDeeDataCache");
+},
+     removeDeeSessionData: function(){
+                  return this.ajaxCall(arguments,"removeDeeSessionData");
+},
+     removeSessionMasterData: function(){
+                  return this.ajaxCall(arguments,"removeSessionMasterData");
+},
+     removeSessionMasterDataBean: function(){
+                  return this.ajaxCall(arguments,"removeSessionMasterDataBean");
+},
+     saveDataFromImportExcel: function(){
+                  return this.ajaxCall(arguments,"saveDataFromImportExcel");
+},
+     setCallback: function(){
+                  return this.ajaxCall(arguments,"setCallback");
+},
+     setCallbacks: function(){
+                  return this.ajaxCall(arguments,"setCallbacks");
+},
+     setCtpMainbodyManager: function(){
+                  return this.ajaxCall(arguments,"setCtpMainbodyManager");
+},
+     setFormBindDesignManager: function(){
+                  return this.ajaxCall(arguments,"setFormBindDesignManager");
+},
+     setFormCacheManager: function(){
+                  return this.ajaxCall(arguments,"setFormCacheManager");
+},
+     setFormDataDAO: function(){
+                  return this.ajaxCall(arguments,"setFormDataDAO");
+},
+     setFormDataManager: function(){
+                  return this.ajaxCall(arguments,"setFormDataManager");
+},
+     setFormListManager: function(){
+                  return this.ajaxCall(arguments,"setFormListManager");
+},
+     setFormRelationManager: function(){
+                  return this.ajaxCall(arguments,"setFormRelationManager");
+},
+     setFormTableValueSignDAO: function(){
+                  return this.ajaxCall(arguments,"setFormTableValueSignDAO");
+},
+     setFormTriggerManager: function(){
+                  return this.ajaxCall(arguments,"setFormTriggerManager");
+},
+     setLock: function(){
+                  return this.ajaxCall(arguments,"setLock");
+},
+     setLockManager: function(){
+                  return this.ajaxCall(arguments,"setLockManager");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     setTemplateManager: function(){
+                  return this.ajaxCall(arguments,"setTemplateManager");
+},
+     showFormRelationRecord: function(){
+                  return this.ajaxCall(arguments,"showFormRelationRecord");
+},
+     unLock: function(){
+                  return this.ajaxCall(arguments,"unLock");
+},
+     unlockFormData: function(){
+                  return this.ajaxCall(arguments,"unlockFormData");
+},
+     updateDataState: function(){
+                  return this.ajaxCall(arguments,"updateDataState");
+},
+     updateDataState2DB: function(){
+                  return this.ajaxCall(arguments,"updateDataState2DB");
+}
+});

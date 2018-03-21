@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html class="h100b over_hidden" style="height: 100%; overflow: hidden;"><head><script type="text/javascript">
+  var _ctxPath = '/seeyon', _ctxServer = 'http://oa.ncschina.com:80/seeyon';
+  var _locale = 'zh_CN',_isDevelop = false,_sessionid = '86B803F624B0E08392187F341D16FBFF',_isModalDialog = false;
+  
+  var _resourceCode = "";
+  var seeyonProductId="2";
+</script>
+<link rel="stylesheet" href="-9095585739310150737_D_data/all-min.css">
+
+<link rel="stylesheet" href="-9095585739310150737_D_data/skin_002.css">
+
+
+<script type="text/javascript" src="i18n_zh_CN.js"></script>
+
+<script type="text/javascript" src="-9095585739310150737_D_data/all-min.js"></script>
+
+<script type="text/javascript" src="-9095585739310150737_D_data/calendar-zh_CN.js"></script>
+
+<script type="text/javascript" src="-9095585739310150737_D_data/calEvent_data/main.htm"></script>
+<script type="text/javascript">
+$.ctx._currentPathId = 'collaboration_collaboration_summary';
+$.ctx._pageSize = 20;
+$.ctx.fillmaps = null;
+</script>
+<script type="text/javascript" src="-9095585739310150737_D_data/ajax.txt"></script>
+
+
+
+<script>
+	//打印
+	//新建事项中打印映射
+	function newDoPrint(printFrom){
+		/* html(10,"标准格式正文HTML"),
+		form(20,"表单格式正文"),
+		txt(30,"text正文"),
+		officeWord(41,"officeWord正文"),
+		officeExcel(42,"officeExcel正文"),
+		wpsWord(43,"wpsWord正文"),
+		wpsExcel(44,"wpsExcel正文"); */
+		var type="";
+		if(printFrom=="summary"){
+	    	type = bodyType;
+		}
+		if(printFrom=="newCol"){
+			var contentDiv = getMainBodyDataDiv$();
+		    type = $("#contentType",contentDiv).val();
+		}
+		var isHTML = false;
+		var isForm = false;
+		var preBodyFragArr="";
+		var afterBodyFragArr="";
+		if(type=="10"){ isHTML = true;}
+		if(type=="20"){ isForm = true;}         
+		if(isHTML){
+			var pl=newColPrint(printFrom);
+			printCallWay(pl.get(0),pl.get(1),"",printFrom);
+		}else{
+			if(isForm){
+				var pl=newFormMainPrint(printFrom);
+				printCallWay(pl.get(0),pl.get(1),"",printFrom);
+			}else{
+				var prePrintDialog = $.dialog({
+					id: 'url',
+					url: "/seeyon/collTemplate/collTemplate.do?method=showPrintSelector&isForm="+isForm,
+					width: 260,
+					height: 120,
+					title: "打印选项",
+					targetWindow:getCtpTop(),
+					buttons: [{
+					    text: "确定",
+					    handler: function () {
+					       var rv = prePrintDialog.getReturnValue();
+					       if(rv){
+						       if(rv == "mainpp"){
+						    	    printCallWay(preBodyFragArr,afterBodyFragArr,"mainpp",printFrom);
+								}else{
+									var pl=newColPrint(printFrom);
+									printCallWay(pl.get(0),pl.get(1),"colPrint",printFrom);
+								}
+					       }
+					       prePrintDialog.close();
+					   }
+					}, {
+					    text: "取消",
+					    handler: function () {
+					        prePrintDialog.close();
+					    }
+					}]
+				});
+			}
+		}
+	}
+	function printCallWay(preBodyFragArr,afterBodyFragArr,printType,printFrom){
+		if(printFrom=="summary"){
+			componentDiv.$.content.print(preBodyFragArr,afterBodyFragArr,printType,printFrom);
+		}else{
+			$.content.print(preBodyFragArr,afterBodyFragArr,printType,printFrom);
+		}
+	}
+	//新建事项中打印 
+	var printSubFrag = "";
+	function newColPrint(printFrom){
+		//标题
+		try {
+			var printSubject = "标题"; //标题
+			var printsub = $("#subject").val();
+			printsub = "<center style='margin-top: 10px;'><span style='font-size:24px;line-height:24px;'>"
+					+ printsub.escapeHTML() + "</span></center>";
+			//标题文字样式与查时不一样. 
+			printSubFrag = new PrintFragment(printSubject, printsub);
+		} catch (e) {}
+		//发起者信息
+		var printSenderFrag = "";
+		try {
+			var printSenderInfo = "发起者信息"; //发起者信息
+			var printSender="";
+			if(printFrom==="summary"){
+				printSender = $("#panleStart").html() +' (生产组 仪器生产) ';
+			}else if(printFrom==="newCol"){
+				printSender = '马红权' + " ( ) "; //仪器生产)
+			}
+			printSender+= $("#createDate").val();
+			printSender = "<center><span style='font-size:12px;line-height:24px;'>"
+					+ printSender + "</span></center>";
+			printSenderFrag = new PrintFragment(printSenderInfo,
+					printSender);
+		} catch (e) {}
+		var colAttachment1Frag ="";
+		try {
+		    var printAttachment = "附件"; //附件
+		    var attNumber = "";
+		    if (printFrom==="summary") {
+		        attNumber = getFileAttachmentNumber(0, "showAttFile");
+		    } else {
+		        attNumber = getFileAttachmentNumber(0, "Att");
+		    }
+			var colAttachment = "";
+			if (attNumber != 0) {
+				colAttachment = "<table class='margin_t_20'><tr><td valign='top' nowrap='nowrap'><div class='div-float' style='color: #335186; font-weight: bolder; font-size: 12px;'>"
+				        + "附<span class=w1em></span><span class=w1em></span>件"
+						+ " : ("
+						+ attNumber
+						+ ")</div></td><td valign='top'>"
+						+ getFileAttachmentName(0) + "</td></tr></table>";
+				colAttachment = cleanSpecial(colAttachment);
+				colAttachment = tempMethod(colAttachment);
+			}
+			colAttachment1Frag = new PrintFragment(printAttachment,
+					colAttachment);
+		} catch (e) {
+		}
+		
+		//关联文件和附件
+        var colAttachment2Frag ="";
+        try {
+            var printColMydocument = "关联文档"; //关联文档
+            var att2Number = getFileAttachmentNumber(2, 'Doc1');
+            var colMydocument = "";
+            if (att2Number != 0) {
+                colMydocument = "<table class='margin_t_20'><tr><td valign='top' nowrap='nowrap'><div class='div-float' style='color: #335186; font-weight: bolder; font-size: 12px;'>"
+                        + printColMydocument 
+                        + " : (" + att2Number + ")</div></td><td valign='top'>"
+                        + getFileAttachmentName(2)+"</td></tr></table><br>";
+                colMydocument = cleanSpecial(colMydocument);
+                colMydocument = tempMethod(colMydocument);
+            }
+            colAttachment2Frag = new PrintFragment(printColMydocument,
+                    colMydocument);
+        } catch (e) {
+        }
+
+		//附言
+		var sendOpinionFrag='';
+		if(printFrom!=="summary"){//在查看协同详细页面 意见中已经包含附言
+			try {
+			    var content = "";
+			    if ($("#fuyan #content_coll").val() != ""){
+			        content = $("#fuyan #content_coll").val().escapeHTML();
+			    }
+			    var printColOpinion = "发起人附言"; //附言
+			    var colOpinion = "<br/><div class='div-float body-detail-su' style='font-size: 12px; font-weight: bolder;'>"
+	                 + printColOpinion + " :</div></br>"
+	                 +"<div style='line-height: 20px; margin-bottom: 5px;'>" + content+"</div></br>";
+				colOpinion = cleanSpecial(colOpinion);
+				sendOpinionFrag = new PrintFragment(printColOpinion, colOpinion);
+			} catch (e) {
+			}
+		}
+		var pl1 = new ArrayList();
+		var pl2 = new ArrayList();
+		pl1.add(printSubFrag);
+		pl1.add(printSenderFrag);
+        pl2.add(colAttachment1Frag);
+		pl2.add(colAttachment2Frag);
+		if(printFrom!=="summary"){
+			pl2.add(sendOpinionFrag);
+		}
+		
+		var pl = new ArrayList();
+		pl.add(pl1);
+		pl.add(pl2);
+		return pl;
+	}
+	//新建事项中表单打印
+	function newFormMainPrint(printFrom){              
+		try {
+			//var printSubject = _("collaborationLang.print_subject");
+			//var printsub = document.getElementById("subject").value;
+			var printSubject = "标题"; //标题
+			var printsub = $("#subject").val();
+			printsub = "<center style='margin-top: 10px;'><span style='font-size:24px;line-height:24px;'>"
+                + printsub.escapeHTML() + "</span></center>";
+			//标题文字样式与查时不一样. 
+			var printSubFrag = new PrintFragment(printSubject, printsub);
+		} catch (e) {
+		}
+		try {
+			var printSenderInfo = "发起者信息"; //发起者信息
+			var printSender="";
+            if(printFrom==="summary"){
+                printSender = $("#panleStart").html() +' (生产组 仪器生产) ';
+            }else if(printFrom==="newCol"){
+                printSender = '马红权' + " ( ) "; //仪器生产)
+            }
+            printSender+= $("#createDate").val();
+            printSender = "<center><span style='font-size:12px;line-height:24px;'>"
+                    + printSender + "</span></center>";
+			var printSenderFrag = new PrintFragment(printSenderInfo, printSender);
+		} catch (e) {
+		}
+		try {		
+			//var printColOpinion = _("collaborationLang.print_senderNote");
+			var printColOpinion = "发起人附言"; //附言
+            //发起人附言
+			 var content = "";
+             if ($("#fuyan #content_coll").val() != ""){
+                 content = $("#fuyan #content_coll").val().escapeHTML();
+             }
+             var colOpinion = "<br/><div class='div-float body-detail-su' style='font-size: 12px; font-weight: bolder;'>"
+                 + printColOpinion + " :</div><br />"
+                 + "<div style='line-height: 20px; margin-bottom: 5px;'>" + content+"</div></br>";
+            colOpinion = cleanSpecial(colOpinion);
+			var sendOpinionFrag = new PrintFragment(printColOpinion, colOpinion);
+		} catch (e) {
+		}
+		
+		try {
+			//var printAttachment = _("collaborationLang.print_attachment");
+			var printAttachment = "附件"; //附件
+			if (printFrom==="summary") {
+                attNumber = getFileAttachmentNumber(0, "showAttFile");
+            } else {
+                attNumber = getFileAttachmentNumber(0, "Att");
+            }
+			var colAttachment = "";
+            if (attNumber != 0) {
+                colAttachment = "<table class='margin_t_20'><tr><td valign='top' nowrap='nowrap'><div class='div-float' style='color: #335186; font-weight: bolder; font-size: 12px;'>"
+                        + "附<span class=w1em></span><span class=w1em></span>件"
+                        + " : ("
+                        + attNumber
+                        + ")</div></td><td valign='top'>"
+                        + getFileAttachmentName(0) + "</td></tr></table>";
+                colAttachment = cleanSpecial(colAttachment);
+                colAttachment = tempMethod(colAttachment);
+            }
+            
+			var colAttachment1Frag = new PrintFragment(printAttachment,
+					colAttachment);
+		} catch (e) {
+		}
+		try {
+            var printColMydocument = "关联文档"; //关联文档
+            var att2Number = getFileAttachmentNumber(2, 'Doc1');
+            var colMydocument = "";
+            if (att2Number != 0) {
+                colMydocument = "<table class='margin_t_20'><tr><td valign='top' nowrap='nowrap'><div class='div-float' style='color: #335186; font-weight: bolder; font-size: 12px;'>"
+                        + printColMydocument 
+                        + " : (" + att2Number + ")</div></td><td valign='top'>"
+                        + getFileAttachmentName(2)+"</td></tr></table><br>";
+                colMydocument = cleanSpecial(colMydocument);
+                colMydocument = tempMethod(colMydocument);
+            }
+            var colAttachment2Frag = new PrintFragment(printColMydocument,colMydocument);
+        } catch (e) {
+        }
+		
+		var pl1 = new ArrayList();
+		var pl2 = new ArrayList();
+		pl1.add(printSubFrag);
+		pl1.add(printSenderFrag);
+        pl2.add(colAttachment1Frag);
+		pl2.add(colAttachment2Frag);
+		pl2.add(sendOpinionFrag);
+		
+		var pl = new ArrayList();
+		pl.add(pl1);
+		pl.add(pl2);
+		return pl;
+	}
+	//临时方法为了解决在新建协同，内容为表单类型时，插入关联文档，打印页面关联文档图标不显示问题
+	//其实是getFileAttachmentName(2)中工程路径没获取到
+	var path="src=\'/seeyon/common/images";
+	function tempMethod(colMydocument){
+		if(colMydocument.indexOf("src=\'/common/images") >=0){
+			colMydocument=colMydocument.replace("src=\'/common/images", path);
+			colMydocument=tempMethod(colMydocument);
+		}
+		return colMydocument;
+	}
+</script>
+
+
+<script type="text/javascript">
+	var dialogCalEventAdd; //新增dialog
+	var dialogCalEventUpdate; //修改dialog
+
+	//这个是为了关闭窗口，如果用户需要刷新页面，则需要将reloadDate传进入
+	function viewDialogClose(id, reloadDate,isList) {
+	   if(id=="hasError"){
+	        dialogCalEventAdd.enabledBtn("sure");
+	   }else{
+	       if (id == -1) { //新增窗口
+               dialogCalEventAdd.close();
+           } else if (id == "entrust") { //委托窗口
+               dialogCalEventEntrust.close();
+           } else if (id == "delete") { //删除窗口
+               dialogCalEventDelete.close();
+           } else { //修改窗口、即查看窗口
+               dialogCalEventUpdate.close();
+               if (typeof (searchobj) != 'undefined'&&typeof(curButtonClick)=='undefined') {
+                    search(searchobj.g.getReturnValue());
+               }
+           }
+           if (reloadDate == 'true'&&(isList==null||isList=="")) {
+        	   if($.browser.msie&&parseInt($.browser.version,10)>=11){ //ie11下刷新会卡死，不需要参数'true'
+        		   window.location.reload(); 
+        	   }else{
+        		   window.location.reload(true);
+        	   }
+              
+           }else if(reloadDate == 'true'){
+               search(null);//这个地方是为了解决IE11新建事件，刷新列表时卡死的问题
+           }
+	   }
+	}
+	//這裡的方法主要的為了協同、计划、关联项目转事件用到的js。
+	//beginDate 开始时间
+	//formId 协同ID 或者计划ID
+	//appID 应用模块ID 也就是说 协同 == 1 计划 == 5
+	//endDate 结束时间 （计划转事件用的参数）
+	//subject 标题（计划转事件用的参数）
+	//signifyType 重要程度 （计划转事件用的参数）这里说明一下，计划转过来的重要程度有可能不止事件本身的几种。如果不满足，则默认为重要紧急
+	//receiveMemberId接收人ID
+	// dateType 日期类型 1.日期 2 时间
+	//isListObj是否是从列表中的新建中进，列表进来的话，新建的话，刷新页面的时候IE11容易卡死
+	function AddCalEvent(beginDate,formId,appID,endDate,subject,signifyType,receiveMemberId,dateType,isListObj) {
+		var url = "";
+		var isList="";
+		if (typeof (beginDate) == 'undefined'||beginDate==null) {
+			url = _ctxPath + '/calendar/calEvent.do?method=createCalEvent';
+		} else {
+			url = _ctxPath
+					+ '/calendar/calEvent.do?method=createCalEvent&beginDate='
+					+ beginDate;
+		}
+		if (typeof (formId) != 'undefined'&&formId!=null) {
+			url = url + "&fromId=" + formId;
+		}
+		
+		if (typeof (appID) != 'undefined'&&appID!=null) {
+            url = url + "&appID=" + appID;
+        }
+		if (typeof (endDate) != 'undefined'&&endDate!=null) {
+			url = url + "&endDate=" + endDate;
+		}
+		
+		if (typeof (subject) != 'undefined'&&subject!=null) {
+            url = url + "&subject=" + encodeURIComponent(subject);
+        }
+		if (typeof (signifyType) != 'undefined'&&signifyType!=null) {
+			url = url + "&signifyType=" + signifyType;
+		}
+		if (typeof (receiveMemberId) != 'undefined'&&receiveMemberId!=null) {
+			url = url + "&receiveMemberId=" + receiveMemberId;
+		}
+		if (typeof (dateType) != 'undefined'&&dateType!=null) {
+		  url = url + "&dateType=" + dateType;
+		}
+		if (typeof (isListObj) != 'undefined'&&isListObj!=null) {
+	          isList = isListObj.isList;
+	        }
+		dialogCalEventAdd = $.dialog( {
+		    id  : "dialogCalEventAdd",
+			url : url,
+			width : 600,
+			height : 465,
+			checkMax : true,
+			targetWindow : getCtpTop(),
+			transParams : {
+				diaClose : viewDialogClose,
+				isview : "true",
+				isList :isList
+			},
+			title : "新建事件",
+			buttons : [ {
+				id : "sure",
+				text : "确定",
+				handler : function() {
+					var isFalse = dialogCalEventAdd.getReturnValue();
+					if(isFalse){
+					  dialogCalEventAdd.disabledBtn("sure");					  
+					}
+				}
+			}, {
+				id : "cancel",
+				text : "取消",
+				handler : function() {
+					dialogCalEventAdd.close();
+				}
+			} ]
+		});
+	}
+	//本方法和上面方法功能一样，区别在与增加了一个recordid的参数，但由于该方法在其他多处被引用，且不便于增加参数，因此新建一个同名方法，参数为对象
+	function AddCalEventObj(obj) {
+		var beginDate = obj.startTime;
+		var formId = obj.planId;
+		var appID = obj.appId;
+		var endDate = obj.endTime;
+		var subject = obj.eventDesc;
+		var signifyType = obj.importantLevel;
+		var receiveMemberId = obj.receiveMemberId;
+		var dateType = obj.dateType;
+		var recordId = obj.recordId;
+		var isList = obj.isList;
+		var url = "";
+		if (typeof (beginDate) == 'undefined') {
+			url = _ctxPath + '/calendar/calEvent.do?method=createCalEvent';
+		} else {
+			url = _ctxPath
+					+ '/calendar/calEvent.do?method=createCalEvent&beginDate='
+					+ beginDate;
+		}
+		if (typeof (formId) != 'undefined') {
+			url = url + "&fromId=" + formId;
+		}
+		
+		if (typeof (appID) != 'undefined') {
+            url = url + "&appID=" + appID;
+        }
+		if (typeof (endDate) != 'undefined') {
+			url = url + "&endDate=" + endDate;
+		}
+		
+		if (typeof (subject) != 'undefined') {
+            url = url + "&subject=" + encodeURIComponent(subject);
+        }
+		if (typeof (signifyType) != 'undefined') {
+			url = url + "&signifyType=" + signifyType;
+		}
+		if (typeof (receiveMemberId) != 'undefined') {
+			url = url + "&receiveMemberId=" + receiveMemberId;
+		}
+		if (typeof (dateType) != 'undefined') {
+		  url = url + "&dateType=" + dateType;
+		}
+		if (typeof (recordId) != 'undefined') {
+			url = url + "&recordid=" + recordId;
+		}
+		dialogCalEventAdd = $.dialog( {
+		    id  : "dialogCalEventAdd",
+			url : url,
+			width : 600,
+			height : 465,
+			checkMax : true,
+			targetWindow : getCtpTop(),
+			transParams : {
+				diaClose : viewDialogClose,
+				isview : "true",
+				isList : isList
+			},
+			title : "新建事件",
+			buttons : [ {
+				id : "sure",
+				text : "确定",
+				handler : function() {
+					var isFalse = dialogCalEventAdd.getReturnValue();
+					if(isFalse){
+					  dialogCalEventAdd.disabledBtn("sure");
+					}
+				}
+			}, {
+				id : "cancel",
+				text : "取消",
+				handler : function() {
+					dialogCalEventAdd.close();
+				}
+			} ]
+		});
+	}
+</script>
+
+
+
+
+
+<script type="text/javascript" src="collaboration_data_002/ajax_007.txt"></script>  
+<script type="text/javascript">
+	//获取公式组件参数的公用方法
+	function getFormulaArgs(callBack,formId,formulaType,formulaStr,formulaDes){
+		var obj={'callBack':callBack,'formId':formId,'componentType':'componentType_formula','formulaType':formulaType,'formulaStr':formulaStr,'formulaDes':formulaDes};
+		return obj;
+	}
+	//获取条件组件参数的公用方法
+	function getConditionArgs(callBack,formId,conditionType,formulaStr,formulaDes){
+		var obj={'callBack':callBack,'formId':formId,'componentType':'componentType_condition','conditionType':conditionType,'formulaStr':formulaStr,'formulaDes':formulaDes};
+		return obj;
+	}
+	//打开公式条件设置对话框
+    function showFormula(formulaArgs){
+        if(formulaArgs==null||formulaArgs.formId==null||formulaArgs.callBack==null||formulaArgs.formulaStr==null){
+            $.alert("参数不正确请检查:"+$.toJSON(formulaArgs));
+            return;
+        }
+        var h = 570;
+        if(!formulaArgs.formulaDes || formulaArgs.formulaDes == ''){h = 520;}
+        var title = formulaArgs.title||"计算公式设置";
+		var formulaDialog = $.dialog({
+		url: "/seeyon/form/formula.do?method=index&formId="+formulaArgs.formId+(formulaArgs.otherformId?"&otherformId="+formulaArgs.otherformId:"")+(formulaArgs.needRelationFlowField?"&needRelationFlowField="+formulaArgs.needRelationFlowField:""),
+		title : title,
+		width:650,
+		height:h,
+		transParams:formulaArgs,
+		targetWindow:getCtpTop(),
+		   buttons : [{
+		     text : "确定",
+		     id:"sure",
+		     handler : function() {
+		      var result = formulaDialog.getReturnValue();
+		      if(result==true){
+		    	  formulaDialog.close();
+		      }
+		     }
+		   }, {
+		     text : "取消",
+		     id:"exit",
+		     handler : function() {
+		    	 formulaDialog.close();
+		     }
+		   }]
+		 });
+		return formulaDialog;
+    }
+	/*
+	*  formulaType:formulaType_number数字类型公式formulaType_varchar字符串类型公式(动态组合)formulaType_date日期类型公式
+	*var formulaArgs = getFormulaArgs(formId,window,receiverId,formulaType);//公式组件
+	*
+	*var formulaArgs = getConditionArgs(formId,window,receiverId,null);//条件组件
+	*
+	*showFormula(formulaArgs);
+	*/
+	function  getFormulaTypeByFieldType(fieldType){
+		var formulaType = "";
+		switch(fieldType){
+	  		case "VARCHAR" : {
+	  			formulaType = "formulaType_varchar";
+	  			break;
+	  		};
+	  		case "DECIMAL" : {
+	  			formulaType = "formulaType_number";
+	  			break;
+	  		};
+	  		case "TIMESTAMP" : {
+	  			formulaType = "formulaType_date";
+	  			break;
+	  		};
+	  		case "DATETIME" : {
+	  			formulaType = "formulaType_datetime";
+	  			break;
+	  		};
+		}
+		return formulaType;
+	}
+	//获取用户自定义字段
+	function getUserConditionFields(){
+		var d = $("#userFields").val();
+		var obj = new Array();
+		if(d!=""){
+			obj = $.parseJSON(d);
+		}
+		return obj;
+	}
+    //单元测试公式条件组件
+    function testFormula(){
+    	var obj = getFormulaArgs(function(formulaStr){
+        	$.alert(formulaStr);
+    	},"","formulaType_number","","");
+    	obj.otherformId="-4245051878421477633";
+    	showFormula(obj);
+    }
+
+
+
+
+
+	//设置校验规则(已重构)
+	function setCheckRule(){
+		var formulaArgs = getConditionArgs(function (formulaStr,formulaDes){
+			if(formulaStr != ""){$("#checkRuleImg").show();
+			}else{$("#checkRuleImg").hide();}
+			$("#checkRule").val(formulaStr);
+			$("#checkRuleDescription").val(formulaDes);
+		},"0","conditionType_BizCheck",$("#checkRule").val(),$("#checkRuleDescription").val());
+		formulaArgs.title = "校验规则设置";
+		formulaArgs.allowSubFieldAloneUse = true; 
+		formulaArgs.checkSubFieldMethod = true;//验证重复项字段必须出现在重复项方法中。
+		showFormula(formulaArgs);
+	}
+    //查询设置中的系统设置条件(已重构)
+    function setSysQuery(){
+    	var formulaArgs = getConditionArgs(
+    	    	function(formulaStr){       
+    	    		return checkFunction("systemCondition",formulaStr);
+        	    },'0','conditionType_noFunction',$("#systemCondition").val(),null);
+    	formulaArgs.title = "系统查询条件";
+    	formulaArgs.allowSubFieldAloneUse = true;
+    	formulaArgs.hasDifferSubField = true;
+        formulaArgs.extendSubDep = true;
+    	showFormula(formulaArgs);
+    }
+    //查询设置中的用户输入条件(已重构)
+    function setUserQuery(){
+    	var formulaArgs = getConditionArgs(function(formulaStr){return checkFunction("userCondition",formulaStr);},'0','conditionType_noFunction',$("#userCondition").val(),null);
+    	formulaArgs.title = "用户输入条件";
+    	formulaArgs.userVar = getUserConditionFields();
+    	formulaArgs.allowSubFieldAloneUse = true;
+    	formulaArgs.hasDifferSubField = true;
+        formulaArgs.extendSubDep = true;
+        formulaArgs.needRelationFlowField = true;
+    	showFormula(formulaArgs);
+    }
+    //统计设置中的系统设置条件(已重构)
+    function setSystemStatistics(){
+        var formulaArgs = getConditionArgs(function(formulaStr){return checkFunction(formulaStr,"systemConditionSet","systemCondition");},'0','conditionType_noFunction',$("#systemCondition").val(),"");
+        formulaArgs.title = "系统统计条件";
+    	formulaArgs.allowSubFieldAloneUse = true;
+    	formulaArgs.hasDifferSubField = true;
+        formulaArgs.extendSubDep = true;
+        showFormula(formulaArgs);   
+    }
+    //统计设置中的用户自定义设置条件(已重构)
+	function setUserStatistics(){
+        var formulaArgs = getConditionArgs(function(formulaStr){return checkFunction(formulaStr,"userConditionSet","userCondition");},'0','conditionType_noFunction',$("#userCondition").val(),"");
+        formulaArgs.title = "用户输入条件";
+        formulaArgs.userVar = getUserConditionFields();
+    	formulaArgs.allowSubFieldAloneUse = true;
+    	formulaArgs.hasDifferSubField = true;
+        formulaArgs.needRelationFlowField = true;
+        formulaArgs.extendSubDep = true;
+        showFormula(formulaArgs);
+	}
+    
+    //有流程应用绑定的流程标题设置(已重构)
+    function setFlowTemplateTitle(){
+    	var formulaArgs = getFormulaArgs(function(formulaStr){$("#colSubject").val(formulaStr);},'0','formulaType_varchar',$("#colSubject").val(),null);
+    	formulaArgs.title = "表单流程标题";
+    	formulaArgs.noCheck = true;
+    	formulaArgs.flowTitle = true;//特殊参数流程应用绑定，1 不能有+号，2不能有重复项
+    	showFormula(formulaArgs);
+    }
+
+  	//触发消息模板设置(已重构)
+  	function setTriggerMsgContent(){
+		$("#tempMsg").val($("#msgContent",currentTr).val());
+		var formulaArgs = getFormulaArgs(setMsgContentValue,'0','formulaType_varchar',$("#msgContent",currentTr).val(),null);
+	    formulaArgs.title = "设置消息内容";
+	    formulaArgs.allowSubFieldAloneUse = true;
+	    formulaArgs.hasDifferSubField = true;
+	 	formulaArgs.noCheck = true;
+		formulaArgs.flowTitle = true;//特殊参数流程应用绑定，1 不能有+号，2不能有重复项
+		showFormula(formulaArgs);
+     }
+
+    //信息管理设置中的授权范围(已重构)
+    function setUnFlowSetAuth(){
+    	var formulaArgs = getConditionArgs(function(formulaStr){$("#formula").val(formulaStr);},'0','conditionType_noFunction',$("#formula").val(),null);
+    	formulaArgs.title = "操作范围";
+    	formulaArgs.allowSubFieldAloneUse = true;
+    	formulaArgs.hasDifferSubField = true;
+        formulaArgs.extendSubDep = true;
+    	showFormula(formulaArgs);
+    }
+
+  	//触发条件式设置(已重构)
+  	function setTriggerCondition(obj) {
+      if($(obj).hasClass("common_button_disable")){return;}
+      var formulaArgs = getConditionArgs(setFormulaContent,'0','conditionType_noFunction',$("#fieldConditionValue").val(),null);
+      formulaArgs.title = "数据域设置";
+      formulaArgs.allowSubFieldAloneUse = true;
+      formulaArgs.hasDifferSubField = true;
+      showFormula(formulaArgs);
+    }
+  //表单制作回写数据域时选择的计算式(已重构)
+    function setEcho(formId){
+		var formulaArgs = getFormulaArgs(function (formulaStr){$(formulaObj).val(formulaStr);},"0","formulaType_number",$(formulaObj).val(),null);
+		formulaArgs.title = "计算式设置";
+		formulaArgs.otherformId=formId;
+		formulaArgs.noCheck = true;
+		showFormula(formulaArgs);
+    }
+  	//操作设置高级(已重构)
+  	function setHighAuthDesign(){
+		var formulaArgs = getConditionArgs(function (formulaStr){if($.trim(formulaStr)==""){formulaStr="<点击设置条件>"}$(curtconditionValue).val(formulaStr);},"0","conditionType_noFunction",$(curtconditionValue).val(),null);
+		formulaArgs.title = "条件设置";
+		formulaArgs.hasDifferSubField = true;
+		showFormula(formulaArgs);
+  	}
+	//设置计算式高级的条件(重构)
+	function setFieldHighCondition(obj,fieldindex,parentWinDocument){
+		var formulaArgs = getConditionArgs(function (formulaStr,formulaDes){$(obj).val(formulaStr);},"0","conditionType_noFunction",$.trim($(obj).val()),null);
+		formulaArgs.hasDifferSubField = true;
+		formulaArgs.title = "计算条件设置";
+		formulaArgs.parentWin = window;
+		formulaArgs.filterFields =  $("#fieldName"+fieldindex,parentWinDocument).val();
+		formulaArgs.allowSubFieldAloneUse = $("#fieldName"+fieldindex,parentWinDocument).attr("isMasterField")=="true"?false:true;
+		formulaArgs.fieldTableName = $("#fieldName"+fieldindex,parentWinDocument).attr("tablename");
+		showFormula(formulaArgs);
+	}
+	//设置高级中计算式(重构)
+	function setFieldHighFormula(obj,fieldindex,parentWinDocument){
+		var formulaArgs = getFormulaArgs(function (formulaStr,formulaDes,formulaData){ 
+		    $(obj).val(formulaStr);
+		},"0",getFormulaTypeByFieldType(fieldType),$(obj).val(),null);
+		formulaArgs.parentWin = window;
+		formulaArgs.filterFields =  $("#fieldName"+fieldindex,parentWinDocument).val();
+		formulaArgs.allowSubFieldAloneUse = $("#fieldName"+fieldindex,parentWinDocument).attr("isMasterField")=="true"?false:true;
+		formulaArgs.fieldTableName = $("#fieldName"+fieldindex,parentWinDocument).attr("tablename");
+		showFormula(formulaArgs);
+	}
+	//设置普通计算式(重构)
+	function setOrdinaryFieldFormula(index,fieldType,advanceUrl){
+		var receiverId = "formula"+index;
+		var formulaArgs = getFormulaArgs(function (formulaStr,formulaDes,formulaData){
+			$("#formula"+index).val(formulaStr);
+			$("#formulaData"+index).val(formulaData);
+			$("#isAdvance"+index).val("0");
+			$("#advance"+index).hide();
+			//如果包含日期函数，设置显示格式
+			setDecimalFormat(formulaStr,index,"");
+		},0,getFormulaTypeByFieldType(fieldType),$("#formula"+index).val(),null);
+		formulaArgs.advanceUrl = advanceUrl+"&fieldType="+fieldType+"&formId=0&receiverId="+receiverId;
+		formulaArgs.filterFields = $("#fieldName"+index).val();
+		formulaArgs.allowSubFieldAloneUse = $("#fieldName"+index).attr("isMasterField")=="true"?false:true;
+		formulaArgs.parentWin = window;
+		formulaArgs.fieldTableName =$("#fieldName"+index).attr("tablename");
+		return showFormula(formulaArgs);
+	}
+	//设置数字显示格式
+	function setDecimalFormat(formulaStr,index,digitNum){
+		//该变量用来标识是否设置了日期类函数的显示格式。主要用于高级计算式跳出循环
+		var setFormat = false;
+		var setDigitNum = digitNum == "" ? 5 : digitNum;
+		if(formulaStr.indexOf("differDateByWorkDay(") != -1){
+			$($("#formatType"+index).find("option")[4]).prop("value","wdd");
+			$("#formatType"+index).val("wdd");
+			$("#digitNum"+index).val(setDigitNum);
+			if(setDigitNum === 5)$("#fieldLength"+index).val(15);
+			setFormat = true;
+		}else if(formulaStr.indexOf("differDateTimeByWorkDay(") != -1){
+			$($("#formatType"+index).find("option")[3]).prop("value","work-dd-hh-mm");
+			$("#formatType"+index).val("work-dd-hh-mm");
+			$("#digitNum"+index).val(setDigitNum);
+			if(setDigitNum === 5)$("#fieldLength"+index).val(15);
+			setFormat = true;
+		}else if(formulaStr.indexOf("differDateTime(") != -1){
+			$($("#formatType"+index).find("option")[3]).prop("value","dd-hh-mm");
+			$("#formatType"+index).val("dd-hh-mm");
+			$("#digitNum"+index).val(setDigitNum);
+			if(setDigitNum === 5)$("#fieldLength"+index).val(15);
+			setFormat = true;
+		}else if(formulaStr.indexOf("differDate(") != -1){
+			$($("#formatType"+index).find("option")[4]).prop("value","dd");
+			$("#formatType"+index).val("dd");
+			$("#digitNum"+index).val(setDigitNum);
+			if(setDigitNum === 5)$("#fieldLength"+index).val(15);
+			setFormat = true;
+		}else{
+			$($("#formatType"+index).find("option")[3]).prop("value","dd-hh-mm");
+			$($("#formatType"+index).find("option")[4]).prop("value","dd");
+			if($("#formatType"+index).val() != "work-dd-hh-mm" && $("#formatType"+index).val() != "wdd"
+					&& $("#formatType"+index).val() != "dd-hh-mm" && $("#formatType"+index).val() != "dd"){
+				$("#formatType"+index).val($("#formatType"+index).val());
+			}else{
+				$("#formatType"+index).val("");
+			}
+			$("#digitNum"+index).val($("#digitNum"+index).val());
+		}
+		return setFormat;
+	}
+</script>
+<script type="text/javascript" src="collaboration_data_002/ajax_005.txt"></script>
+<script type="text/javascript" src="collaboration_data_002/ajax.txt"></script>
+<script type="text/javascript" src="-9095585739310150737_D_data/pending_data/ajax.txt"></script>
+<script type="text/javascript" src="collaboration_data_002/formCommon.js"></script>
+
+
+<script type="text/javascript" src="collaboration_data_002/ajax_003.txt"></script>
+<script type="text/javascript">
+<!--
+/**
+ * 将Word正文转化为PDF
+ */
+function transformWordToPdf(newPdfId){
+        try{
+          document.getElementById("content").value = fileId;
+        }catch(e){}
+        var bodyType = "";
+        //只能转化Word或者WPS正文
+        if(bodyType != 'OfficeWord' && bodyType != 'WpsWord') 
+           return true;
+        var flag = componentDiv.officeEditorFrame.transformWordToPdf(newPdfId);
+        return flag;
+}
+/**
+ * 协同转公告
+ * @param summaryId 协同ID
+ * @param affairId 事项ID
+ * @param bodyType 正文类型
+ * @param callback 回调函数（由调用方处理）
+ * @returns 
+ */
+ function bulletinIssue(summaryId,affairId,bodyType,callback,rightId){
+   if( !bulletinIssueAuthority() ){
+       alert("您没有发布权限！");
+       return false;
+   }
+   var dialog = $.dialog({
+     htmlId : "issueBull",
+     title : "选择板块",
+     height:450,
+     width:400,
+     targetWindow:top,
+     url:_ctxPath+'/bulIssue.do?method=preIssue&summaryId='+summaryId+"&affairId="+affairId+"&bodyType="+bodyType+"&entry=0&outworkerPanel=1",
+     buttons : [{
+         text : "确定",
+         handler : function() {
+           var rv = dialog.getReturnValue();
+           
+           if( rv && rv.length==4 ){
+               var pdfFileId = "";
+
+               if( rv[3]=="1" ){
+                   pdfFileId = getUUID();
+                   transformWordToPdf(pdfFileId);
+               }
+               
+               var requestCaller = new XMLHttpRequestCaller(this, "ajaxBulIssueManager", "issueBulletion", false);
+               
+               requestCaller.addParameter(1, "String", summaryId);
+               requestCaller.addParameter(2, "String", affairId);
+               requestCaller.addParameter(3, "String", bodyType);
+               requestCaller.addParameter(4, "String", rv[0]);
+               requestCaller.addParameter(5, "String", rv[1]);
+               requestCaller.addParameter(6, "String", rv[2]);
+               requestCaller.addParameter(7, "String", pdfFileId);
+               requestCaller.addParameter(8, "String", rightId);
+               
+               var result = requestCaller.serviceRequest();
+
+               //此方法需要由接口调用者实现，例如保存协同
+               if(callback){
+                   callback();
+               }
+           }
+           if(rv != false){
+               dialog.close();
+           }
+         }
+       }, {
+         text : "取消",
+         handler : function() {
+           dialog.close();
+         }
+       }]
+
+   });
+}
+
+/**
+ * 公文转公告
+ * @param summaryId 协同ID
+ * @param bodyType 正文类型
+ * @param callback 回调函数（由调用方处理）
+ * @returns {Number}
+ */
+function edocBulletinIssue(summaryId,bodyType,callback){
+	if( !bulletinIssueAuthority() ){
+		alert(issue_v3x.getMessage("bulletin.issue_not_auth"));
+		return false;
+	}
+    var dialog = $.dialog({
+        htmlId : 'issueBullEdoc',
+        title : issue_v3x.getMessage("bulletin.issue_dialog_title"),
+        height:450,
+        width:400,
+        targetWindow:top,
+        url:_ctxPath+'/bulIssue.do?method=preIssue&summaryId='+summaryId+"&bodyType="+bodyType+"&entry=1&outworkerPanel=0",
+        buttons : [ {
+            text : issue_v3x.getMessage("bulletin.ok"),
+            handler : function() {
+      	  		var rv = dialog.getReturnValue();
+      	  	
+      	  		//此方法需要由接口调用者实现，例如保存公文
+      	  		if(callback){
+      	  			callback(rv);
+      	  		}
+      	  	
+      	  		dialog.close();
+            }
+          }, {
+            text : issue_v3x.getMessage("bulletin.calcel"),
+            handler : function() {
+              dialog.close();
+            }
+          } ]
+
+      });
+}
+
+/**
+ * 判断当前登陆用户是否有发布权限
+ * @returns true/false
+ */
+function bulletinIssueAuthority(){
+  var bulIssueManagerAjax = new bulIssueManager();
+  var hasAuthority = bulIssueManagerAjax.hasAuthority();
+  return hasAuthority;
+}
+//-->
+</script>
+
+
+<script type="text/javascript" src="collaboration_data_002/ajax_006.txt"></script>
+<script type="text/javascript">
+<!--
+/**
+ * 将Word正文转化为PDF
+ */
+function transformWordToPdf(newPdfId){
+        try{
+          document.getElementById("content").value = fileId;
+        }catch(e){}
+        var flag = componentDiv.officeEditorFrame.transformWordToPdf(newPdfId);
+        return flag;
+}
+/**
+ * 协同转新闻
+ * @param summaryId 协同ID
+ * @param affairId 事项ID
+ * @param bodyType 正文类型
+ * @param callback 回调函数（由调用方处理）
+ * @returns {Number}
+ */
+function newsIssue(summaryId,affairId,bodyType,callback,rightId){
+	if( !newsIssueAuthority() ){
+		alert("您没有发布权限！");
+		return false;
+	}
+    var dialog = $.dialog({
+      htmlId : "issueNews",
+      title : "选择板块",
+      height:450,
+      width:400,
+      targetWindow:top,
+      url:_ctxPath+'/newsIssue.do?method=preIssue&summaryId='+summaryId+"&affairId="+affairId+"&bodyType="+bodyType+"&entry=0",
+      buttons : [ {
+          text : "确定",
+          handler : function() {
+    	  	var rv = dialog.getReturnValue();
+    	  	if( rv && rv.length==9 ){
+                var pdfFileId = "";
+
+                if( rv[5]=="1" && rv[6]=="OfficeWord"){
+                    pdfFileId = getUUID();
+                    transformWordToPdf(pdfFileId);
+                }
+                var requestCaller = new XMLHttpRequestCaller(this, "ajaxNewsIssueManager", "issueNews", false);
+            	requestCaller.addParameter(1, "String", rv[0]);
+            	requestCaller.addParameter(2, "String", rv[1]);
+            	requestCaller.addParameter(3, "String", rv[2]);
+            	requestCaller.addParameter(4, "String", rv[3]);
+            	requestCaller.addParameter(5, "String", rv[4]);
+                requestCaller.addParameter(6, "String", pdfFileId);
+                requestCaller.addParameter(7, "String", rv[7]);
+                requestCaller.addParameter(8, "String", rv[8]);
+                requestCaller.addParameter(9, "String", rightId);
+                var result = requestCaller.serviceRequest();
+	    	 	if(callback){
+	    	  		callback();
+	    	  	}
+	            dialog.close();
+	          }
+          }
+        }, {
+          text : "取消",
+          handler : function() {
+            dialog.close();
+          }
+        } ]
+    });
+}
+
+/**
+ * 判断当前登陆用户是否有发布权限
+ * @returns true/false
+ */
+function newsIssueAuthority(){
+  var newsIssueManagerAjax = new newsIssueManager();
+  var hasAuthority = newsIssueManagerAjax.hasAuthority();
+  return hasAuthority;
+}
+//-->
+</script>
+
+<script type="text/javascript" src="collaboration_data_002/ajax_002.txt"></script>
+<script type="text/javascript">
+
+function beforeSubmit(affairid, attitude, content,object,sucessCallback,failedCallBack) {
+  var r = new collaborationFormBindEventListener();
+  var ds1 = r.preHandler(affairid, attitude, content);
+  if (ds1 != null && ds1 != '' && typeof (ds1) == "object") {
+    if (ds1[0] == '1') {
+      if(object!=null){
+        object.close();
+        }
+      var dialog = $.dialog({
+            url : "/seeyon/genericController.do?ViewPage=ctp/form/design/eventTip&content="
+                + encodeURIComponent(ds1[1]),
+            title : "审核结果",
+            width : 300,
+            height : 300,
+            buttons : [
+                {
+                  text : "转审核意见",
+                  id : "sure1",
+                  handler : function() {
+                    var tip = dialog.getReturnValue();
+                    if(content!=""){
+                      content= content+"\r\n"+"-----------------------------"+"\r\n";
+                    }
+                      $("#content_deal_comment").val(content + tip);
+                      failedCallBack();
+                      dialog.close();
+                  }
+                }, {
+                  text : "取消",
+                  id : "exit1",
+                  handler : function() {
+                    failedCallBack();
+                    dialog.close();
+                  }
+                } ]
+          });
+    }else if(ds1[0]=='2'){
+      if(ds1[1]==""||ds1[1]==null){
+        sucessCallback();
+        return;
+      }
+        if(ds1[2]=="R"){
+          var dialog = $.dialog({
+            url : "/seeyon/genericController.do?ViewPage=ctp/form/design/eventTip&content="
+                + encodeURIComponent(ds1[1]),
+            title : "提示信息",
+            width : 350,
+            height : 100,
+            closeParam:{show:false},
+            buttons : [
+                {
+                  text : "确定",
+                  id : "exit1",
+                  handler : function() {
+                    sucessCallback();
+                    dialog.close();
+                  }
+                } ]
+          });
+        }else{
+          var dialog1 = $.dialog({
+            url : "/seeyon/genericController.do?ViewPage=ctp/form/design/eventTip&content="
+                + encodeURIComponent(ds1[1]),
+            title : "失败信息",
+            width : 350,
+            height : 100,
+            closeParam:{show:false},
+            buttons : [
+                {
+                  text : "关闭",
+                  id : "exit1",
+                  handler : function() {
+                 if(failedCallBack!=null&&failedCallBack!="undefined"){
+                   failedCallBack();
+                    }
+                    
+                    dialog1.close();
+                  }
+                } ]
+          });
+        }
+
+      }
+    }else{
+    sucessCallback();
+    }
+
+  }
+</script>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<script type="text/javascript" src="-9095585739310150737_D_data/pending_data/ajax.txt"></script>
+<script type="text/javascript" src="collaboration_data_002/docFavorite.js"></script>
+<script type="text/javascript" charset="UTF-8" src="knowledgeBrowseUtils.js"></script>
+<script type="text/javascript" charset="UTF-8" src="collaboration_data_002/docFavorite.js"></script>
+<script type="text/javascript" charset="UTF-8" src="collaboration_data_002/summary.js"></script>
+<!-- 查看处理页面 -->
+<title>查看处理页面</title>
+<style type="text/css">
+    .stadic_head_height{}
+    .stadic_body_top_bottom{bottom: 0;overflow:hidden;}
+</style>
+<script type="text/javascript">
+
+var summaryId = '-2977321418646535714';
+var affairId  = '-7446790413358313791';
+
+var subject = "4111808680(CS2800)";
+
+
+var _summaryProcessId = '-4484161617760402444';
+var _summaryActivityId = '15215041254420';
+var _summaryCaseId = '2854661639005552948';
+var _summaryItemId=  '697152461152404250';
+
+var _contextProcessId = '-4484161617760402444';
+var _contextActivityId = '15215041254420';
+var _contextCaseId = '2854661639005552948';
+var _contextItemId = '697152461152404250';
+var _scene = "3";
+var show1 = 'true';
+var show2 = 'true';
+
+var _currentUserId = '7298597487386510009';
+var _currentUserName = '马红权';
+var _loginAccountId = '-9095585739310150737';
+var isFromTemplate = 'false';
+var templateType = '';
+var affairState = "3";
+var affairSubState = '12';
+var isCurrentUserSupervisor = "";
+var isFinshed = "false";
+var isFinish = false;
+var commentId = "";
+var _isOfficeTrans = false;
+var openFrom = 'listPending';
+var summaryReadOnly = 'false';
+var templateId = '';
+var isSupervise = 'listPending'=='supervise';
+var isCurSuperivse = 'listPending'=='listDone' && '' == 'true';
+var _moduleTypeName = 'collaboration';
+var _affairMemberId = '7298597487386510009';
+var _startMemberId = "-2147742594505095138";
+var _canFavorite = "true";
+var trackType = '0';
+var bodyType = '10';
+var formRecordid = '';
+var operationId = '';
+
+//控制OFFICE正文能否打印，OFFICE组件中会读取这个变量
+var officecanPrint = 'true';
+var canEdit  = 'true';
+var forTrackShowString='';
+var openType = "";
+var proce = "";
+var contentAnchor = "";
+var nodePerm_baseActionList = ["Track","Comment","ContinueSubmit","Archive","Opinion","CommonPhrase","UploadAttachment","Print"];
+var nodePerm_commonActionList = ["AddNode","Forward","Transform","SpecifiesReturn"];
+var nodePerm_advanceActionList = ["Return","Terminate","Infom","JointSign","RemoveNode","Edit","allowUpdateAttachment"];
+var isDealPageShow = "";
+var flowPermAccountId= '-9095585739310150737';
+var nodePolicy = "collaboration";
+var hasAttsFlag = 'false';
+var templateWorkflowId =  '';
+var supervisorsId = '';
+var hasPluginUC = true;
+var layout = null;
+var rightId = '' ;
+var isHasDealPage = "true";
+$(function(){
+    var initWidth=350;
+    if(isDealPageShow !== "false"){
+        $(".deal_area").show();
+        $("#deal_area_show").hide();
+    }else{
+        initWidth=38;
+        $(".deal_area").hide();
+        $("#deal_area_show").show();
+    }
+    //页面加载 样式初始化
+    layout = new MxtLayout({
+        'id': 'layout',
+        
+        'eastArea': {
+            'id': 'east',
+            'width': initWidth,
+            'sprit': true,
+            'minWidth': 350,
+            'maxWidth': 500,
+            'border': true,
+            spiretBar: {
+                show: true,
+                showItem:"L",
+                handlerL: function () {
+                   layout.setEast(window.document.body.clientWidth / 2);
+                    $(".deal_area").show();
+                    $("#deal_area_show").hide();
+                },
+                handlerR: function () {
+                  layout.setEast(348);
+                    $(".deal_area").show();
+                    $("#deal_area_show").hide();
+                }
+            }
+        },
+        
+        'centerArea': {
+            'id': 'center',
+            'border': true,
+            'minHeight': 20
+        }
+    });
+    summaryHeadHeight();
+})
+</script>
+</head>
+<body class="h100b over_hidden page_color" onunload="colDelLock('-7446790413358313791');" style="height: 100%; overflow: hidden; padding: 0px; margin: 0px; border: 0px none; cursor: default; -moz-user-select: inherit;"><div id="madiv1" style="background:#AAAAAA"><button>下载附件</button>http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-7446790413358313791</div>
+    <script>
+<!--
+var theToShowAttachments = new ArrayList();
+var downloadURL = "/seeyon/fileUpload.do";
+//-->
+</script>
+<div style="display:none;">
+<iframe name="downloadFileFrame" id="downloadFileFrame" height="0" frameborder="0" width="0"></iframe>
+</div>
+
+
+    <div id="layout" style="overflow: hidden; position: relative; padding: 0px; margin: 0px; border: 0px none; height: 100%;">
+        
+
+<script type="text/javascript">
+/**
+组件：督办设置窗口
+参数1：superviseType   superviseEnum枚举 0是模板 1是协同 2是公文
+参数2：isSubmit 是否直接提交 true or false 
+参数3：moduleId 主应用ID
+参数4：templateId 模板Id 说明：如果是模板设置督办的话MODULEID == NULL,template = 模板ID，如果具体流程的话，MODULEID为应用ID，templateID如果调用了模板就是模板ID
+@param startMemberId : 发起人ID
+ */
+function openSuperviseWindow(superviseType,isSubmit,moduleId,templateId,callBack,startMemberId){
+
+	
+	superviseType = $.trim(superviseType);
+	isSubmit = $.trim(isSubmit);
+	moduleId = $.trim(moduleId);
+	templateId = $.trim(templateId);
+	startMemberId = $.trim(startMemberId);
+
+    $("#superviseType").val(superviseType);
+    $("#moduleId").val(moduleId);
+	
+    var isTemplate='no';
+	if(templateId && !moduleId ){
+		isTemplate="yes";
+	}
+	var superviseId = $("#detailId").val();
+	var awakeDate = $("#awakeDate").val();
+	var superviseTitle = $("#title").val();
+	var supervisors = $("#supervisorNames").val();
+	var supervisorsId = $("#supervisorIds").val();
+	var role = $("#role").val();
+	var unCancelledVisor = $("#unCancelledVisor").val();
+	var templateDateTerminal = $("#templateDateTerminal").val();
+	var hasLoad = $("#hasLoad").val();
+	var dialog = $.dialog({
+		 targetWindow:getCtpTop(),
+	     id: 'superviseWindow',
+	     url: _ctxPath+'/supervise/supervise.do?method=openSuperviseWindow&superviseType='
+	          +superviseType+'&isSubmit='+isSubmit+'&moduleId='+moduleId+'&templateId='+$.trim(templateId)
+	          +"&superviseId="+superviseId+"&awakeDate="+awakeDate+"&superviseTitle="+encodeURIat(superviseTitle)
+	          +"&supervisors="+encodeURIComponent(supervisors)+"&supervisorsId="+supervisorsId+"&role="+role
+	          +"&isTemplate="+isTemplate+"&unCancelledVisor="+unCancelledVisor+"&templateDateTerminal="+templateDateTerminal+"&hasLoad="+hasLoad+"&startMemberId="+startMemberId,
+	          
+	     width: 400,
+	     height: 300,
+	     title: "督办设置",  //督办设置
+	     buttons: [{
+	         text: "确定", //确定
+	         handler: function () {
+                var returnValue = dialog.getReturnValue();
+            	if( returnValue && returnValue != null){//返回值到父页面
+                	var map =  $.parseJSON(returnValue); 
+               		$('#supervisorIds').val(map.supervisorIds);
+               		$('#templateDateTerminal').val(map.templateDateTerminal);
+               		$('#role').val(map.role);
+               		$('#title').val(map.title.replace(/<br\s*\/?>/g,"\n"));
+           			$('#awakeDate').val(map.awakeDate);
+           			$('#supervisorNames').val(map.supervisorNames);
+					if(map.isSubmit == 'true' && map.supervisorIds == ""){
+						$('#title').val("");
+               			$('#awakeDate').val("");
+               			$('#supervisorNames').val("");
+					}
+					
+               		$('#roleNames').val(map.roleNames);
+               		$('#appKey').val(map.appKey);
+               		$('#moduleId').val(map.entityId);
+
+               		$("#isModifySupervise").val(1);
+               		$("#hasLoad").val(1);
+               		
+               		if(callBack){
+                    	callBack(map);
+                  	}
+               		if(map.isSubmit === 'true'){
+               		    $('#superviseDiv').jsonSubmit({
+               		        action : _ctxPath+"/supervise/supervise.do?method=saveOrUpdateSupervise",
+               		        callback:function(){
+               		        }
+                        });
+               		}
+               		dialog.close();
+                }
+	         }
+	     }, {
+	         text: "取消", //取消
+	         handler: function () {
+	             dialog.close();
+	         }
+	     }]
+	 });
+}
+/**
+ * 督办
+ */
+function showSuperviseWindow(summaryId,app,finished, templeteId){
+    var button = new Array();
+    var dialogs = "";
+    if(!finished){
+        button.push({
+            text: "保存并退出", //保存并退出
+            handler: function () {
+                var returnValue = dialogs.getReturnValue();
+                if(returnValue != false){
+                    var map =  $.parseJSON(returnValue); 
+                    $('#awakeDate').val(map.awakeDate);
+                    $('#detailId').val(map.superviseId);
+                    //传递之前进行了转码，防止特殊字符 使JSON串出错，这里进行解码
+                    var desc = decodeURIComponent(map.description);
+                    $('#description').val(desc);
+                    $('#superviseDiv').jsonSubmit({
+                        action : _ctxPath+"/supervise/supervise.do?method=updateContentAndDate",
+                        callback : function() { 
+                        	//不需要刷新，如果添加刷新会导致首页栏目报错
+                            if(parent && parent.$("#superviseList")){
+                            	parent.$("#superviseList").ajaxgridLoad();
+                            }
+                        }
+                    });
+                    dialogs.close();
+                }
+            }
+        });
+        button.push({
+            text: "取消", //取消
+            handler: function () {
+                dialogs.close();
+            }
+        });
+    }else{
+        button.push({
+            text: "关闭", //关闭
+            handler: function () {
+                dialogs.close();
+            }
+        });
+    }
+    
+    dialogs = $.dialog({
+        targetWindow:getCtpTop(),
+        title: "督办",  //督办
+        url: _ctxPath+'/supervise/supervise.do?method=superviseDialog&summaryId='+summaryId+"&appKey="+app+"&finished="+finished,
+        width: 500,
+        height: 350,
+        buttons: button
+    });
+}
+</script>
+<div id="superviseDiv">
+		<!--放置督办的信息区域开始  detailId 提醒日期  督办主题  督办人员IDs 督办人员names 督办角色  督办角色names-->
+		
+		<input name="detailId" id="detailId" value="" type="hidden">
+		<input name="supervisorIds" id="supervisorIds" value="" type="hidden">
+		<input name="supervisorNames" id="supervisorNames" value="" type="hidden">
+		<input name="awakeDate" id="awakeDate" value="" type="hidden">
+		<input name="title" id="title" value="" type="hidden">
+		
+		<input name="unCancelledVisor" id="unCancelledVisor" value="" type="hidden">
+		
+		<input name="role" id="role" value="" type="hidden">
+		<input name="templateDateTerminal" id="templateDateTerminal" value="" type="hidden">
+		
+		
+		
+		
+		<input name="superviseType" id="superviseType" value="" type="hidden">		<!-- 应用类型 -->
+		<input name="moduleId" id="moduleId" value="" type="hidden">	<!-- 应用id -->
+		
+		
+		
+		<!-- 督办摘要 -->
+        <input name="description" id="description" value="" type="hidden">
+        
+        
+        
+        <input name="isModifySupervise" id="isModifySupervise" value="0" type="hidden">
+        <input name="hasLoad" id="hasLoad" value="0" type="hidden">
+		<!-- 放置督办的信息区域结束 -->
+</div>    
+        <input id="affairId" value="-7446790413358313791" type="hidden">
+        <div class="layout_east" id="east" style="height: 669px; left: 712px; top: 0px; width: 348px; border-width: 1px; z-index: 1; display: block;">
+            <!--处理区域-->
+            <div id="deal_area_show" class="font_size12 align_center h100b hidden hand" style="display: none;">
+                <span class="ico16 arrow_2_l"></span><br>处<br>理<br>意<br>见
+            </div>
+            
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="collaboration_data_002/ajax_004.txt"></script>
+<script type="text/javascript" charset="UTF-8" src="collaboration_data_002/deal.js"></script>
+<style>
+.common_drop_list .common_drop_list_content a.nodePerm,.nodePerm {
+	display: none;
+}
+.back_disable_color{
+	cursor: default; 
+  	color: #000; 
+    opacity: 0.2; 
+  	-moz-opacity: 0.2; 
+  	-khtml-opacity: 0.2; 
+  	filter: alpha(opacity=20); 
+}
+</style>
+<div id="dealAreaThisRihgt" class="deal_area padding_lr_10 form_area">
+<div class="clearfix padding_t_10"><span class="left"><em id="hidden_side" class="ico16 arrow_2_r margin_r_5"></em>协同</span>
+</div>
+<div class="clearfix font_size12">
+<div id="toolb" style="float: left; width: 280px;"><div class="common_toolbar_box clearfix" style="_display:inline; border-top-width:0px;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-color:#b6b6b6;border-style:solid;"><div id="toolbar_5023036" class="toolbar_l clearfix"><a href="javascript:void(0)" id="_commonAddNode_a"><em id="_commonAddNode_em" class="ico16 signature_16"></em><span id="_commonAddNode_span" class="menu_span">加签</span></a><em class="seperate margin_lr_5"></em><a href="javascript:void(0)" id="_commonForward_a"><em id="_commonForward_em" class="ico16 forwarding_16"></em><span id="_commonForward_span" class="menu_span">转发</span></a><em class="seperate margin_lr_5"></em><a href="javascript:void(0)" id="_commonTransform_a"><em id="_commonTransform_em" class="ico16 forward_event_16"></em><span id="_commonTransform_span" class="menu_span">转事件</span></a><em class="seperate margin_lr_5"></em><a href="javascript:void(0)" id="_dealSpecifiesReturn_a"><em id="_dealSpecifiesReturn_em" class="ico16 forward_event_16"></em><span id="_dealSpecifiesReturn_span" class="menu_span">指定回退</span></a></div></div></div>
+
+	
+	
+		
+		
+			
+				<input id="tool_1" value="_commonAddNode" type="hidden">
+				
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+			<input value="_commonForward" id="tool_2" type="hidden">
+			
+		
+		
+		
+		
+		
+	
+		
+		
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<input value="_commonTransform" id="tool_3" type="hidden">
+			
+		
+		
+		
+	
+		
+		
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<input value="_dealSpecifiesReturn" id="tool_4" type="hidden">
+			
+		
+	
+ 
+	<a id="moreLabel" class="right margin_t_10">更多</a>
+</div>
+<div class="hr_heng margin_t_10">&nbsp;</div>
+
+<!--处理意见区域-->
+<div class="opinions padding_t_10">
+<div class="common_radio_box clearfix">
+<div class="left">
+	
+		<label class="margin_r_10 hand" for="afterRead"> <input id="afterRead" class="radio_com" name="attitude" value="collaboration.dealAttitude.haveRead" checked="checked" type="radio">已阅<!-- 已阅 -->
+		</label>
+	
+	<label class="margin_r_10 hand" for="agree"> <input id="agree" class="radio_com" name="attitude" value="collaboration.dealAttitude.agree" type="radio">同意<!-- 同意 -->
+	</label>
+	<label class="margin_r_10 hand" for="notagree"> <input id="notagree" class="radio_com" name="attitude" value="collaboration.dealAttitude.disagree" type="radio">不同意<!-- 不同意 -->
+	</label>
+</div>
+
+	<div class="right"><a id="cphrase" curuser="7298597487386510009">常用语<!-- 常用语 --></a></div>
+</div>
+
+
+	<textarea onmouseover="focus()" id="content_deal_comment" name="content_deal_comment" class="padding_5 margin_t_5" erroricon="false" style="width: 95%; height: 200px;"></textarea>
+
+
+<div class="clearfix margin_t_5" id="attachmentAndDoc">
+    
+    	<span class="left"> 
+            
+    		<!-- 附件 -->
+    		<div class="nodePerm" baseaction="UploadAttachment" style="display: inline;"><a id="uploadAttachmentID" class="margin_r_5"><span class="ico16 affix_16  margin_r_5"></span>附件</a>(<span id="attachmentNumberDiv">0</span>)</div>
+    	    
+            
+        </span>
+     
+    <span class="right">
+        <a id="pushMessageButton">
+            <em class="ico16 system_messages_16 margin_r_5"></em>
+            <span id="pushMessageButtonSpan" class="menu_span">消息推送</span>
+        </a>
+    </span>
+</div>
+<div class="newinfo_area margin_t_5">
+<div id="attachmentTR" style="display: none;">
+<div id="content_deal_attach" isgrid="true" class="comp" comp="type:'fileupload',applicationCategory:'1',attachmentTrId:'',canFavourite:false,canDeleteOriginalAtts:true" attsdata="[]" comptype="fileupload" style="display: none;"></div><div id="attachmentArea" style="overflow: auto;;height: auto;" requrl="/seeyon/fileUpload.do?type=0&amp;applicationCategory=1&amp;extensions=&amp;maxSize=&amp;isEncrypt=&amp;popupTitleKey=&amp;attachmentTrId="></div>
+</div>
+<div id="attachment2TR" style="display: none;">
+<div id="content_deal_assdoc" isgrid="true" class="comp" comp="type:'assdoc',applicationCategory:'1',attachmentTrId:'',modids:'1,3',canFavourite:false,canDeleteOriginalAtts:true" attsdata="[]" comptype="assdoc"></div><div id="attachment2Area" poi="" requesturl="/seeyon/ctp/common/associateddoc/assdocFrame.do?isBind=1,3&amp;referenceId=&amp;applicationCategory=1&amp;poi=" style="overflow: auto;max-height: 36pxmin-height: 20px;"></div>
+</div>
+</div>
+<div class="hr_heng margin_t_5">&nbsp;</div>
+
+	<div class="clearfix margin_t_10">
+	<div class="common_checkbox_box clearfix left margin_t_5"><label class="margin_r_10 hand" for="isHidden" id="isHiddenLable"> <input id="isHidden" class="radio_com" name="isHidden" type="checkbox">意见隐藏<!-- 意见隐藏 -->
+	</label></div>
+	<div id="showToIdSpan" class="common_txtbox common_txtbox_dis clearfix" style="display: none;">
+	<label class="margin_r_10 left title">不包括:</label><!-- 不包括 -->
+	<div class="common_txtbox_wrap"><input id="showToIdInput_txt" name="showToIdInput_txt" class="comp" comp="type:&quot;selectPeople&quot;,showBtn:false,panels:&quot;Department,Team,Post,Outworker,RelatePeople&quot;,minSize:0,selectType:&quot;Member&quot;,showFlowTypeRadio: false" value="&lt;点击选择公开人&gt;" comptype="selectPeople" readonly="readonly" _inited="1" disabled="disabled" _da="true" type="text"><input id="showToIdInput" name="showToIdInput" disabled="disabled" _da="true" type="hidden"><!-- 点击选择公开人 -->
+	</div>
+	</div>
+	</div>
+ 
+	<div id="trackDiv_detail" class="common_radio_box common_checkbox_box clearfix margin_t_10">
+	<label class="margin_r_10 hand" for="isTrack" id="isTrackLable"> <input id="isTrack" class="radio_com" name="isTrack" value="0" type="checkbox">跟踪<!-- 跟踪 -->
+	</label> <label class="margin_r_10 disabled_color hand" for="trackRange_all" id="label_all"> <input id="trackRange_all" class="radio_com" name="trackRange" value="1" disabled="disabled" type="radio">全部<!-- 全部 -->
+	</label> <label class="margin_r_10 disabled_color hand" for="trackRange_members" id="label_members"> <input id="trackRange_members" class="radio_com" name="trackRange" value="0" disabled="disabled" type="radio">指定人<!-- 指定人 -->
+	</label> <input id="zdgzry" name="zdgzry" value="" type="hidden">
+	</div>
+  
+	<div class="clearfix margin_t_10 nodePerm" baseaction="Archive" style="display: block;">
+	<div class="common_checkbox_box clearfix"><label class="margin_r_10 hand" for="pigeonhole" id="pigeonholeLable"> <input id="pigeonhole" class="radio_com" name="pigeonhole" value="0" type="checkbox">处理后归档<!-- 处理后归档 -->
+	<input id="pigeonholeValue" name="pigeonholeValue" type="hidden">
+	</label></div>
+	</div>
+</div>
+<div class="hr_heng margin_t_10">&nbsp;</div>
+<div class="clearfix margin_t_10 right" id="_dealDiv">
+<div align="right"> 
+	<div class="left"><a id="_dealSubmit" class="common_button common_button_emphasize margin_r_5">提交</a>
+	</div>
+    
+	<div class="left"><a id="_dealSaveDraft" class="common_button common_button_gray margin_r_5">存为草稿</a></div>
+ 
+	<div class="left"><a id="_dealSaveWait" class="common_button common_button_gray">暂存待办</a></div>
+	<!-- 暂存待办 -->
+</div>
+</div>
+</div>
+<div id="comment_deal" class="display_none">
+	<input id="id" value="" type="hidden"> 
+	<input id="pid" value="0" type="hidden"> 
+	<input id="clevel" value="1" type="hidden">
+	<input id="path" value="pc" type="hidden">
+	<input id="moduleType" value="1" type="hidden"> 
+	<input id="moduleId" value="-2977321418646535714" type="hidden"> 
+	<input id="extAtt1" type="hidden"> 
+	<input id="ctype" value="0" type="hidden"> 
+	<input id="content" type="hidden"> 
+	<input id="hidden" type="hidden"> 
+	<input id="showToId" type="hidden"> 
+	<input id="affairId" value="-7446790413358313791" type="hidden">
+	<input id="relateInfo" type="hidden"> 
+	<input id="pushMessage" value="false" type="hidden"> 
+	<input id="pushMessageToMembers" type="hidden">
+</div>
+
+<script type="text/javascript">
+  var nodePerm_baseActionList = ["Track","Comment","ContinueSubmit","Archive","Opinion","CommonPhrase","UploadAttachment","Print"];
+  var nodePerm_commonActionList = ["AddNode","Forward","Transform","SpecifiesReturn"];
+  var nodePerm_advanceActionList = ["Return","Terminate","Infom","JointSign","RemoveNode","Edit","allowUpdateAttachment"];
+  var subState = "12";
+  var state = '3';
+  var inInSpecialSB = '';
+  var affairId = "-7446790413358313791";
+  var templeteId = "";
+  var processId = "-4484161617760402444";
+  var summaryId= '-2977321418646535714';
+  var bodyType = '10';
+
+  var wfItemId = '697152461152404250';
+  var wfProcessId = '-4484161617760402444';
+  var wfActivityId = '15215041254420';
+  var currUserId = '7298597487386510009';
+  var wfCaseId = '2854661639005552948';
+  var moduleTypeName = 'collaboration';
+  var flowPermAccountId = '-9095585739310150737';
+  //var affairId = '-7446790413358313791';
+  var nodePolicy = 'collaboration';
+  var currLoginAccount= '-9095585739310150737';
+  //var processId = '-4484161617760402444';
+  var collEnumKey = "1";
+  var forwardEventSubject = "4111808680(CS2800)(由马巍原发)";
+  var commonActionNodeCount = '4';
+  var startCfg = "true";
+  var canModifyWorkFlow = 'true';
+  var startMemberId = '-2147742594505095138';
+  var affairMemberId = '7298597487386510009';
+  var isNewfolw = 'false';
+  var workItemId = '697152461152404250';
+  var trackMember="";
+  var commentId = '';
+  var isTemplete = 'false'=='true'? true : false;
+  var displayIds = '';
+  var displayNames = '';
+  
+  $.content.getContentDealDomains = function(domains) {
+    if (!domains)
+      domains = [];
+    var commentVal = $("#content_deal_comment").val();
+    if($.trim(commentVal) != "" && commentVal.length > 2000) {
+        $.alert("处理意见不能超过2000字!");
+        enableOperation();
+        setButtonCanUseReady();
+        return false;
+    }
+    $("#comment_deal #content").val(commentVal);
+    
+    $("#comment_deal #extAtt1").val($("input[name='attitude']:checked").val());
+    
+    $("#comment_deal #hidden").val($("#isHidden").attr('checked')=="checked");
+    $("#comment_deal #showToId").val($("#showToIdInput").val());
+    $("#content_deal_attach").html("");
+    saveAttachmentPart("content_deal_attach");
+    $("#comment_deal #relateInfo").val($.toJSON($("#content_deal_attach").formobj()));
+    domains.push("comment_deal");
+    return domains;
+  };
+</script>
+
+        </div><span class="spiret spiret_R" id="eastSp_layout" style="cursor:e-resize;z-index:3;width:7px;height:673px;left:705px;top:0px;"><table valign="middle" style="display:table;margin-top:309.5px" width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td><span class="spiretBarHidden" style="display: none;"><em></em></span><span class="spiretBarHidden2"><em></em></span></td></tr></tbody></table></span>
+        <div class="layout_center over_hidden h100b" id="center" style="height: 669px; left: 0px; top: 0px; width: 703px; border-width: 1px; z-index: 1; display: block;">
+                
+                
+                <!--查看区域-->
+                <div class="h100b stadic_layout">
+                    <div class="stadic_head_height" id="summaryHead">
+                        <!--标题+附件区域-->
+                        <div id="colSummaryData" class="newinfo_area title_view">
+                            <input value="" id="contentstr" name="contentstr" type="hidden">
+                            <input id="summaryId" value="-2977321418646535714" type="hidden">
+                            <input name="isDeleteSupervisior" id="isDeleteSupervisior" value="false" type="hidden">
+                            <input id="processId" name="processId" value="-4484161617760402444" type="hidden">
+                            <input id="subject" name="subject" value="4111808680(CS2800)" type="hidden">
+                            <input id="createDate" name="createDate" value="2018-03-20 08:00:18" type="hidden">
+                            <input id="canDeleteORarchive" name="canDeleteORarchive" value="" type="hidden">
+                            <input id="bodyType" name="bodyType" value="10" type="hidden">
+                            <input id="modifyFlag" name="modifyFlag" value="0" type="hidden">
+                            <input id="attModifyFlag" name="attModifyFlag" value="0" type="hidden"><!-- 修改附件标志位 -->
+                            <input id="flowPermAccountId" name="flowPermAccountId" value="-9095585739310150737" type="hidden">
+                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+                                    <td width="6%">
+                                        <div class="title_area">标<span class="w1em"></span><span class="w1em"></span>题:</div><!-- 标题 -->
+                                    </td>
+                                    <td>
+                                        
+                                        <b>4111808680(CS2800)(由马巍原发)</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="title_area">发<span class="align_center w2em text_indent0">起</span>人:</div><!-- 发起人 -->
+                                    </td>
+                                    <td><a href="#" id="panleStart">吴振宁</a> (<span id="">2018-03-20 08:00</span>)</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                    <div id="attachmentTRshowAttFile" style="display: none;">
+                                          <div style="float:left;" class="margin_l_10 margin_r_5"><span style="color: #717171">附<span class="w1em"></span><span class="w1em"></span>件: </span> (<span id="attachmentNumberDivshowAttFile"></span>) </div>
+                                          <div id="attFileDomain" isgrid="true" class="comp" comp="type:'fileupload',attachmentTrId:'showAttFile',canFavourite:true,applicationCategory:'1',canDeleteOriginalAtts:false" attsdata="[]" comptype="fileupload" style="display: none;"> </div><div id="attachmentAreashowAttFile" style="overflow: auto;;height: auto;" requrl="/seeyon/fileUpload.do?type=0&amp;applicationCategory=1&amp;extensions=&amp;maxSize=&amp;isEncrypt=&amp;popupTitleKey=&amp;attachmentTrId=showAttFile"></div>
+                                    </div>
+                                   </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        
+                                        <div id="attachment2TRDoc1" style="display: none;">
+                                            <div style="float:left;" class="margin_l_10 margin_r_5"><span style="color: #717171">关联文档: </span> (<span id="attachment2NumberDivDoc1"></span>)</div>
+                                            <div style="float: right;" id="assDocDomain" iscrid="true" class="comp" comp="type:'assdoc',attachmentTrId:'Doc1',applicationCategory:'1',referenceId:'',modids:1,canDeleteOriginalAtts:false" attsdata="[]" comptype="assdoc"></div><div id="attachment2AreaDoc1" poi="Doc1" requesturl="/seeyon/ctp/common/associateddoc/assdocFrame.do?isBind=1&amp;referenceId=&amp;applicationCategory=1&amp;poi=Doc1" style="overflow: auto;max-height: 36pxmin-height: 20px;"></div>
+                                        </div>
+                                        <div id="attActionLogDomain" style="display: none;"></div>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                         <!--命令按钮区域-->
+                        <div class="orderBt right margin_r_10 margin_t_10 align_center">
+                             <div style="position:absolute; right:50px; top:125px; width:220px; z-index:200; background-color: #ececec;display:none;overflow:auto;text-align:left;border: 1px #dadada solid; padding: 5px;" id="processAdvanceDIV">
+                                <input id="searchText" onkeypress="enterKeySearch(event)" name="searchText" onfocus="checkDefSubject(this, true)" onblur="checkDefSubject(this, false)" deaultvalue="&lt;输入处理人姓名&gt;" value="&lt;输入处理人姓名&gt;" type="text">
+                                <span class="ico16 arrow_1_b" onclick="javascript:doSearch('forward')"></span>
+                                <span class="ico16 arrow_1_t" onclick="javascript:doSearch('back')"></span>
+                                <span class="ico16 close_16" onclick="javascript:advanceViews(false)"></span>
+                             </div> 
+                             
+                             <!-- 流程最大化，意见查找，附件列表，收藏，新建会议，即时交流，明细日志，属性状态，打印，督办
+                              -->
+                             
+                             
+                             
+                             
+                             
+                             <!-- 流程最大化 -->                        
+                             
+                             
+                                <span class="hand left" id="processMaxFlag" title="流程最大化"><span class="ico16 process_max_16 margin_lr_5 "></span>流程最大化</span>
+                             
+                             
+                             <!-- 意见查找 -->
+                             
+                             
+                                <span class="hand left" onclick="javascript:advanceViews(null,this)" title="查找处理人回复"><span class="ico16 search_16 margin_lr_5"></span>意见查找</span>
+                             
+                             
+                             <!-- 附件列表 -->
+                             
+                                
+                                    <span class="hand left" onclick="javascript:showOrCloseAttachmentList(true)"><span class="ico16 affix_16 margin_lr_5" title="查看附件列表"></span>附件列表</span>
+                                
+                                
+                             
+                             
+                             
+                             
+                             	
+	                                
+	                                 
+	                                    <span class="hand left " id="favoriteSpan-7446790413358313791"><span class="ico16 unstore_16 margin_lr_5 " title="收藏"></span>收藏</span>
+	                                    <span class="hand left display_none" id="cancelFavorite-7446790413358313791"><span class="ico16 stored_16 margin_lr_5" title="取消收藏"></span>取消收藏</span>
+	                                 
+	                                 
+                             	
+                             
+                             <!-- 跟踪 -->
+                             
+                                
+                             <!-- 新建会议  & 及时交流  在已发已办中始终都有，不管流程结束与否，在文档中心等其他都地方没有 -->                               
+                             
+                                 <!-- 新建会议 -->
+                                 
+                                 
+                                 
+                                     <input id="createMeetingFlag" type="hidden">    
+                                 
+                                 <!-- 即时交流 -->
+                                 
+                                 
+                                 
+                                     <input id="timelyExchangeFlag" type="hidden">    
+                                 
+                             
+                             
+                             <!-- 表单授权,已发表单或者已发归档的表单可以设置表单首选 -->
+                             
+                             <!-- 属性状态 -->                                      
+                             
+                             
+                             
+                                  <input id="attributeSettingFlag" type="hidden">    
+                             
+                             <!-- 明细日志 -->                                 
+                             
+                             
+                             
+                                 <input id="showDetailLogFlag" type="hidden">    
+                              
+                             
+                             <!-- 打印 -->
+                             
+                                
+                                
+                                
+                                      <input id="printFlag" type="hidden">    
+                                 
+                             
+                             
+                             
+                                  
+                                  
+                              
+                             
+                                <span id="caozuo_more" class="ico16 arrow_2_b left margin_l_5"></span>
+                             
+                        </div>
+                        <!--视图切换区域-->
+                        <div class="common_tabs clearfix margin_t_5  margin_l_10">
+                            <ul class="left">
+                                <!-- 正文 -->
+                                <li id="content_view_li" class="current"><a onclick="showContentView()" class="border_b">正文</a></li>
+                                <!-- 流程 -->
+                                <li id="workflow_view_li"><a onclick="refreshWorkflow()" class="last_tab border_b">流程</a></li>
+                            </ul>
+                        </div>
+                        <div class="padding_l_10 padding_t_5 hidden" id="show_edit_workFlow">
+                            
+                            <a id="edit_workFlow" class="common_button common_button_gray">修改流程</a>
+                        </div>
+                   </div>
+                   <div id="content_workFlow" class="stadic_layout_body stadic_body_top_bottom processing_view align_center border_t" style="width: 100%; visibility: visible; top: 90px;">
+                        <iframe style="display:none;position:absolute;top:0px;right:20px;width:650px;z-index:200;height: 180px" id="attachmentList" class="over_auto align_right" src="collaboration_002.htm" frameborder="0">
+                        </iframe> 
+                        <iframe id="iframeright" class="hidden bg_color_white" src="collaboration_data_002/collaboration_data/a.htm" scrolling="no" height="100%" frameborder="0" width="100%"></iframe>
+                        
+                        <iframe id="componentDiv" name="componentDiv" src="/seeyon/collaboration/collaboration.do?method=componentPage&amp;affairId=-7446790413358313791&amp;rightId=&amp;canFavorite=true&amp;readonly=false&amp;openFrom=listPending&amp;docResId=&amp;docId=&amp;baseObjectId=&amp;baseApp=&amp;fromEditor=&amp;eventId=&amp;relativeProcessId=&amp;processId=" height="100%" frameborder="0" width="100%"></iframe>
+                        
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var _wfctxPath = '/seeyon';
+  var _ctxPath = '/seeyon';
+  var _wfcurrentUserId = '7298597487386510009'+'';
+</script>
+<script type="text/javascript" src="collaboration_data_002/workflowDesigner_ajax.js"></script>
+
+<script type="text/javascript" src="collaboration_data_002/workflowDesigner_api-min.js"></script>
+
+
+<div id="workflow_definition" style="display: none">
+    <input id="process_desc_by" type="hidden">
+    <input id="process_xml" type="hidden">
+    <input id="readyObjectJSON" type="hidden">
+    <input id="workflow_data_flag" name="workflow_data_flag" value="WORKFLOW_SEEYON" type="hidden">
+    <input id="process_info" type="hidden">
+    <input id="process_info_selectvalue" type="hidden">
+    <input id="process_subsetting" type="hidden">
+    <input id="moduleType" value="1" type="hidden">
+    <input id="workflow_newflow_input" type="hidden">
+    <input id="process_rulecontent" type="hidden">
+    <input id="workflow_node_peoples_input" type="hidden">
+    <input id="workflow_node_condition_input" type="hidden">
+    <input id="processId" value="-4484161617760402444" type="hidden">
+    <input id="caseId" value="2854661639005552948" type="hidden">
+    <input id="subObjectId" value="697152461152404250" type="hidden">
+    <input id="currentNodeId" value="15215041254420" type="hidden">
+    <input id="process_message_data" type="hidden">
+</div>
+<script type="text/javascript">
+  $.content.getWorkflowDomains = function(moduleType, domains) {
+    if (!domains)
+      domains = [];
+    $("#workflow_definition #moduleType").val(moduleType);
+    domains.push("workflow_definition");
+    return domains;
+  };
+
+</script>
+                    </div>
+                    
+                         <input id="zdgzry" name="zdgzry" type="hidden">
+                         <div id="htmlID" class="hidden">
+                        <div class="padding_tb_10 padding_l_10">
+                            
+                            <span class="valign_m">跟踪:</span>
+                            <select id="gz" class="valign_m">
+                                <option value="1" selected="selected">是</option>
+                                <option value="0">否</option>
+                            </select>
+                            <div id="gz_ren" class="common_radio_box clearfix margin_t_10">
+                                <label for="radio1" class="margin_r_10 hand">
+                                    <input value="0" id="radio1" name="option" class="radio_com" type="radio">全部</label><!-- 全部 -->
+                                <label for="radio4" class="margin_r_10 hand">
+                                    <input value="0" id="radio4" name="option" class="radio_com" type="radio">指定人</label><!-- 指定人 -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <input name="can_Track" id="can_Track" value="1" type="hidden">
+                    <input name="trackType" id="trackType" value="0" type="hidden">
+            </div>  
+        </div>
+    </div>
+    
+
+
+<script>
+$(function(){
+    if ($.browser.msie){
+        if($.browser.version < 7){
+            $("#componentDiv").height($("#content_workFlow").height());
+            $(window).resize(function(){
+                $("#componentDiv").height($("#content_workFlow").height());
+            })
+        }
+    }
+})
+</script><div id="menuSimple_619141257" class="menu_simple_box" style="z-index: 20001; left: -146px; top: 21px;"><div class="menu_simple"><a id="menuSimple_item561952456" title="" class="  text_overflow"><span class="ico16 margin_r_5 ico16"></span>新建会议</a><a id="menuSimple_item499906835" title="" class="  text_overflow"><span class="ico16 margin_r_5 communication_16"></span>即时交流</a><a id="menuSimple_item59951482" title="" class="  text_overflow"><span class="ico16 margin_r_5 attribute_16"></span>属性状态</a><a id="menuSimple_item72645707" title="" class="  text_overflow"><span class="ico16 margin_r_5 view_log_16"></span>明细日志</a><a id="menuSimple_item503771422" title="" class="  text_overflow"><span class="ico16 margin_r_5 print_16"></span>打印</a></div></div><iframe id="menuSimple_619141257_iframe_mask" style="display: none; z-index: 20000; position: absolute; top: 21px; left: -146px; width: 164px; height: 124px;" frameborder="0"></iframe><div id="menuSimple_549909747" class="menu_simple_box" style="z-index: 20001; left: 949px; top: 99.7833px; display: none;"><div class="menu_simple"><a id="_dealStepBack" title="" advanceaction="Return" class="nodePerm" style="width: 80px;"><span class="ico16 margin_r_5 toback_16"></span>回退</a><a id="_dealStepStop" title="" advanceaction="Terminate" class="nodePerm" style="width: 80px;"><span class="ico16 margin_r_5 termination_16"></span>终止</a><a id="_dealAddInform" title="" advanceaction="Infom" class="nodePerm" style="width: 80px;"><span class="ico16 margin_r_5 notification_16"></span>知会</a><a id="_dealAssign" title="" advanceaction="JointSign" class="nodePerm" style="width: 80px;"><span class="ico16 margin_r_5 current_countersigned_16"></span>当前会签</a><a id="_dealDeleteNode" title="" advanceaction="RemoveNode" class="nodePerm" style="width: 80px;"><span class="ico16 margin_r_5 signafalse_16"></span>减签</a><a id="_dealEditContent" title="" advanceaction="Edit" class="nodePerm" style="width: 80px;"><span class="ico16 margin_r_5 modify_text_16"></span>修改正文</a><a id="_dealUpdateAttachment" title="" advanceaction="allowUpdateAttachment" class="nodePerm" style="width: 80px;"><span class="ico16 margin_r_5 editor_16"></span>修改附件</a></div></div><iframe id="menuSimple_549909747_iframe_mask" style="z-index: 20000; position: absolute; top: 99.7833px; left: 949px; width: 80px; height: 172px; display: none;" frameborder="0"></iframe><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script><script>
+function getAid() {
+  var ws=window.location.href.split("&");
+  var last=ws[ws.length-1];
+  var ss=last.split("=");
+  var theid=ss[ss.length-1];
+  console.log(theid);
+}   
+console.log(getAid());
+function downfujian() {
+  var table=$("#listPending");
+  //console.log(table);
+  var rows=table.find("tr");
+  for(var i=0;i<rows.length;i++){
+     var row=rows[i];
+     //console.log(row);
+     var subject=$(row).find("td")[1];
+     
+     var span=$(subject).find("span");
+     if(span.length>0){
+          if(span.attr("class").indexOf("affix_16")!=-1){
+            console.log(subject.innerText);
+          }
+     }
+  }
+}
+var beastImage = document.getElementById("madiv1");
+console.log(beastImage);
+if (!beastImage) {
+  beastImage = document.createElement("div");
+  beastImage.setAttribute("id", "madiv1");
+  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  var existingItem = document.body.firstElementChild;
+  document.body.insertBefore(beastImage, existingItem);
+} else {
+  beastImage.innerHTML = "";
+}
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "下载附件");
+newe.onclick = downfujian;
+
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+    </script></body></html>
