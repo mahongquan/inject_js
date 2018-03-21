@@ -1,4 +1,64 @@
-//console.log(window.location.href);
+console.log(window.location.href);
+// function addModal() {
+//     window.spawn = window.spawn || function(gen) {
+//         function continuer(verb, arg) {
+//             var result;
+//             try {
+//                 result = generator[verb](arg);
+//             } catch (err) {
+//                 return Promise.reject(err);
+//             }
+//             if (result.done) {
+//                 return result.value;
+//             } else {
+//                 return Promise.resolve(result.value).then(onFulfilled, onRejected);
+//             }
+//         }
+//         var generator = gen();
+//         var onFulfilled = continuer.bind(continuer, 'next');
+//         var onRejected = continuer.bind(continuer, 'throw');
+//         return onFulfilled();
+//     };
+//     window.showModalDialog = window.showModalDialog || function(url, arg, opt) {
+//         url = url || ''; //URL of a dialog
+//         arg = arg || null; //arguments to a dialog
+//         opt = opt || 'dialogWidth:300px;dialogHeight:200px'; //options: dialogTop;dialogLeft;dialogWidth;dialogHeight or CSS styles
+//         var caller = showModalDialog.caller.toString();
+//         var dialog = document.body.appendChild(document.createElement('dialog'));
+//         dialog.setAttribute('style', opt.replace(/dialog/gi, ''));
+//         dialog.innerHTML = '<a href="#" id="dialog-close" style="position: absolute; top: 0; right: 4px; font-size: 20px; color: #000; text-decoration: none; outline: none;">&times;</a><iframe id="dialog-body" src="' + url + '" style="border: 0; width: 100%; height: 100%;"></iframe>';
+//         document.getElementById('dialog-body').contentWindow.dialogArguments = arg;
+//         document.getElementById('dialog-close').addEventListener('click', function(e) {
+//             e.preventDefault();
+//             dialog.close();
+//         });
+//         dialog.showModal();
+//         //if using yield
+//         if(caller.indexOf('yield') >= 0) {
+//             return new Promise(function(resolve, reject) {
+//                 dialog.addEventListener('close', function() {
+//                     var returnValue = document.getElementById('dialog-body').contentWindow.returnValue;
+//                     document.body.removeChild(dialog);
+//                     resolve(returnValue);
+//                 });
+//             });
+//         }
+//         //if using eval
+//         var isNext = false;
+//         var nextStmts = caller.split('\n').filter(function(stmt) {
+//             if(isNext || stmt.indexOf('showModalDialog(') >= 0)
+//                 return isNext = true;
+//             return false;
+//         });
+//         dialog.addEventListener('close', function() {
+//             var returnValue = document.getElementById('dialog-body').contentWindow.returnValue;
+//             document.body.removeChild(dialog);
+//             nextStmts[0] = nextStmts[0].replace(/(window\.)?showModalDialog\(.*\)/g, JSON.stringify(returnValue));
+//             eval('{\n' + nextStmts.join('\n'));
+//         });
+//         throw 'Execution stopped until showModalDialog is closed';
+//     };
+// }
 const scriptLoader = ({src, innerHTML}) => {
     if (src) {
         return new Promise((resolve, reject) => {
@@ -243,39 +303,26 @@ function getAid() {
   var theid=ss[ss.length-1];
   console.log(theid);
 }   
-console.log(getAid());
-function downfujian() {
-  var table=$("#listPending");
-  //console.log(table);
-  var rows=table.find("tr");
-  for(var i=0;i<rows.length;i++){
-     var row=rows[i];
-     //console.log(row);
-     var subject=$(row).find("td")[1];
-     
-     var span=$(subject).find("span");
-     if(span.length>0){
-          if(span.attr("class").indexOf("affix_16")!=-1){
-            console.log(subject.innerText);
-          }
-     }
-  }
+console.log("updateContentPage");
+function changeEdit() {
+  //var table=$("#exitDialog_a");
+  //table.click();
+
+  console.log(window);
+  console.log(window.frameElement);
+  //window.parentDialogObj["dialogUpdate"].close();
+  // setTimeout(function(){
+  //     var ext=$("#ok_msg_btn_first");
+  //     console.log(ext);
+  //     ext.trigger("click");
+  // },2000);
 }
-//定义window.showModalDialog如果它不存在    
-//console.log(window.showModalDialog);
         if(window.showModalDialog == undefined){    
-            window.showModalDialog = function(url){   
-                // if(window.hasOpenWindow){    
-                //     alert("您已经打开了一个窗口！请先处理它");//避免多次点击会弹出多个窗口    
-                //     window.myNewWindow.focus();    
-                // }    
-                //window.hasOpenWindow = true;    
-                window.myNewWindow = window.open(url);    
-            }    
+             window.showModalDialog = function(url){   
+                 window.open(url);    
+             }    
+            //addModal();
         }   
-        function showModal(){  
-            window.showModalDialog("http://www.baidu.com");  
-        }  
 // console.log(window);
 // console.log(window.showModalDialog);
 var beastImage = document.getElementById("madiv1");
@@ -292,8 +339,8 @@ if (!beastImage) {
 
 var newe = document.createElement("button");
 beastImage.appendChild(newe);
-newe.insertAdjacentText("afterBegin", "下载附件");
-newe.onclick = downfujian;
+newe.insertAdjacentText("afterBegin", "修改正文");
+newe.onclick = changeEdit;
 
 var newe = document.createTextNode(window.location.href);
 beastImage.appendChild(newe);
@@ -319,7 +366,8 @@ function getAid() {
   var ss=last.split("=");
   var theid=ss[ss.length-1];
   console.log(theid);
-}   
+}  
+console.log("summary"); 
 console.log(getAid());
 function downfujian() {
   var table=$("#listPending");
@@ -501,8 +549,8 @@ function setbiaoti() {
   iframes.val(tofind);
 
 }
+
 var beastImage = document.getElementById("madiv1");
-console.log(beastImage);
 if (!beastImage) {
   beastImage = document.createElement("div");
   beastImage.setAttribute("id", "madiv1");
@@ -532,28 +580,29 @@ beastImage.appendChild(newe);
 }//else
 else{
   co(function*() {
-   console.log("else load");
-// 加载脚本
-//yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
-//yield scriptLoader({ src: '//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js' });
-
-// 检查jquery和jquery.cookie是否顺利注入。注意检查代码也要注入到页面环境
 scriptLoader({
     innerHTML: `
-console.log("inject================")
-var beastImage = document.getElementById("madiv1");
-console.log(beastImage);
-if (!beastImage) {
-  beastImage = document.createElement("div");
-  beastImage.setAttribute("id", "madiv1");
-  beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
-  var existingItem = document.body.firstElementChild;
-  document.body.insertBefore(beastImage, existingItem);
-} else {
-  beastImage.innerHTML = "";
-}
-var newe = document.createTextNode(window.location.href);
-beastImage.appendChild(newe);
+ console.log("here==============");
+ console.log(document);
+ if(document){
+    var beastImage = document.getElementById("madiv1");
+    console.log(beastImage);
+    if (!beastImage) {
+      beastImage = document.createElement("div");
+      beastImage.setAttribute("id", "madiv1");
+      beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+      var existingItem = document.body.firstElementChild;
+      if (existingItem){
+        console.log(existingItem);
+        document.body.insertBefore(beastImage, existingItem);
+      }
+    } else {
+      beastImage.innerHTML = "";
+    }
+    var newe = document.createTextNode(window.location.href);
+    beastImage.appendChild(newe);
+  }
+console.log("inject finish=============");
     `,
 });//loader
 });//co
