@@ -259,6 +259,9 @@ function changeEdit() {
   //     ext.trigger("click");
   // },2000);
 }
+function getdata(){
+  console.log(window.CKEDITOR.currentInstance.getData());
+}
         if(window.showModalDialog == undefined){    
              window.showModalDialog = function(url){   
                  window.open(url);    
@@ -289,6 +292,14 @@ newe.insertAdjacentText("afterBegin", "修改正文");
 newe.onclick = changeEdit;
 var newe = document.createTextNode(window.location.href);
 beastImage.appendChild(newe);
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "getdata");
+newe.onclick = getdata;
+var newe = document.createTextNode(window.location.href);
+beastImage.appendChild(newe);
+
 } + ')();';
 scriptLoader({
     innerHTML: shim
@@ -665,6 +676,7 @@ else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/fileUpload.d
   });//co
 }//else
 else{
+  //
   co(function*() {
      console.log("else load");
     //  if(window.AjaxDataLoader){
