@@ -1,3 +1,4 @@
+function me(){
 console.log(window.location.href);
 const scriptLoader = ({src, innerHTML}) => {
     if (src) {
@@ -231,6 +232,14 @@ newe.onclick = chazhao;
 }
 //http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=updateContentPage
 else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=updateContentPage")==0){
+  console.log("updateContentPage,,,");
+  //console.log(window.document.body.attributes["class"].indexOf("cke")>=0);
+  //console.log(window.document.body.attributes["class"]);
+  if (window.document.body.attributes["class"].value.indexOf("cke")>=0)
+  {
+    return
+  }
+  
   co(function*() {
 // 加载脚本
 //yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
@@ -245,7 +254,6 @@ var shim = '(' + function() {
   var theid=ss[ss.length-1];
   console.log(theid);
 }   
-console.log("updateContentPage");
 function changeEdit() {
   //var table=$("#exitDialog_a");
   //table.click();
@@ -260,8 +268,28 @@ function changeEdit() {
   // },2000);
 }
 function getdata(){
-  console.log(window.CKEDITOR.currentInstance.getData());
+  if(window.CKEDITOR.currentInstance){
+      window.currentInstance=window.CKEDITOR.currentInstance;
+  }
+  if(window.currentInstance){
+       console.log(window.currentInstance.getData()); 
+  }
+  // var content = replaceAll($.content.getContent(), 'comp', '');
+  // operationObj[0].componentDiv.$.content.setContent(content);
+  // operationObj[0].setFlagto1();
+  // window.parentDialogObj["dialogUpdate"].close();
+  console.log(operationObj[0].componentDiv.$.content);
 }
+function setdata(){
+  if(window.CKEDITOR.currentInstance){
+      window.currentInstance=window.CKEDITOR.currentInstance;
+  }
+  if(window.currentInstance){
+       window.currentInstance.setData("hello ");
+  }
+  
+}
+setTimeout(getdata,2000);
         if(window.showModalDialog == undefined){    
              window.showModalDialog = function(url){   
                  window.open(url);    
@@ -269,8 +297,7 @@ function getdata(){
             //addModal();
         }   
         console.log(window);
-        if(window.AjaxDataLoader){}
-        else{return}
+
 
 // console.log(window);
 // console.log(window.showModalDialog);
@@ -290,13 +317,17 @@ var newe = document.createElement("button");
 beastImage.appendChild(newe);
 newe.insertAdjacentText("afterBegin", "修改正文");
 newe.onclick = changeEdit;
-var newe = document.createTextNode(window.location.href);
-beastImage.appendChild(newe);
 
 var newe = document.createElement("button");
 beastImage.appendChild(newe);
 newe.insertAdjacentText("afterBegin", "getdata");
 newe.onclick = getdata;
+
+var newe = document.createElement("button");
+beastImage.appendChild(newe);
+newe.insertAdjacentText("afterBegin", "setdata");
+newe.onclick = setdata;
+
 var newe = document.createTextNode(window.location.href);
 beastImage.appendChild(newe);
 
@@ -364,7 +395,7 @@ var newe = document.createTextNode(window.location.href);
 beastImage.appendChild(newe);
 } + ')();';
 scriptLoader({
-    innerHTML:shim
+    innerHTML:"console.log('"+window.location.href+"');"+shim
 });//loader
 });//co
 
@@ -677,38 +708,40 @@ else if(window.location.href.indexOf("http://oa.ncschina.com/seeyon/fileUpload.d
 }//else
 else{
   //
-  co(function*() {
-     console.log("else load");
-    //  if(window.AjaxDataLoader){
+  // co(function*() {
+  //    console.log("else load");
+  //   //  if(window.AjaxDataLoader){
 
-    //  }
-    //  else{
-    //   return
-    // }
-    // 加载脚本
-    //yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
-    //yield scriptLoader({ src: '//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js' });
+  //   //  }
+  //   //  else{
+  //   //   return
+  //   // }
+  //   // 加载脚本
+  //   //yield scriptLoader({ src: '//cdn.bootcss.com/jquery/3.2.1/jquery.js' });
+  //   //yield scriptLoader({ src: '//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js' });
 
-    // 检查jquery和jquery.cookie是否顺利注入。注意检查代码也要注入到页面环境
-    var shim = '(' + function() {
-        console.log("inject================")
-        var beastImage = document.getElementById("madiv1");
-        console.log(beastImage);
-        if (!beastImage) {
-          beastImage = document.createElement("div");
-          beastImage.setAttribute("id", "madiv1");
-          beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
-          var existingItem = document.body.firstElementChild;
-          document.body.insertBefore(beastImage, existingItem);
-        } else {
-          beastImage.innerHTML = "";
-        }
-        var newe = document.createTextNode(window.location.href);
-        beastImage.appendChild(newe);
-    } + ')();';
-    scriptLoader({
-        innerHTML: shim
-    });//loader
-  });//co
+  //   // 检查jquery和jquery.cookie是否顺利注入。注意检查代码也要注入到页面环境
+  //   var shim = '(' + function() {
+  //       console.log("inject================")
+  //       var beastImage = document.getElementById("madiv1");
+  //       console.log(beastImage);
+  //       if (!beastImage) {
+  //         beastImage = document.createElement("div");
+  //         beastImage.setAttribute("id", "madiv1");
+  //         beastImage.setAttribute("style", "background:#AAAAAA"); // style="font-size:14px;width:600px;background-color:#FF0066
+  //         var existingItem = document.body.firstElementChild;
+  //         document.body.insertBefore(beastImage, existingItem);
+  //       } else {
+  //         beastImage.innerHTML = "";
+  //       }
+  //       var newe = document.createTextNode(window.location.href);
+  //       beastImage.appendChild(newe);
+  //   } + ')();';
+  //   scriptLoader({
+  //       innerHTML: shim
+  //   });//loader
+  // });//co
 }//else
 
+}
+me();
