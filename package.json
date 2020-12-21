@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "p": "prettier --single-quote --trailing-comma es5 --write content_scripts/content_scripts.js"
+    "p": "prettier  --single-quote --trailing-comma es5 --write content_scripts/oa.js"
   },
   "dependencies": {
     "web-ext": "^5.4.1"

@@ -11,10 +11,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://oa.ncschina.com/seeyon/*"],
+      "matches": ["*://192.168.1.1/*"],
       "js": [
         "/libs/co.min.js",
-        "/content_scripts/oa.js"
+        "/content_scripts/content_script.js"
       ],
       "all_frames": true,
       "run_at": "document_idle"
