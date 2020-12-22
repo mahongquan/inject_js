@@ -1,4 +1,5 @@
 function me() {
+  console.log("me")
   console.log(window.location.href);
   const scriptLoader = ({ src, innerHTML }) => {
     if (src) {
@@ -21,7 +22,7 @@ function me() {
   };
   //console.log();
   if (
-    window.location.href.indexOf('http://oa.ncschina.com/seeyon/main.do') == 0
+    window.location.href.indexOf('http://10.0.108.90:888/seeyon/main.do') == 0
   ) {
     co(function* () {
       // 加载脚本
@@ -238,10 +239,10 @@ function me() {
       }); //loader
     }); //co
   }
-  //http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=updateContentPage
+  //http://10.0.108.90:888/seeyon/collaboration/collaboration.do?method=updateContentPage
   else if (
     window.location.href.indexOf(
-      'http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=updateContentPage'
+      'http://10.0.108.90:888/seeyon/collaboration/collaboration.do?method=updateContentPage'
     ) == 0
   ) {
     console.log('updateContentPage,,,');
@@ -349,10 +350,10 @@ function me() {
     }); //co
   } //else
 
-  //http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=summary
+  //http://10.0.108.90:888/seeyon/collaboration/collaboration.do?method=summary
   else if (
     window.location.href.indexOf(
-      'http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=summary'
+      'http://10.0.108.90:888/seeyon/collaboration/collaboration.do?method=summary'
     ) == 0
   ) {
     co(function* () {
@@ -420,7 +421,7 @@ function me() {
   //method=listPending&_resourceCode=F01_listPending
   else if (
     window.location.href.indexOf(
-      'http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=listPending'
+      'http://10.0.108.90:888/seeyon/collaboration/collaboration.do?method=listPending'
     ) == 0
   ) {
     co(function* () {
@@ -504,7 +505,7 @@ function me() {
     }); //co
   } //else
   else if (
-    window.location.href.indexOf('http://oa.ncschina.com/seeyon/index.jsp') == 0
+    window.location.href.indexOf('http://10.0.108.90:888/seeyon/index.jsp') == 0
   ) {
     co(function* () {
       // 加载脚本
@@ -547,10 +548,10 @@ function me() {
       }); //loader
     }); //co
   } //else
-  //http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=componentPage
+  //http://10.0.108.90:888/seeyon/collaboration/collaboration.do?method=componentPage
   else if (
     window.location.href.indexOf(
-      'http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=componentPage'
+      'http://10.0.108.90:888/seeyon/collaboration/collaboration.do?method=componentPage'
     ) == 0
   ) {
     co(function* () {
@@ -617,7 +618,7 @@ function me() {
   } //else
   else if (
     window.location.href.indexOf(
-      'http://oa.ncschina.com/seeyon/collaboration/collaboration.do?method=newColl'
+      'http://10.0.108.90:888/seeyon/collaboration/collaboration.do?method=newColl'
     ) == 0
   ) {
     co(function* () {
@@ -682,10 +683,10 @@ function me() {
       }); //loader
     }); //co
   } //else
-  //http://oa.ncschina.com/seeyon/fileUpload.do
+  //http://10.0.108.90:888/seeyon/fileUpload.do
   else if (
     window.location.href.indexOf(
-      'http://oa.ncschina.com/seeyon/fileUpload.do'
+      'http://10.0.108.90:888/seeyon/fileUpload.do'
     ) == 0
   ) {
     co(function* () {

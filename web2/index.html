@@ -1,0 +1,949 @@
+<html><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<!-- favicon.ico -->
+<link rel="shortcut icon" type="image/x-icon" href="/seeyon/common/images/A8/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/seeyon/portal/pagelayout/front_common.css?V=V7_1SP1_2019-10-10_1781899491">
+<link rel="stylesheet" type="text/css" href="/seeyon/portal/pagelayout/element/elements_1000000007.css?V=V7_1SP1_2019-10-10_1781899491">
+<link rel="stylesheet" type="text/css" href="/seeyon/portal/pagelayout/layout/layout02/layout02_c.css?V=V7_1SP1_2019-10-10_1781899491">
+<link rel="stylesheet" type="text/css" href="/seeyon/portal/pagelayout/skin/11.css?V=V7_1SP1_2019-10-10_1781899491">
+<link rel="stylesheet" type="text/css" href="/seeyon/portal/sections/tpl/sectiontpls.css?V=V7_1SP1_2019-10-10_1781899491">
+<link rel="stylesheet" type="text/css" href="/seeyon/portal/sections/skin/03.css?V=V7_1SP1_2019-10-10_1781899491">
+<link rel="stylesheet" type="text/css" href="/seeyon/skin/dist/components/components_layout.css?V=V7_1SP1_2019-10-10_1781899491">
+<link rel="stylesheet" type="text/css" href="/seeyon/skin/dist/components/components_theme_default.css?V=V7_1SP1_2019-10-10_1781899491">
+<link rel="stylesheet" type="text/css" href="/seeyon/portal/icons/default/fonts/plane/iconfont.css?V=V7_1SP1_2019-10-10_1781899491">
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="/seeyon/portal/sections/tpl/default-mediaForIE8.css?V=V7_1SP1_2019-10-10_1781899491">
+<![endif]-->
+<!--[if (!IE)|(gte IE 9)]><!-->
+<link rel="stylesheet" type="text/css" href="/seeyon/skin/dist/common/special-notIE8.css?V=V7_1SP1_2019-10-10_1781899491">
+<!--<![endif]-->
+
+<title>致远A8+协同管理软件 V7.1SP1, 吴振宁,您好!</title></head>
+<body onload="javascript:locationCurrentUser();javascript:initV5Portal();">
+<div id="madiv1" style="background:#aaaaaa"><button>登录</button><button>请假单</button><button>个人</button><button>新建</button><button>待办</button><button>已办</button><input id="mainput1" value="erp"><button>查找</button></div><div class="wrapper" id="wrapper"> 
+ <!-- 头部区 --> 
+ <div class="seeyon-portal-header" id="seeyonPortalHeader"> 
+  <!-- 左侧：logo、切换兼职单位 --> 
+  <div class="seeyonElementGroup logoNameConcurrent"> 
+   <!-- logo --> 
+   <div class="seeyonElement" id="logoAndName" data-tpl="tpl-wideLogo">     <div class="wideLogo" id="logoArea" onclick="javascript:refreshCurrentSpace()" style="margin-top: 0px; height: 50px;">         <div class="logo" style="height: 50px; line-height: 50px; overflow: hidden;">                                       <img src="/seeyon/portal/images/logo/50x50-2.png">                                   </div>         <div class="companyNames" style="padding-top: 16.5px; max-width: 510px;">                          <div class="cnName">                                  <span id="groupShortName" title="钢研纳克" class="groupName">钢研纳克</span>                                                   <span id="accountShortName" title="仪器中心" class="accountShortName">仪器中心</span>                              </div>                                   </div>     </div> </div> 
+   <!-- 切换兼职单位 --> 
+   <div class="seeyonElement" id="concurrentAccount" data-tpl="tpl-concurrentAccount"></div> 
+  </div> 
+  <div class="seeyonElementGroup spaceNavOperationBtn height-inherit lineHeight-inherit"> 
+   <!-- 右侧操作区 --> 
+   <div class="seeyonElement" id="systemOperationBtn" data-tpl="tpl-topRightsystemOperation">          <div class="topRightsystemOperation" id="topRightsystemOperationWidth">         <ul class="topIco">                       <li class="signBtn" title="签到" style="">           <span onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.onlineCardClick();" style="display: none">签到</span>           <i onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.onlineCardClick();" class="vportal vp-signIn" style=""></i>           <em></em>          </li>    <li class="appIco" title="应用中心" style="" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.appcenterClick();"><i class="vportal vp-XXApp"></i><em></em></li>    <li class="searchIco" title="搜索" style=""><i onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.searchOpen();" class="vportal vp-search-large"></i>                 <em></em>              <div class="searchContainer" id="searchContainer">               <i onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.searchClose();" class="vportal vp-close searchClose"></i>      <input type="text" placeholder="请输入关键字开始搜索" id="searchAreaInput" onkeypress="javascript:vPortalMainFrameElements.topRightsystemOperation.pressEnter('searchAreaInput');">      <span class="common_button topRightSearchButton" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.search('searchAreaInput');">搜索</span>      &nbsp;&nbsp;<span class="common_button common_button_gray" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.searchArea();">高级</span>              </div>             </li>    <!-- <li class="backIco" style="display: none "><i class="vportal vp-back"></i><em></em></li>    <li class="forwardIco" style="display: none "><i class="vportal vp-forward"></i><em></em></li> -->    <li class="refreshIco" title="刷新" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.refreshPageClick()" style="display: none "><i class="vportal vp-refresh"></i><em></em></li>    <li class="messageIco" title="致信" style="display: none" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.msgClick();"><i class="vportal vp-msg"></i><em></em></li>             <li class="onlineServiceIco" title="在线客服
+" style="display: none" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.onlineServiceClick();"><i class="vportal vp-OnlineService"></i><em></em></li>             <li class="settingIco" onmouseover="vPortalMainFrameElements.topRightsystemOperation.showPersonContainer()" onmouseleave="vPortalMainFrameElements.topRightsystemOperation.hidePersonContainer()">                 <i class="vportal vp-setting"></i>                 <iframe id="personContainer_iframe" class="personContainer_iframe" frameborder="0"></iframe>     <div class="personContainer" id="personContainer">            <ul class="pushdownSecond">       <li id="skin" title="首页设置" style="" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.showSkinPanle();getCtpTop().openSkinPanle = '1';">首页设置</li>          <li id="mySet" title="个人设置" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.mySetClick();">个人设置</li>                                   <li id="productView_btn" title="产品导航" style="display: none" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.productViewClick();">产品导航</li>                                   <li id="viewSalary" title="薪资查看" style="" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.viewSalaryClick();">薪资查看</li>          <li id="about" title="关于" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.showAbout();">关于</li>       <li id="logout" title="退出" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.logoutClick();">退出</li>      </ul>     </div>             </li>         </ul>     </div>      </div> 
+   <!-- 空间导航 --> 
+   <div class="seeyonElement height-inherit lineHeight-inherit navElement" id="spaceNav" data-tpl="tpl-topCenterNav">                    <div class="topCenterNav navHotspotsArea">         <ul class="showedSpaceNav" id="showedNav">                                                                              <li id="spaceLi_-7231391710645170548" style="max-width:100px" class="current" title="个人空间" onclick="javascript:vPortalMainFrameElements.topCenterNav.showNavigation(0,this)">             <div class="navName">个人空间</div>             <div class="navBottomBorder"></div>             </li>                                                                              <li id="spaceLi_3542421856666798216" style="max-width:100px" title="纳克空间" onclick="javascript:vPortalMainFrameElements.topCenterNav.showNavigation(1,this)">             <div class="navName">纳克空间</div>             <div class="navBottomBorder"></div>             </li>                                                                              <li id="spaceLi_5544714977782548287" style="max-width:100px" title="单位空间" onclick="javascript:vPortalMainFrameElements.topCenterNav.showNavigation(2,this)">             <div class="navName">单位空间</div>             <div class="navBottomBorder"></div>             </li>                      </ul>                  <div class="moreSpaceNav" id="moreSpaceNav" onmouseenter="javascript:showMoreSpaceNavList(this)" onmouseleave="hideMoreSpaceNavList(this)">             <div class="moreSpaceNavArrow"><i class="vportal vp-arrow-down-serif"></i></div>             <iframe id="topCenterNav_iframe" class="topCenterNav_iframe" style="width: 352px; height: 200px;" frameborder="0"></iframe>             <div class="moreSpaceNavList" id="moreSpaceNavList" style="visibility: visible; display: none;">                <ul>                                                                                                         <li id="spaceLi_876852643659465907" title="财务空间(纳克职能部门)" onclick="javascript:vPortalMainFrameElements.topCenterNav.showNavigation(3,this)">                                                  <div class="navIcon"><i class="vportal vp-menu_custom"></i></div>                                                  <div class="navName">财务空间(纳克职能部门)</div>                     </li>                                          <div class="clearFix"></div>                 </ul>                 <div class="square"></div>             </div>         </div>                  <div class="clearFix"></div>     </div>      </div> 
+  </div> 
+ </div> 
+ <!-- 我的快捷 + 菜单 --> 
+ <div class="seeyonElementGroup shortcutAndMenuNav menuHotspotsArea clearfix"> 
+  <!-- 头像、在线状态、在线人数 --> 
+  <div class="seeyonElementGroup account4in1 "> 
+   <div class="accountNav" id="accountNav"> 
+    <div class="headLeft"> 
+     <div class="seeyonElement" id="personHeadImg" data-tpl="tpl-largeHead">     <div class="largeHead" onclick="javascript:showPersonCenter()"><img id="memberImageUrl" src="/seeyon/commonimage.do?method=showImage&amp;id=5553557893870734687&amp;createDate=2020-10-19&amp;size=custom&amp;w=100&amp;h=100"></div> </div> 
+     <div class="seeyonElement" id="onlineStatus" data-tpl="tpl-onlineStatus">     <div class="onlineStatus"><i class="vportal vp-online0"></i></div> </div> 
+    </div> 
+    <div class="headRight"> 
+     <div class="seeyonElement" id="onlineNumArea" data-tpl="tpl-onlineNum">     <div class="onlineNum hand"><span onclick="javascript:vPortalMainFrameElements.onlineNum.onlineMember();"><span id="onlineNum">40</span>人</span> </div> </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- 我的快捷 --> 
+  <div class="seeyonElement" id="shortcutNav" data-tpl="tpl-topShortcutNav">          <div class="topShortcutNav shortcutNav lev1 lev" id="shortcutNav">         <ul class="topShortcutNavContainer">             <li class="lev1Li">                 <div class="lev1Title navTitleName" title="我的快捷" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><span class="navText"><i class="vportal vp-myShortCut"></i></span></div>                 <div class="lev2 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)">                     <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'50')"><i class="vportal vp-arrow-up-serif"></i></div>                     <ul class="lev2Ul">                                                  <li class="lev2Li">                             <div class="lev2Title navTitleName" title="新建事项" onclick="javascript:showMenu('/seeyon/collaboration/collaboration.do?method=newColl&amp;rescode=F01_newColl&amp;_resourceCode=F01_newColl','menu_-7732004021612100617','newWindow','undefined',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-newcollaboration"></i><span class="navText">新建事项</span></div>                         </li>                                                  <li class="lev2Li">                             <div class="lev2Title navTitleName" title="时间安排" onclick="javascript:showMenu('/seeyon/calendar/calEvent.do?method=arrangeTime','menu_6975672660502134921','mainfrm','undefined',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-schedule"></i><span class="navText">时间安排</span></div>                         </li>                                                  <li class="lev2Li">                             <div class="lev2Title navTitleName" title="新建计划" onclick="javascript:showMenu('/seeyon/plan/plan.do?method=newPlan','menu_9162200917700461620','newWindow','undefined',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-newplan"></i><span class="navText">新建计划</span></div>                         </li>                                                  <li class="lev2Li">                             <div class="lev2Title navTitleName" title="通讯录" onclick="javascript:showMenu('/seeyon/addressbook.do?method=homeEntry','menu_6483964819832588449','newWindow','undefined',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-contacts"></i><span class="navText">通讯录</span></div>                         </li>                                                  <li class="lev2Li">                             <div class="lev2Title navTitleName" title="新建会议" onclick="javascript:showMenu('/seeyon/meetingNavigation.do?method=entryManager&amp;entry=meetingArrange&amp;listType=create','menu_-161633461972480845','newWindow','undefined',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-newconference"></i><span class="navText">新建会议</span></div>                         </li>                                                  <li class="lev2Li">                             <div class="lev2Title navTitleName" title="关联系统" onclick="javascript:showMenu('/seeyon/portal/linkSystemController.do?method=linkSystemMore&amp;doType=0','menu_5495680312369824433','mainfrm','undefined',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-related"></i><span class="navText">关联系统</span></div>                         </li>                                                  <li class="lev2Li">                             <div class="lev2Title navTitleName" title="我的邮件" onclick="javascript:showMenu('/seeyon/webmail.do?method=list&amp;jsp=inbox','menu_-1676919384944393023','mainfrm','undefined',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-inbox"></i><span class="navText">我的邮件</span></div>                         </li>                                                  <li class="lev2Li">                             <div class="lev2Title navTitleName" title="综合查询" onclick="javascript:showMenu('/seeyon/isearch.do?method=index','menu_7433919187500615362','mainfrm','undefined',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-searchengine"></i><span class="navText">综合查询</span></div>                         </li>                                              </ul>                     <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'50')"><i class="vportal vp-arrow-down-serif"></i></div>                 </div>             </li>         </ul>     </div>      </div> 
+  <!-- 菜单 --> 
+  <div class="seeyonElement left menuElement" id="menuNav" data-tpl="tpl-topMenuNav">     <!-- 菜单区 -->     <div class="topMenuNav lev1 lev" id="topMenuNavContainer" style="width: 512px">         <ul class="topNavContainer lev1Ul">                      <li class="lev1Li" style="max-width: 132px;">                 <div class="lev1Title navTitleName" title="协同工作" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" style="cursor: default;">                     <div class="navText">协同工作</div>                 </div>                                  <div class="lev2 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)">                     <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'50')"><i class="vportal vp-arrow-up-serif"></i></div>                     <ul class="lev2Ul">                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-7382284343554457562">                             <div id="T03_cooperation_work" class="lev2Title navTitleName" title="协同BPM门户" onclick="javascript:showMenu('/seeyon/bpm/bpmPortal.do?method=index&amp;menu=T03_cooperation_work&amp;themType=19','-7382284343554457562','newWindow','T03_cooperation_work',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-7382284343554457562">                                                                                                   <div class="navIcon"><i class="vportal vp-collaborationthemespace"></i></div>                                                                  <div class="navText">协同BPM门户</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-4140425781984149261">                             <div id="F01_newColl" class="lev2Title navTitleName" title="新建事项" onclick="javascript:showMenu('/seeyon/collaboration/collaboration.do?method=newColl&amp;rescode=F01_newColl','-4140425781984149261','newWindow','F01_newColl',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-4140425781984149261">                                                                                                   <div class="navIcon"><i class="vportal vp-newaffair"></i></div>                                                                  <div class="navText">新建事项</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-8306075607604378311">                             <div id="F01_listWaitSend" class="lev2Title navTitleName" title="待发事项" onclick="javascript:showMenu('/seeyon/collaboration/collaboration.do?method=listWaitSend','-8306075607604378311','mainfrm','F01_listWaitSend',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-8306075607604378311">                                                                                                   <div class="navIcon"><i class="vportal vp-unsentEvent"></i></div>                                                                  <div class="navText">待发事项</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_3908880089061278395">                             <div id="F01_listSent" class="lev2Title navTitleName" title="已发事项" onclick="javascript:showMenu('/seeyon/collaboration/collaboration.do?method=listSent','3908880089061278395','mainfrm','F01_listSent',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="3908880089061278395">                                                                                                   <div class="navIcon"><i class="vportal vp-sentevent"></i></div>                                                                  <div class="navText">已发事项</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-74745459456393211">                             <div id="F01_listPending" class="lev2Title navTitleName" title="待办事项" onclick="javascript:showMenu('/seeyon/collaboration/collaboration.do?method=listPending','-74745459456393211','mainfrm','F01_listPending',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-74745459456393211">                                                                                                   <div class="navIcon"><i class="vportal vp-todoevent"></i></div>                                                                  <div class="navText">待办事项</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-1170093474986179706">                             <div id="F01_listDone" class="lev2Title navTitleName" title="已办事项" onclick="javascript:showMenu('/seeyon/collaboration/collaboration.do?method=listDone','-1170093474986179706','mainfrm','F01_listDone',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-1170093474986179706">                                                                                                   <div class="navIcon"><i class="vportal vp-doneevent"></i></div>                                                                  <div class="navText">已办事项</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_2272495001459507804">                             <div id="F01_supervise" class="lev2Title navTitleName" title="流程督办监控" onclick="javascript:showMenu('/seeyon/supervise/supervise.do?method=superviseFrame','2272495001459507804','mainfrm','F01_supervise',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="2272495001459507804">                                                                                                   <div class="navIcon"><i class="vportal vp-supervisoryevent"></i></div>                                                                  <div class="navText">流程督办监控</div>                                                              </div>                                                      </li>                                              </ul>                     <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'50')"><i class="vportal vp-arrow-down-serif"></i></div>                 </div>                              </li>                          <li class="lev1Li" style="max-width: 132px;">                 <div class="lev1Title navTitleName" title="表单应用" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" style="cursor: default;">                     <div class="navText">表单应用</div>                 </div>                                  <div class="lev2 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)" style="display: none;">                     <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'50')"><i class="vportal vp-arrow-up-serif"></i></div>                     <ul class="lev2Ul">                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_144760001172621381">                             <div id="T03_form_application" class="lev2Title navTitleName" title="主题空间" onclick="javascript:showMenu('/seeyon/portal/spaceController.do?method=showThemSpace&amp;themType=25','144760001172621381','mainfrm','T03_form_application',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="144760001172621381">                                                                                                   <div class="navIcon"><i class="vportal vp-formthemespace"></i></div>                                                                  <div class="navText">主题空间</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-7080776067937645441">                             <div id="T05_formQuery" class="lev2Title navTitleName" title="表单查询" onclick="javascript:showMenu('/seeyon/form/queryResult.do?method=queryIndex','-7080776067937645441','mainfrm','T05_formQuery',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-7080776067937645441">                                                                                                   <div class="navIcon"><i class="vportal vp-formquery"></i></div>                                                                  <div class="navText">表单查询</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-1760548293269241145">                             <div id="F08_reportviewindex" class="lev2Title navTitleName" title="表单统计" onclick="javascript:showMenu('/seeyon/report/queryReport.do?method=index','-1760548293269241145','mainfrm','F08_reportviewindex',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-1760548293269241145">                                                                                                   <div class="navIcon"><i class="vportal vp-formstatistics"></i></div>                                                                  <div class="navText">表单统计</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_6873441147727266208">                             <div id="T05_formSection" class="lev2Title navTitleName" title="表单栏目配置" onclick="javascript:showMenu('/seeyon/form/formSection.do?method=index','6873441147727266208','mainfrm','T05_formSection',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="6873441147727266208">                                                                                                   <div class="navIcon"><i class="vportal vp-formcolumnconfig"></i></div>                                                                  <div class="navText">表单栏目配置</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_7434930406419351698">                             <div id="T05_wfdynamic" class="lev2Title navTitleName" title="审批路径动态表" onclick="javascript:showMenu('/seeyon/form/wfdynamic.do?method=index','7434930406419351698','mainfrm','T05_wfdynamic',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="7434930406419351698">                                                                                                   <div class="navIcon"><i class="vportal vp-routechart"></i></div>                                                                  <div class="navText">审批路径动态表</div>                                                              </div>                                                      </li>                                              </ul>                     <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'50')"><i class="vportal vp-arrow-down-serif"></i></div>                 </div>                              </li>                          <li class="lev1Li" style="max-width: 132px;">                 <div class="lev1Title navTitleName" title="业务生成器" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" style="cursor: default;">                     <div class="navText">业务生成器</div>                 </div>                                  <div class="lev2 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)">                     <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'50')"><i class="vportal vp-arrow-up-serif"></i></div>                     <ul class="lev2Ul">                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-4325582076455204361">                             <div id="T05_unflowBasicData" class="lev2Title navTitleName" title="基础数据" onclick="javascript:showMenu('/seeyon/form/formData.do?method=unflowForm&amp;formType=3','-4325582076455204361','mainfrm','T05_unflowBasicData',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-4325582076455204361">                                                                                                   <div class="navIcon"><i class="vportal vp-elementarydata"></i></div>                                                                  <div class="navText">基础数据</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-5548038733928905841">                             <div id="T05_unflowInfoData" class="lev2Title navTitleName" title="信息管理" onclick="javascript:showMenu('/seeyon/form/formData.do?method=unflowForm&amp;formType=2','-5548038733928905841','mainfrm','T05_unflowInfoData',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-5548038733928905841">                                                                                                   <div class="navIcon"><i class="vportal vp-informationform"></i></div>                                                                  <div class="navText">信息管理</div>                                                              </div>                                                      </li>                                              </ul>                     <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'50')"><i class="vportal vp-arrow-down-serif"></i></div>                 </div>                              </li>                          <li class="lev1Li" style="max-width: 132px;">                 <div class="lev1Title navTitleName" title="目标管理" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" style="cursor: default;">                     <div class="navText">目标管理</div>                 </div>                                  <div class="lev2 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)">                     <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'50')"><i class="vportal vp-arrow-up-serif"></i></div>                     <ul class="lev2Ul">                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-5716671469804893533">                             <div id="T03_objective_manage" class="lev2Title navTitleName" title="主题空间" onclick="javascript:showMenu('/seeyon/portal/spaceController.do?method=showThemSpace&amp;themType=20','-5716671469804893533','mainfrm','T03_objective_manage',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-5716671469804893533">                                                                                                   <div class="navIcon"><i class="vportal vp-objectivethemespace"></i></div>                                                                  <div class="navText">主题空间</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_2125633280564414179">                             <div id="F02_projecttask" class="lev2Title navTitleName" title="项目/任务" onclick="javascript:showMenu('/seeyon/projectandtask.do?method=projectAndTaskIndex&amp;pageType=project','2125633280564414179','','F02_projecttask',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="2125633280564414179">                                                                                                   <div class="navIcon"><i class="vportal vp-relatedproject"></i></div>                                                                  <div class="navText">项目/任务</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_-7161143440221910122">                             <div id="F02_planListHome" class="lev2Title navTitleName" title="工作计划" onclick="javascript:showMenu('/seeyon/plan/plan.do?method=planListHome','-7161143440221910122','mainfrm','F02_planListHome',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="-7161143440221910122">                                                                                                   <div class="navIcon"><i class="vportal vp-workingplan"></i></div>                                                                  <div class="navText">工作计划</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_4165935459437856527">                             <div id="F02_eventlist" class="lev2Title navTitleName" title="日程事件" onclick="javascript:showMenu('/seeyon/calendar/calEvent.do?method=calEventIndex','4165935459437856527','mainfrm','F02_eventlist',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="4165935459437856527">                                                                                                   <div class="navIcon"><i class="vportal vp-workingaffair"></i></div>                                                                  <div class="navText">日程事件</div>                                                              </div>                                                      </li>                                                  <li class="lev2Li" style="height: 50px;line-height: 50px" id="lev2_7818692527006044155">                             <div id="F02_timeArrangelist" class="lev2Title navTitleName" title="时间视图" onclick="javascript:showMenu('/seeyon/calendar/calEvent.do?method=arrangeTime','7818692527006044155','mainfrm','F02_timeArrangelist',this)" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="7818692527006044155">                                                                                                   <div class="navIcon"><i class="vportal vp-schedule"></i></div>                                                                  <div class="navText">时间视图</div>                                                              </div>                                                      </li>                                              </ul>                     <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'50')"><i class="vportal vp-arrow-down-serif"></i></div>                 </div>                              </li>                      </ul>         <ul class="pageArea">             <li id="navPrev" class="disabled" onselectstart="return false" title="上一页"><i class="vportal vp-arrow-left-serif"></i></li>             <li id="navNext" class="" onselectstart="return false" title="下一页"><i class="vportal vp-arrow-right-serif"></i></li>         </ul>         <div id="activeSubNav" class="activeSubNav" onmouseenter="javascript:showActiveNavAndParent(event,this)" onmouseleave="javascript:hideActiveNavAndParent(event,this)" style="display: none;">             <div id="activeSubNavInner" class="activeSubNavInner"></div>         </div>     </div> </div> 
+ </div> 
+ <!-- 中间区 --> 
+ <div class="seeyon-portal-body" id="seeyonPortalBody"> 
+  <!-- 面包屑 --> 
+  <div class="breadcrumb" id="breadcrumb" style="display: none;"></div> 
+  <!-- 栏目区 --> 
+  <div class="main" id="main" style="top: 0px; height: 100%; overflow-y: auto;"><div class="container columnSpacing15">
+    <div class="row">
+        <div class="col-12 col">
+            <div class="fragment" id="fragment_0_0" x="0" y="0" swidth="12" celladd="true" maxsection="-1"></div>
+        <div class="sectionPanel" id="section_6363431333892276367" data-section-width="687">               <!-- 标题区样式：样式1、样式2 -->         <!-- 大标题区 -->         <div class="section-bigTitle" id="section-bigTitle-6363431333892276367">             <div class="section-bigTitleInnerArea">                 <!-- 大标题区：图标 -->                 <span class="section-bigTitle-icon"><i class=""></i></span>                 <!-- 大标题区：标题名称 -->                 <span class="section-bigTitle-text" style="left:0;">我的工作</span>             </div>             <!-- AI智能排序 -->             <div class="section-header-aiSort" id="aiSort-6363431333892276367" style="display: block;"><span onclick="javascript:changeAiSort('6363431333892276367','6363431333892276367_0','0')" class="vportal vp-AiSortOff" title="智能排序"></span></div>             <!-- 大标题区：按钮图标 -->             <div class="section-header-button" style="right: 75px;">                                  <div class="btnGroup sectionButton-Setting" id="sectionButtonSetting_6363431333892276367">                     <span><i class="vportal vp-section-btn-setting"></i></span>                     <div class="btnMoreListArea">                         <ul class="btnMoreList">                             <li id="edit_section_6363431333892276367" onclick="javascript:sectionOperation('6363431333892276367_0','loadSectionPro')" title="编辑栏目"><div>编辑栏目</div></li>                             <li id="del_section_6363431333892276367" onclick="javascript:sectionOperation('6363431333892276367_0','deleteFragment')" title="移除栏目"><div>移除栏目</div></li>                             <li id="add_section_6363431333892276367" onclick="javascript:sectionOperation('6363431333892276367_0','addSectionsToFrag')" title="添加栏目"><div>添加栏目</div></li>                                                          <li id="mbt_section_6363431333892276367" onclick="javascript:sectionOperation('6363431333892276367_0','modifyBigTitlePro')" title="编辑组合栏目"><div>编辑组合栏目</div></li>                                                      </ul>                     </div>                 </div>                                  <div class="btnGroup sectionButton-allInOne" id="sectionButtonAllInOne6363431333892276367" style="display: none;"></div>             </div>             <!-- 标题区：更多 -->             <div class="section-header-more" id="sectionHeaderMore6363431333892276367"><i onclick="javascript:_openDataLink({'url':'/collaboration/pending.do?method=morePendingCenter&amp;fragmentId=6363431333892276367&amp;ordinal=0&amp;currentPanel=all&amp;rowStr=subject,receiveTime,sendUser,category&amp;columnsName=%E5%BE%85%E5%8A%9E%E5%B7%A5%E4%BD%9C&amp;source=Common&amp;section=All&amp;spaceId=-7231391710645170548&amp;aiSortValue=0&amp;x=0&amp;y=0','obj':this,'openType':'2','sectionBeanId':'pendingSection'});" class="vportal vp-section-more" title="更多"></i></div>         </div>                                    <!-- 标题区样式：样式2 -->         <div class="section-header section-header-card2" id="section-header-6363431333892276367">             <div id="section-header-card2_6363431333892276367"><ul class="tabCard oneRow"><li id="sectionName_6363431333892276367_0" class="current" title="待办工作" style="background-color:#49a4ea;" onclick="javascript:changeTabAndReloadSection(&quot;6363431333892276367&quot;,&quot;6363431333892276367_0&quot;)"><div class="leftTotalNum" id="total_6363431333892276367_0"><span class="total999">999<sup>+</sup></span></div><div class="rightName text_overflow" id="titleName_6363431333892276367_0">待办工作</div><div class="bgIcon"><i class="vportal vp-colourful-icons0"></i></div><div class="rhombus" style="border-top-color:#49a4ea"></div></li><li id="sectionName_6363431333892276367_1" title="表单审批" style="background-color:#8693f3;" onclick="javascript:changeTabAndReloadSection(&quot;6363431333892276367&quot;,&quot;6363431333892276367_1&quot;)"><div class="leftTotalNum" id="total_6363431333892276367_1">33</div><div class="rightName text_overflow" id="titleName_6363431333892276367_1">表单审批</div><div class="bgIcon"><i class="vportal vp-colourful-icons1"></i></div><div class="rhombus" style="border-top-color:#8693f3"></div></li><li id="sectionName_6363431333892276367_2" title="跟踪事项" style="background-color:#5484ff;" onclick="javascript:changeTabAndReloadSection(&quot;6363431333892276367&quot;,&quot;6363431333892276367_2&quot;)"><div class="leftTotalNum" id="total_6363431333892276367_2">278</div><div class="rightName text_overflow" id="titleName_6363431333892276367_2">跟踪事项</div><div class="bgIcon"><i class="vportal vp-colourful-icons2"></i></div><div class="rhombus" style="border-top-color:#5484ff"></div></li></ul></div>         </div>                                <!-- 内容区 -->                                    <div class="section-body padding10_15" id="panelBody_6363431333892276367" style="padding-top: 0px; height: 200px;"><!-- 协同类：多行不定列模板 -->        <!-- div高度为35*行数（35为行高） -->      <div class="multiRowVariableColumn multiRowVariableCol" style="height:210px;">                    <div class="autoScroll" style="height:210px">              <table width="100%">                  <tbody>                  <!--轮循所有的行-->                                        <tr>                          <!--轮循所有的列-->                                                                                          <td class="col_first" width="100%"><!--第一列-->                                                                                                                  <div class="colDiv AlreadyRead columnRowDiv">                                                                                                                          <a class="cellContentText" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.checkAndOpenLink('/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-3728782335989559711','3','-3728782335989559711','1','null',this)" title="CS20975(CS-2800)">                                              <!-- 置顶 -->                                                                                            <!-- 重要程度 -->                                                                                            <!-- 标题 -->                                              <span class="titleText">CS20975(CS-2800)</span>                                              <!-- 正文类型 -->                                                                                        </a>                                      </div>                                  </td>                                  <td class="setTopRow">                                  <!-- 置顶功能 -->                                                                    <div class="setTop" id="topStatus_-3728782335989559711" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.setTop('-3728782335989559711')" title="置顶"><i class="vportal vp-setTop"></i></div>                                                                    </td>                                                                                                                                                                  <td class="variableColumn columnRowDiv" title="2020-12-21" style="padding-left:5px;"><!--其它列-->                                                                        2020-12-21                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="马巍"><!--其它列-->                                                                        <a onclick="javascript:showMemberCard('254269942801907843','5')">                                      马巍</a>                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="协同"><!--其它列-->                                                                        <a onclick="javascript:open_link('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending','0')">                                      协同</a>                                                                    <!-- extClasses -->                                                                    </td>                              </tr>                                        <tr>                          <!--轮循所有的列-->                                                                                          <td class="col_first" width="100%"><!--第一列-->                                                                                                                  <div class="colDiv AlreadyRead columnRowDiv">                                                                                                                          <a class="cellContentText" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.checkAndOpenLink('/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-8240407783085618493','3','-8240407783085618493','1','null',this)" title="CS20976(CS-2800)">                                              <!-- 置顶 -->                                                                                            <!-- 重要程度 -->                                                                                            <!-- 标题 -->                                              <span class="titleText">CS20976(CS-2800)</span>                                              <!-- 正文类型 -->                                                                                        </a>                                      </div>                                  </td>                                  <td class="setTopRow">                                  <!-- 置顶功能 -->                                                                    <div class="setTop" id="topStatus_-8240407783085618493" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.setTop('-8240407783085618493')" title="置顶"><i class="vportal vp-setTop"></i></div>                                                                    </td>                                                                                                                                                                  <td class="variableColumn columnRowDiv" title="2020-12-21" style="padding-left:5px;"><!--其它列-->                                                                        2020-12-21                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="马巍"><!--其它列-->                                                                        <a onclick="javascript:showMemberCard('254269942801907843','5')">                                      马巍</a>                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="协同"><!--其它列-->                                                                        <a onclick="javascript:open_link('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending','0')">                                      协同</a>                                                                    <!-- extClasses -->                                                                    </td>                              </tr>                                        <tr>                          <!--轮循所有的列-->                                                                                          <td class="col_first" width="100%"><!--第一列-->                                                                                                                  <div class="colDiv AlreadyRead columnRowDiv">                                                                                                                          <a class="cellContentText" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.checkAndOpenLink('/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-5819982912459684661','3','-5819982912459684661','1','null',this)" title="CS20961(CS-2800)">                                              <!-- 置顶 -->                                                                                            <!-- 重要程度 -->                                                                                            <!-- 标题 -->                                              <span class="titleText">CS20961(CS-2800)</span>                                              <!-- 正文类型 -->                                                                                        </a>                                      </div>                                  </td>                                  <td class="setTopRow">                                  <!-- 置顶功能 -->                                                                    <div class="setTop" id="topStatus_-5819982912459684661" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.setTop('-5819982912459684661')" title="置顶"><i class="vportal vp-setTop"></i></div>                                                                    </td>                                                                                                                                                                  <td class="variableColumn columnRowDiv" title="2020-12-18" style="padding-left:5px;"><!--其它列-->                                                                        2020-12-18                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="马巍"><!--其它列-->                                                                        <a onclick="javascript:showMemberCard('254269942801907843','5')">                                      马巍</a>                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="协同"><!--其它列-->                                                                        <a onclick="javascript:open_link('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending','0')">                                      协同</a>                                                                    <!-- extClasses -->                                                                    </td>                              </tr>                                        <tr>                          <!--轮循所有的列-->                                                                                          <td class="col_first" width="100%"><!--第一列-->                                                                                                                  <div class="colDiv AlreadyRead columnRowDiv">                                                                                                                          <a class="cellContentText" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.checkAndOpenLink('/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-1181814729772022754','3','-1181814729772022754','1','null',this)" title="出入库通知(王浩玲&nbsp;2020-12-18&nbsp;09:55)">                                              <!-- 置顶 -->                                                                                            <!-- 重要程度 -->                                                                                            <!-- 标题 -->                                              <span class="titleText">出入库通知(王浩玲&nbsp;2020-12-18&nbsp;09:55)</span>                                              <!-- 正文类型 -->                                                                                                                                          <span class="vportal vp-ico16 vp-attachment"></span>                                                                                                                                      </a>                                      </div>                                  </td>                                  <td class="setTopRow">                                  <!-- 置顶功能 -->                                                                    <div class="setTop" id="topStatus_-1181814729772022754" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.setTop('-1181814729772022754')" title="置顶"><i class="vportal vp-setTop"></i></div>                                                                    </td>                                                                                                                                                                  <td class="variableColumn columnRowDiv" title="2020-12-18" style="padding-left:5px;"><!--其它列-->                                                                        2020-12-18                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="王浩玲"><!--其它列-->                                                                        <a onclick="javascript:showMemberCard('-3605826905431195176','5')">                                      王浩玲</a>                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="协同"><!--其它列-->                                                                        <a onclick="javascript:open_link('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending','0')">                                      协同</a>                                                                    <!-- extClasses -->                                                                    </td>                              </tr>                                        <tr>                          <!--轮循所有的列-->                                                                                          <td class="col_first" width="100%"><!--第一列-->                                                                                                                  <div class="colDiv AlreadyRead columnRowDiv">                                                                                                                          <a class="cellContentText" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.checkAndOpenLink('/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-8819036001542256974','3','-8819036001542256974','1','null',this)" title="ONH20115(ONH3000)">                                              <!-- 置顶 -->                                                                                            <!-- 重要程度 -->                                                                                            <!-- 标题 -->                                              <span class="titleText">ONH20115(ONH3000)</span>                                              <!-- 正文类型 -->                                                                                        </a>                                      </div>                                  </td>                                  <td class="setTopRow">                                  <!-- 置顶功能 -->                                                                    <div class="setTop" id="topStatus_-8819036001542256974" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.setTop('-8819036001542256974')" title="置顶"><i class="vportal vp-setTop"></i></div>                                                                    </td>                                                                                                                                                                  <td class="variableColumn columnRowDiv" title="2020-12-17" style="padding-left:5px;"><!--其它列-->                                                                        2020-12-17                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="马巍"><!--其它列-->                                                                        <a onclick="javascript:showMemberCard('254269942801907843','5')">                                      马巍</a>                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="协同"><!--其它列-->                                                                        <a onclick="javascript:open_link('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending','0')">                                      协同</a>                                                                    <!-- extClasses -->                                                                    </td>                              </tr>                                        <tr>                          <!--轮循所有的列-->                                                                                          <td class="col_first" width="100%"><!--第一列-->                                                                                                                  <div class="colDiv AlreadyRead columnRowDiv">                                                                                                                          <a class="cellContentText" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.checkAndOpenLink('/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-532193708159514270','3','-532193708159514270','1','null',this)" title="CS20972(CS-2800)">                                              <!-- 置顶 -->                                                                                            <!-- 重要程度 -->                                                                                            <!-- 标题 -->                                              <span class="titleText">CS20972(CS-2800)</span>                                              <!-- 正文类型 -->                                                                                        </a>                                      </div>                                  </td>                                  <td class="setTopRow">                                  <!-- 置顶功能 -->                                                                    <div class="setTop" id="topStatus_-532193708159514270" onclick="javascript:vPortal.sectionHandler.multiRowVariableColumnColTemplete.setTop('-532193708159514270')" title="置顶"><i class="vportal vp-setTop"></i></div>                                                                    </td>                                                                                                                                                                  <td class="variableColumn columnRowDiv" title="2020-12-17" style="padding-left:5px;"><!--其它列-->                                                                        2020-12-17                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="马巍"><!--其它列-->                                                                        <a onclick="javascript:showMemberCard('254269942801907843','5')">                                      马巍</a>                                                                    <!-- extClasses -->                                                                    </td>                                                                                                                                    <td class="variableColumn columnRowDiv" title="协同"><!--其它列-->                                                                        <a onclick="javascript:open_link('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending','0')">                                      协同</a>                                                                    <!-- extClasses -->                                                                    </td>                              </tr>                                    </tbody>              </table>          </div>      </div>  </div>         <!-- 内容区的编辑功能 -->         <div class="section-editArea" id="panelEditArea_6363431333892276367">编辑栏目的相关属性等</div>         <!-- 栏目底部区 -->         <!-- <div class="section-footer"></div> -->  </div></div>
+    </div>
+    <div class="row">
+        <div class="col-12 col">
+            <div class="row">
+              <div class="col-6 col">
+                    <div class="fragment" id="fragment_1_0" x="0" y="1" swidth="6" celladd="true" maxsection="-1"></div>
+                <div class="sectionPanel" id="section_-172565837009828677" data-section-width="335">           <!-- 标准页签(standard)，card1或card2且是单页签时，均使用标准页签的展现方式 -->         <!-- 标题区样式：默认样式 -->                           <!-- 标题区 -->         <div class="section-header standard noIcon" id="section-header--172565837009828677">             <!-- 标题区：图标 -->             <div class="section-header-icon"><i class="vportal vp-section-"></i></div>             <!-- 标题区：页签 -->             <div class="section-header-tabs" id="sectionHeaderTabs_-172565837009828677"><ul class="showedTabs"><li class="current" id="sectionName_-172565837009828677_0" title="我的任务" onclick="javascript:changeTabAndReloadSection(&quot;-172565837009828677&quot;,&quot;-172565837009828677_0&quot;)"><div><span id="titleName_-172565837009828677_0">我的任务</span></div></li><li id="sectionName_-172565837009828677_1" title="我的项目" onclick="javascript:changeTabAndReloadSection(&quot;-172565837009828677&quot;,&quot;-172565837009828677_1&quot;)"><div><span id="titleName_-172565837009828677_1">我的项目</span></div></li></ul></div>             <!-- AI智能排序 -->             <div class="section-header-aiSort" id="aiSort--172565837009828677" style="display: none;"></div>             <!-- 标题区：按钮图标 -->             <div class="section-header-button" id="sectionHeaderButton_-172565837009828677" style="right: 45px;">                                  <div class="btnGroup sectionButton-Setting" id="sectionButtonSetting_-172565837009828677">                     <span><i class="vportal vp-section-btn-setting"></i></span>                     <div class="btnMoreListArea">                         <ul class="btnMoreList">                             <li id="edit_section_-172565837009828677" onclick="javascript:sectionOperation('-172565837009828677_0','loadSectionPro')" title="编辑栏目"><div>编辑栏目</div></li>                             <li id="del_section_-172565837009828677" onclick="javascript:sectionOperation('-172565837009828677_0','deleteFragment')" title="移除栏目"><div>移除栏目</div></li>                             <li id="add_section_-172565837009828677" onclick="javascript:sectionOperation('-172565837009828677_0','addSectionsToFrag')" title="添加栏目"><div>添加栏目</div></li>                                                          <li id="mbt_section_-172565837009828677" onclick="javascript:sectionOperation('-172565837009828677_0','modifyBigTitlePro')" title="编辑组合栏目"><div>编辑组合栏目</div></li>                                                      </ul>                     </div>                 </div>                                  <div class="btnGroup sectionButton-allInOne" id="sectionButtonAllInOne-172565837009828677" style="display: block;"><span onclick="javascript:vPortal.sectionHandler.taskListTemplate.newTaskInfo('taskMySection')" title="新建任务"><i class="vportal vp-section-btn-sectionNewIco"></i></span></div>             </div>             <!-- 标题区：更多 -->             <div class="section-header-more" id="sectionHeaderMore-172565837009828677"><i onclick="javascript:_openDataLink({'url':'/projectandtask.do?method=projectAndTaskIndex&amp;pageType=task&amp;listType=Personal','obj':this,'openType':'2','sectionBeanId':'taskMySection'});" class="vportal vp-section-more" title="更多"></i></div>         </div>                       <!-- 内容区 -->                                    <div class="section-body padding10_15" id="panelBody_-172565837009828677" style="height: 280px;">          <!-- 多行不定列模板 -->      <!-- div高度为35*行数（35为行高） -->      <div class="multiRowVariableColumn taskListTemplate" style="height:280px;">                            <div class="myTaskTab clearfix hasArrow" id="tab-172565837009828677" style="overflow: visible;">                                            <span class="tabSpan thisSelected" data-page="all" onclick="javascript:vPortal.sectionHandler.taskListTemplate.tabClick(this,'all','-172565837009828677');" style="width: 89px;">全部(0)</span>                                            <span class="tabSpan " data-page="notstarted" onclick="javascript:vPortal.sectionHandler.taskListTemplate.tabClick(this,'notstarted','-172565837009828677');" style="width: 89px;">未开始(0)</span>                                            <span class="tabSpan " data-page="marching" onclick="javascript:vPortal.sectionHandler.taskListTemplate.tabClick(this,'marching','-172565837009828677');" style="width: 89px; margin-right: 0px;">进行中(0)</span>                                                                                                                                    <div class="tabMoreDiv"><i class="vportal vp-arrow-down-serif"></i><div id="tabMore-172565837009828677"><span class="tabSpan " data-page="unoverdue" onclick="javascript:vPortal.sectionHandler.taskListTemplate.tabClick(this,'unoverdue','-172565837009828677');">未超期(0)</span><span class="tabSpan " data-page="hasoverdue" onclick="javascript:vPortal.sectionHandler.taskListTemplate.tabClick(this,'hasoverdue','-172565837009828677');">已超期(0)</span></div></div>              </div>                              <div id="tabList-172565837009828677" class="autoScrollXandY dobuleLineTable" style="height: 244px">                                  <div class="none_data" style="height:244px;"></div>                              </div>        </div>  </div>         <!-- 内容区的编辑功能 -->         <div class="section-editArea" id="panelEditArea_-172565837009828677">编辑栏目的相关属性等</div>         <!-- 栏目底部区 -->         <!-- <div class="section-footer"></div> -->  </div><div class="sectionPanel" id="section_2233693686284439425" data-section-width="335">           <!-- 标准页签(standard)，card1或card2且是单页签时，均使用标准页签的展现方式 -->         <!-- 标题区样式：默认样式 -->                           <!-- 标题区 -->         <div class="section-header standard noIcon" id="section-header-2233693686284439425">             <!-- 标题区：图标 -->             <div class="section-header-icon"><i class="vportal vp-section-"></i></div>             <!-- 标题区：页签 -->             <div class="section-header-tabs" id="sectionHeaderTabs_2233693686284439425"><ul class="showedTabs"><li class="current" id="sectionName_2233693686284439425_0" title="我的学习区" onclick="javascript:changeTabAndReloadSection(&quot;2233693686284439425&quot;,&quot;2233693686284439425_0&quot;)"><div><span id="titleName_2233693686284439425_0">我的学习区</span></div></li><li id="sectionName_2233693686284439425_1" title="我的收藏" onclick="javascript:changeTabAndReloadSection(&quot;2233693686284439425&quot;,&quot;2233693686284439425_1&quot;)"><div><span id="titleName_2233693686284439425_1">我的收藏</span></div></li></ul></div>             <!-- AI智能排序 -->             <div class="section-header-aiSort" id="aiSort-2233693686284439425" style="display: none;"></div>             <!-- 标题区：按钮图标 -->             <div class="section-header-button" id="sectionHeaderButton_2233693686284439425" style="right: 45px;">                                  <div class="btnGroup sectionButton-Setting" id="sectionButtonSetting_2233693686284439425">                     <span><i class="vportal vp-section-btn-setting"></i></span>                     <div class="btnMoreListArea">                         <ul class="btnMoreList">                             <li id="edit_section_2233693686284439425" onclick="javascript:sectionOperation('2233693686284439425_0','loadSectionPro')" title="编辑栏目"><div>编辑栏目</div></li>                             <li id="del_section_2233693686284439425" onclick="javascript:sectionOperation('2233693686284439425_0','deleteFragment')" title="移除栏目"><div>移除栏目</div></li>                             <li id="add_section_2233693686284439425" onclick="javascript:sectionOperation('2233693686284439425_0','addSectionsToFrag')" title="添加栏目"><div>添加栏目</div></li>                                                          <li id="mbt_section_2233693686284439425" onclick="javascript:sectionOperation('2233693686284439425_0','modifyBigTitlePro')" title="编辑组合栏目"><div>编辑组合栏目</div></li>                                                      </ul>                     </div>                 </div>                                  <div class="btnGroup sectionButton-allInOne" id="sectionButtonAllInOne2233693686284439425" style="display: none;"></div>             </div>             <!-- 标题区：更多 -->             <div class="section-header-more" id="sectionHeaderMore2233693686284439425"><i onclick="javascript:_openDataLink({'url':'/doc.do?method=docLearningMore','obj':this,'openType':'2','sectionBeanId':'knowledgeUsedDocLearningSection'});" class="vportal vp-section-more" title="更多"></i></div>         </div>                       <!-- 内容区 -->                                    <div class="section-body padding10_15" id="panelBody_2233693686284439425" style="height: 280px;"><!-- 棋盘式模板 -->        <div class="column_textList" style="height:280px;overflow: hidden;">          <div class="none_data"></div>      </div>  </div>         <!-- 内容区的编辑功能 -->         <div class="section-editArea" id="panelEditArea_2233693686284439425">编辑栏目的相关属性等</div>         <!-- 栏目底部区 -->         <!-- <div class="section-footer"></div> -->  </div></div>
+                <div class="col-6 col">
+                    <div class="fragment" id="fragment_2_0" x="0" y="2" swidth="6" celladd="true" maxsection="-1"></div>
+                <div class="sectionPanel" id="section_2079496612383245799" data-section-width="335">           <!-- 标准页签(standard)，card1或card2且是单页签时，均使用标准页签的展现方式 -->         <!-- 标题区样式：默认样式 -->                           <!-- 标题区 -->         <div class="section-header standard noIcon" id="section-header-2079496612383245799">             <!-- 标题区：图标 -->             <div class="section-header-icon"><i class="vportal vp-section-"></i></div>             <!-- 标题区：页签 -->             <div class="section-header-tabs" id="sectionHeaderTabs_2079496612383245799"><ul class="showedTabs"><li class="current" id="sectionName_2079496612383245799_0" title="我的日程" onclick="javascript:changeTabAndReloadSection(&quot;2079496612383245799&quot;,&quot;2079496612383245799_0&quot;)"><div><span id="titleName_2079496612383245799_0">我的日程</span></div></li><li id="sectionName_2079496612383245799_1" title="我的模板" onclick="javascript:changeTabAndReloadSection(&quot;2079496612383245799&quot;,&quot;2079496612383245799_1&quot;)"><div><span id="titleName_2079496612383245799_1">我的模板</span></div></li></ul></div>             <!-- AI智能排序 -->             <div class="section-header-aiSort" id="aiSort-2079496612383245799" style="display: none;"></div>             <!-- 标题区：按钮图标 -->             <div class="section-header-button" id="sectionHeaderButton_2079496612383245799" style="right: 45px;">                                  <div class="btnGroup sectionButton-Setting" id="sectionButtonSetting_2079496612383245799">                     <span><i class="vportal vp-section-btn-setting"></i></span>                     <div class="btnMoreListArea">                         <ul class="btnMoreList">                             <li id="edit_section_2079496612383245799" onclick="javascript:sectionOperation('2079496612383245799_0','loadSectionPro')" title="编辑栏目"><div>编辑栏目</div></li>                             <li id="del_section_2079496612383245799" onclick="javascript:sectionOperation('2079496612383245799_0','deleteFragment')" title="移除栏目"><div>移除栏目</div></li>                             <li id="add_section_2079496612383245799" onclick="javascript:sectionOperation('2079496612383245799_0','addSectionsToFrag')" title="添加栏目"><div>添加栏目</div></li>                                                          <li id="mbt_section_2079496612383245799" onclick="javascript:sectionOperation('2079496612383245799_0','modifyBigTitlePro')" title="编辑组合栏目"><div>编辑组合栏目</div></li>                                                      </ul>                     </div>                 </div>                                  <div class="btnGroup sectionButton-allInOne" id="sectionButtonAllInOne2079496612383245799" style="display: block;"><span><i class="vportal vp-dropdown-operation"></i></span><div class="btnMoreListArea"><ul class="btnMoreList"><li onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete.newMeeting()" title="新建会议"><div>新建会议</div></li><li onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete.newPlan('month')" title="新建计划"><div>新建计划</div></li><li onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete.newTask('2020-12-22')" title="新建任务"><div>新建任务</div></li><li onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete.newEvent()" title="新建事件"><div>新建事件</div></li></ul></div></div>             </div>             <!-- 标题区：更多 -->             <div class="section-header-more" id="sectionHeaderMore2079496612383245799"><i onclick="javascript:_openDataLink({'url':'/calendar/calEvent.do?method=arrangeTime','obj':this,'openType':'2','sectionBeanId':'eventCalViewSetion'});" class="vportal vp-section-more" title="更多"></i></div>         </div>                       <!-- 内容区 -->                                    <div class="section-body padding10_15" id="panelBody_2079496612383245799" style="height: 380px;">        <!-- 其中410 + 15的右padding是左右结构 左侧日历的固定宽度，50px是中间的间距 -->  <!-- 149是周视图 日历的高度 -->    <!-- 40是选项卡的高度 -->  <!-- 150是周视图 日历的高度 -->  <div style="height: 380px" class="autoScrollXandY  ">   <div class="dateCalenderP1 clearfix" style="width:auto;height:149px">   <div id="dateCalender2079496612383245799" class="dateCalender"><div class="cal_head"><span id="dateCalender2079496612383245799_nowDayBig" class="nowDayBig" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].goBaseToday();" style="width: 24px;">22</span><span class="cal_head_right"><span class="cal_prev" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].prev();"> &lt; </span><span class="cal_date" id="dateCalender2079496612383245799_m_date">12.20 - 12.26</span><span class="cal_next" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].next();"> &gt; </span></span></div><table width="100%"><thead><tr><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr></thead></table><div id="dateCalender2079496612383245799_body"><table width="100%"><tbody><tr class="week"><td><span class="" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].loadDateCalenderData('2020-12-20','dateCalender2079496612383245799',this);" id="dateCalender2079496612383245799_d20" data-date="2020-12-20">20</span></td><td><span class="" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].loadDateCalenderData('2020-12-21','dateCalender2079496612383245799',this);" id="dateCalender2079496612383245799_d21" data-date="2020-12-21">21</span></td><td><span onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].loadDateCalenderData('2020-12-22','dateCalender2079496612383245799',this);" id="dateCalender2079496612383245799_d22" data-date="2020-12-22" class="selectedDay ">22</span></td><td><span class="" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].loadDateCalenderData('2020-12-23','dateCalender2079496612383245799',this);" id="dateCalender2079496612383245799_d23" data-date="2020-12-23">23</span></td><td><span class="" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].loadDateCalenderData('2020-12-24','dateCalender2079496612383245799',this);" id="dateCalender2079496612383245799_d24" data-date="2020-12-24">24</span></td><td><span class="" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].loadDateCalenderData('2020-12-25','dateCalender2079496612383245799',this);" id="dateCalender2079496612383245799_d25" data-date="2020-12-25">25</span></td><td><span class="" onclick="javascript:vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].loadDateCalenderData('2020-12-26','dateCalender2079496612383245799',this);" id="dateCalender2079496612383245799_d26" data-date="2020-12-26">26</span></td></tr></tbody></table></div></div>   <div id="dateCalender2079496612383245799_switchView" class="dateCalender_switchView expandIcon" onclick="javascript: vPortal.sectionHandler.calendarForWeekOrMonthTemplete['dateCalender2079496612383245799'].switchView();"><i class="vPortal vp-arrow-down-serif"></i></div>   </div>     <div class="dateCalenderP2 clearfix" style="width:auto;">   <div class="scheduleListTab " id="tab2079496612383245799">           <span id="tab_2079496612383245799my" data-pagename="calendar.my" onclick="vPortal.sectionHandler.calendarForWeekOrMonthTemplete.tabClick(this,'my','2079496612383245799');" class="tabSpan thisSelected">我的(0)</span>           <span id="tab_2079496612383245799myArrange" data-pagename="calendar.arrange.other" onclick="vPortal.sectionHandler.calendarForWeekOrMonthTemplete.tabClick(this,'myArrange','2079496612383245799');" class="tabSpan ">我安排给他人的</span>          <div class="tabMoreDiv"><i class="vportal vp-arrow-down-serif"></i><div id="tabMore2079496612383245799"></div></div>   </div>   <ul class="scheduleList" id="dateCalender2079496612383245799List" style="height:190px">             </ul>   </div>  </div>      <!-- <li class="wholeDay">全天   <div class="timeTag"><span>全天</span></div>   <div class="titleAndInfo">    <p>我是标题我是标题我是标题我是标题</p>    <i>11-13 - 11-18</i>   </div>  </li>  <li class="startToday">当天开始   <div class="timeTag">    <span>12:00</span>    <span>开始</span>   </div>   <div class="titleAndInfo">    <p>我是标题我是标题我是标题我是标题</p>    <i>11-13 - 11-15</i>   </div>  </li>  <li class="endToday">当天结束   <div class="timeTag">    <span>12:00</span>    <span>结束</span>   </div>   <div class="titleAndInfo">    <p>我是标题我是标题我是标题我是标题</p>    <i>11-10 - 11-13</i>   </div>  </li>  <li class="startAndEndToday">当天开始和结束   <div class="timeTag">    <span>12:00</span>    <span>16:00</span>   </div>   <div class="titleAndInfo">    <p>只有标题只有标题只有标题--我上下居中....</p>    <i>11-13 - 11-13</i>   </div>  </li> --></div>         <!-- 内容区的编辑功能 -->         <div class="section-editArea" id="panelEditArea_2079496612383245799">编辑栏目的相关属性等</div>         <!-- 栏目底部区 -->         <!-- <div class="section-footer"></div> -->  </div><div class="sectionPanel" id="section_7207742625579944625" data-section-width="335">           <!-- 标准页签(standard)，card1或card2且是单页签时，均使用标准页签的展现方式 -->         <!-- 标题区样式：默认样式 -->                           <!-- 标题区 -->         <div class="section-header standard noIcon" id="section-header-7207742625579944625">             <!-- 标题区：图标 -->             <div class="section-header-icon"><i class="vportal vp-section-"></i></div>             <!-- 标题区：页签 -->             <div class="section-header-tabs" id="sectionHeaderTabs_7207742625579944625"><ul class="showedTabs"><li class="current" id="sectionName_7207742625579944625_0" title="关联人员" onclick="javascript:changeTabAndReloadSection(&quot;7207742625579944625&quot;,&quot;7207742625579944625_0&quot;)"><div><span id="titleName_7207742625579944625_0">关联人员</span></div></li><li id="sectionName_7207742625579944625_1" title="关联系统" onclick="javascript:changeTabAndReloadSection(&quot;7207742625579944625&quot;,&quot;7207742625579944625_1&quot;)"><div><span id="titleName_7207742625579944625_1">关联系统</span></div></li></ul></div>             <!-- AI智能排序 -->             <div class="section-header-aiSort" id="aiSort-7207742625579944625" style="display: none;"></div>             <!-- 标题区：按钮图标 -->             <div class="section-header-button" id="sectionHeaderButton_7207742625579944625" style="right: 45px;">                                  <div class="btnGroup sectionButton-Setting" id="sectionButtonSetting_7207742625579944625">                     <span><i class="vportal vp-section-btn-setting"></i></span>                     <div class="btnMoreListArea">                         <ul class="btnMoreList">                             <li id="edit_section_7207742625579944625" onclick="javascript:sectionOperation('7207742625579944625_0','loadSectionPro')" title="编辑栏目"><div>编辑栏目</div></li>                             <li id="del_section_7207742625579944625" onclick="javascript:sectionOperation('7207742625579944625_0','deleteFragment')" title="移除栏目"><div>移除栏目</div></li>                             <li id="add_section_7207742625579944625" onclick="javascript:sectionOperation('7207742625579944625_0','addSectionsToFrag')" title="添加栏目"><div>添加栏目</div></li>                                                          <li id="mbt_section_7207742625579944625" onclick="javascript:sectionOperation('7207742625579944625_0','modifyBigTitlePro')" title="编辑组合栏目"><div>编辑组合栏目</div></li>                                                      </ul>                     </div>                 </div>                                  <div class="btnGroup sectionButton-allInOne" id="sectionButtonAllInOne7207742625579944625" style="display: block;"><span onclick="javascript:_openDataLink({'url':'/relateMember.do?method=relate','obj':this,'openType':'2','sectionBeanId':'relateMemberSection '});" title="配置关联人员"><i class="vportal vp-section-btn-sectionSetIco"></i></span></div>             </div>             <!-- 标题区：更多 -->             <div class="section-header-more" id="sectionHeaderMore7207742625579944625"><i onclick="javascript:_openDataLink({'url':'/relateMember.do?method=relateMore','obj':this,'openType':'2','sectionBeanId':'relateMemberSection'});" class="vportal vp-section-more" title="更多"></i></div>         </div>                       <!-- 内容区 -->                                    <div class="section-body padding10_15" id="panelBody_7207742625579944625" style="height: 180px;"><!-- 棋盘式模板 -->        <div class="column_textList" style="height:180px;overflow: hidden;">          <div class="none_data"></div>      </div>  </div>         <!-- 内容区的编辑功能 -->         <div class="section-editArea" id="panelEditArea_7207742625579944625">编辑栏目的相关属性等</div>         <!-- 栏目底部区 -->         <!-- <div class="section-footer"></div> -->  </div></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col">
+            <div class="fragment" id="fragment_3_0" x="0" y="3" swidth="12" celladd="true" maxsection="-1"></div>
+        </div>
+    </div>
+</div></div> 
+ </div> 
+ <!-- 消息盒子(底部弹出) --> 
+ <div class="seeyonElement" id="messageBox" data-tpl="tpl-messageBottom">     <div class="messageBlock ui-draggable ui-draggable-handle" id="messageBlock" onclick="javascript:vPortalMainFrameElements.messageBottom.toggleMsgbox();"><span class="msg_remind"></span><i class="vportal vp-remind"></i></div>     <div class="messageBottom display_none" id="messageBottom">    <div class="messageBottomTitle">    <span>消息设置（<label id="sysMsgTotalCount1">0</label>）</span>       <i class="vportal vp-min right" onclick="javascript:vPortalMainFrameElements.messageBottom.toggleMsgbox();"></i>   </div>    <div class="msgTab display_none" id="tab_messageBottomTab">     <div class="tabMoreDiv"><i class="vportal vp-arrow-down-serif"></i><div class="tabMoreDivIn"><div class="tabMoreDivInC" id="tabMore_messageBottomTab"></div></div></div>   </div>     <div class="messageUl" id="messageUl">    </div>    <div class="msgSetting">       <i class="vportal vp-setting margin_r_10" onclick="javascript:vPortalMainFrameElements.messageBottom.showMessageSet('/seeyon/message.do?method=showMessageSetting&amp;fromModel=top');"></i>       <span class="msgSettingMenu" onclick="javascript:vPortalMainFrameElements.messageBottom.ignoreAllSysMsg();">忽略全部</span>       <span class="msgSettingMenu" onclick="javascript:vPortalMainFrameElements.messageBottom.showMoreMessage()">查看全部</span>   </div>  </div>    <iframe id="playSoundHelper" class="hidden" scrolling="no" marginheight="0" marginwidth="0" width="0" height="0" frameborder="0"></iframe> </div> 
+ <!-- 首页设置 --> 
+ <div class="seeyonElement" id="topSkinSet" data-tpl="tpl-skinSet">     <div id="skin_set" class="skin_set_contaner display_none">         <div class="skin_top_bar">             <div class="skin_top_bar_left">           <span id="theme_category_0" class="padding_l_5 hand padding_r_5 choosed" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">全部模板</span>           <span id="theme_category_1" class="padding_l_5 hand padding_r_5 " onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(1)">工作类</span>           <span id="theme_category_2" class="padding_l_5 hand padding_r_5 " onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(2)">业务类</span>           <span id="theme_category_3" class="padding_l_5 hand padding_r_5 " onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(3)">职能类</span>                      <!--<span class="padding_l_5 hand padding_r_5 choosed" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">全部模板</span>                 <span class="padding_l_5 hand padding_r_5" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">工作类</span>                 <span class="padding_l_5 hand padding_r_5" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">业务类</span>                 <span class="padding_l_5 hand padding_r_5" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">职能类</span> -->                 <!-- <span class="padding_l_5 hand padding_r_5 choosed" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">模板</span> -->                 <!-- <span class="margin_r_5 hand padding_l_5 padding_r_5" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(1)">皮肤</span> -->             </div>             <div class="skin_top_bar_right">                 <span class="padding_l_10 margin_r_5 hand padding_r_10" onclick="javascript:vPortalMainFrameElements.skinSet.spaceSet()">个人空间设置</span>                                  <span class="padding_l_10 margin_r_5 hand padding_r_10" id="navSetId" onclick="javascript:vPortalMainFrameElements.skinSet.configSpaceNav()">导航设置</span>                                                   <span class="margin_l_5 margin_r_5 hand padding_l_10 padding_r_10" id="menuSetId" onclick="javascript:vPortalMainFrameElements.skinSet.menusSet()">菜单设置</span>                                                   <span class="margin_l_5 hand padding_l_10 padding_r_10" onclick="javascript:vPortalMainFrameElements.skinSet.quickMenu()">快捷设置</span>                                  <i onclick="javascript:vPortalMainFrameElements.skinSet.hideSkinPanle();" class="margin_l_20 hand vportal vp-icon vp-close closeSkinSet"></i>             </div>         </div>         <div class="skin_content_tabs" id="skin_content"></div>     </div> </div> 
+</div>
+
+<!-- 宽尺寸的logo -->
+<script id="tpl-wideLogo" type="text/html">
+    <div class="wideLogo" id="logoArea"{{# if(!vPortal.isDesigner){ }} onclick="javascript:refreshCurrentSpace()"{{#} }}>
+        <div class="logo">
+            {{# if(d && d.logoShowType){ }}
+            {{# if(d.logoShowType == "1" && d.logo !== ""){ }}
+            <img height="{{ d.logoHeight }}" src="{{ d.logo }}">
+            {{#}else{ }}
+            <img src="{{ d.logo }}">
+            {{#} }}
+            {{#} }}
+        </div>
+        <div class="companyNames">
+            {{# if(d.groupShortName != "" || d.accountShortName !="" ){ }}
+            <div class="cnName">
+                {{# if(d.groupShortName != ""){ }}
+                <span id="groupShortName" title="{{ d.groupShortName }}" class="groupName">{{ d.groupShortName }}</span>
+                {{# } }}
+                {{# if(d.accountShortName != ""){ }}
+                <span id="accountShortName" title="{{ d.accountShortName }}" class="accountShortName">{{ d.accountShortName }}</span>
+                {{# } }}
+            </div>
+            {{# } }}
+            {{# if(d.accountSecondName !="" ){ }}
+            <div class="enName">
+                <span id="accountSecondName" title="{{ d.accountSecondName }}" class="accountShortName">{{ d.accountSecondName }}</span>
+            </div>
+            {{# } }}
+        </div>
+    </div>
+</script>
+
+<!--切换兼职单位-->
+<script id="tpl-concurrentAccount" type="text/html">
+  {{# if(vPortal.subPortal && vPortal.subPortal !== "true"){ }}
+    <div class="concurrentAccount">
+        <div class="concurrentArrow" onclick="javascript:vPortalMainFrameElements.concurrentAccount.showConcurrentList(event)"><i class="vportal vp-arrow-down"></i></div>
+        <ul class="autoHideElement" id="concurrentList" onmouseleave="javascript:vPortalMainFrameElements.concurrentAccount.hideConcurrentList()">
+            {{# for(var i = 0, len = d.length; i < len; i++){ }}
+            <li title = {{ d[i].shortName }} onclick="javascript:vPortalMainFrameElements.concurrentAccount.changeConcurrent('{{ d[i].id }}')">{{ d[i].shortName }}</li>
+            {{# } }}
+    </div>
+    {{# } }}
+</script>
+
+<!-- 顶部右侧操作区 -->
+<script id="tpl-topRightsystemOperation" type="text/html">
+    {{# if(vPortal.subPortal!="true"){ }}
+    <div class="topRightsystemOperation" id="topRightsystemOperationWidth">
+        <ul class="topIco">
+            {{# if(document.getElementById("onlineNumArea") == null ){ }}
+          <li class="account3in1">
+            {{#  var _currentState = vPortal.currentState === "" ? "0" : vPortal.currentState; }}
+            <div class="onlineNum hand" class="onlineNumArea" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.onlineMember();"><span id="onlineNum">{{ vPortal.onlineNumber }}</span>{{ $.i18n('portal.onlineNum.label') }}</div>
+            <div class="smallHead" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.showPersonCenter()"><img id="memberImageUrl" width="22" height="22" src="{{ vPortal.memberImageUrl }}"></div>
+            <em></em>
+        {{# if(vPortal.smsSendEnabled == true){}}
+        <i class="vportal vp-message" onclick="sendSMSV3X();"></i>
+        {{# } }}
+          </li>
+            {{# } }}
+          <li class="signBtn" title="{{=$.i18n('menu.sign.label')}}" style="{{# if(d.btnSign != '1' || vPortal.cardEnabled==false){ }}display: none{{# } }}">
+            <span onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.onlineCardClick();" style="{{# if(d.btnSignStyle == 'icon'){ }}display: none{{# } }}">{{=$.i18n("menu.sign.label")}}</span>
+            <i onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.onlineCardClick();" class="vportal vp-signIn" style="{{# if(d.btnSignStyle != 'icon'){ }}display: none{{# } }}"></i>
+            <em></em>
+          </li>
+      <li class="appIco" title="{{=$.i18n('menu.workDesktop.label')}}" style="{{# if(d.btnAppCenter != '1'){ }}display: none{{# } }}"  onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.appcenterClick();"><i class="vportal vp-XXApp"></i><em></em></li>
+      <li class="searchIco"  title="{{=$.i18n('menu.search.label')}}" style="{{# if(d.btnSearch != '1' || vPortal.searchEnabled==false){ }}display: none{{# } }}"><i onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.searchOpen();" class="vportal vp-search-large"></i>
+                <em></em>
+              <div class="searchContainer" id="searchContainer">
+                <i onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.searchClose();" class="vportal vp-close searchClose"></i>
+          <input type="text" placeholder="{{=$.i18n("portal.index.search.txt")}}" id="searchAreaInput" onkeypress="javascript:vPortalMainFrameElements.topRightsystemOperation.pressEnter('searchAreaInput');">
+          <span class="common_button topRightSearchButton" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.search('searchAreaInput');">{{=$.i18n("menu.search.label")}}</span>
+          &nbsp;&nbsp;<span class="common_button common_button_gray" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.searchArea();">{{=$.i18n("advance.search.label")}}</span>
+              </div>
+            </li>
+      <!-- <li class="backIco" style="{{# if(d.btnBack != '1'){ }}display: none{{# } }} "><i class="vportal vp-back"></i><em></em></li>
+      <li class="forwardIco" style="{{# if(d.btnGo != '1'){ }}display: none{{# } }} "><i class="vportal vp-forward"></i><em></em></li> -->
+      <li class="refreshIco" title="{{=$.i18n('menu.refresh.label')}}" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.refreshPageClick()" style="{{# if(d.btnRefresh != '1'){ }}display: none{{# } }} "><i class="vportal vp-refresh"></i><em></em></li>
+      <li class="messageIco" title="{{=$.i18n('menu.ucMsg.label')}}" style="{{# if(d.btnMessage != '1' || vPortal.ucEnabled != 'true' ){ }}display: none{{# } }}" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.msgClick();"><i class="vportal vp-msg"></i><em></em></li>
+            <li class="onlineServiceIco" title="{{=$.i18n('menu.onlineService.label')}}" style="{{# if(d.btnonlineService != '1' || vPortal.OnlineCustomerServiceEnabled != true ){ }}display: none{{# } }}"onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.onlineServiceClick();"><i class="vportal vp-OnlineService"></i><em></em></li>
+            <li class="settingIco" onmouseover="vPortalMainFrameElements.topRightsystemOperation.showPersonContainer()" onmouseleave="vPortalMainFrameElements.topRightsystemOperation.hidePersonContainer()">
+                <i class="vportal vp-setting"></i>
+                <iframe id="personContainer_iframe" class="personContainer_iframe" frameborder="0"></iframe>
+        <div class="personContainer" id="personContainer">
+              <ul class="pushdownSecond">
+            <li id="skin" title="{{=$.i18n('menu.personalSet.PortalSet')}}" style="{{# if(d.btnHomeSet != '1'){ }}display: none{{# } }}" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.showSkinPanle();getCtpTop().openSkinPanle = '1';">{{=$.i18n("menu.personalSet.PortalSet")}}</li>
+              <li id="mySet" title="{{=$.i18n('menu.personal.affair')}}" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.mySetClick();">{{=$.i18n("menu.personal.affair")}}</li>
+              {{# if(vPortal.locale == "zh_CN" ){ }}
+                        <li id="productView_btn" title="{{=$.i18n('menu.productNavigation.label')}}" style="{{# if(d.btnProductNav != '1'){ }}display: none{{# } }}" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.productViewClick();">{{=$.i18n("menu.productNavigation.label")}}</li>
+                        {{# } }}
+              <li id="viewSalary" title="{{=$.i18n('menu.hr.salary.show')}}" style="{{# if(d.btnSalaryView != '1' || vPortal.salaryEnabled==false){ }}display: none{{# } }}" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.viewSalaryClick();">{{=$.i18n("menu.hr.salary.show")}}</li>
+              <li id="about" title="{{=$.i18n('product.about.title')}}" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.showAbout();">{{=$.i18n("product.about.title")}}</li>
+            <li id="logout" title="{{=$.i18n('seeyon.top.close.alt')}}" onclick="javascript:vPortalMainFrameElements.topRightsystemOperation.logoutClick();">{{=$.i18n("seeyon.top.close.alt")}}</li>
+          </ul>
+        </div>
+            </li>
+        </ul>
+    </div>
+    {{# } }}
+</script>
+
+<!-- 顶部中间的空间导航 -->
+<script id="tpl-topCenterNav" type="text/html">
+    {{# if(vPortal.themeHotspots && vPortal.themeHotspots.topCenterSpaceNav && vPortal.themeHotspots.topCenterSpaceNav!=undefined && vPortal.themeHotspots.topCenterSpaceNav.portalNavMax !== null){ var maxShowedNav = Number(vPortal.themeHotspots.topCenterSpaceNav.portalNavMax) } else{ var maxShowedNav = 3; } }}
+    {{# var len = d.length > maxShowedNav ? maxShowedNav : d.length; }}
+    {{# if(!(len == 1 && vPortal.portalType==3)){ }}
+    <div class="topCenterNav navHotspotsArea{{# if(vPortal.subPortal=='true'){ }} noRightTopCenterNav{{#} }}">
+        <ul class="showedSpaceNav" id="showedNav">
+            {{# for(var i = 0; i < len; i++){ }}
+            {{# var navName = d[i]["navName"] || d[i]["spaceName"];}}
+            {{# navName = navName.escapeHTML(true) }}
+            {{# var navId = d[i]["id"] || d[i]["spaceId"];}}
+            {{# var _navWidth = maxShowedNav >= 3 ? 100 : 400; }}
+            <li id="spaceLi_{{ navId }}" {{#  if(len == 1 && vPortal.portalType==3) { }} style="display:none;max-width: {{ _navWidth }}px" {{# }else{ }}style = "max-width:{{ _navWidth }}px"{{# } }} {{#  if(i == 0) { }} class="current" {{# } }} title="{{ navName }}" onclick="javascript:vPortalMainFrameElements.topCenterNav.showNavigation({{i}},this)">
+            <div class="navName">{{ navName }}</div>
+            <div class="navBottomBorder"></div>
+            </li>
+            {{# } }}
+        </ul>
+        {{# if(d.length > maxShowedNav){ }}
+        <div class="moreSpaceNav" id="moreSpaceNav" onmouseenter="javascript:showMoreSpaceNavList(this)" onmouseleave="hideMoreSpaceNavList(this)">
+            <div class="moreSpaceNavArrow"><i class="vportal vp-arrow-down-serif"></i></div>
+            <iframe id="topCenterNav_iframe" class="topCenterNav_iframe" frameborder="0"></iframe>
+            <div class="moreSpaceNavList" id="moreSpaceNavList">
+               <ul>
+                    {{# for(var i = maxShowedNav; i < d.length; i++){ }}
+                    {{# var navId = d[i]["id"] || d[i]["spaceId"];}}
+                    {{# var navName = d[i]["navName"] || d[i]["spaceName"];}}
+                    {{# navName = navName.escapeHTML(true) }}
+                    <li id="spaceLi_{{ navId }}" title="{{ navName }}" onclick="javascript:vPortalMainFrameElements.topCenterNav.showNavigation({{i}},this)">
+                        {{# if(d[i]["icon"] && d[i]["icon"].indexOf("/fileUpload.do") > -1){ }}
+                        <div class="navIcon"><img src="{{ _ctxPath + d[i]['icon'] }}" /></div>
+                        {{#}else if(d[i]["icon"]){ }}
+                        <div class="navIcon"><i class="vportal vp-{{ d[i]['icon'] }}"></i></div>
+                        {{# } }}
+                        <div class="navName">{{ navName }}</div>
+                    </li>
+                    {{# } }}
+                    <div class="clearFix"></div>
+                </ul>
+                <div class="square"></div>
+            </div>
+        </div>
+        {{# } }}
+        <div class="clearFix"></div>
+    </div>
+    {{# } }}
+</script>
+
+<!-- 左侧大尺寸头像 -->
+<script id="tpl-largeHead" type="text/html">
+    <div class="largeHead" onclick="javascript:showPersonCenter()"><img id="memberImageUrl" src="{{ d }}"></div>
+</script>
+
+<!-- 在线状态 -->
+<script id="tpl-onlineStatus" type="text/html">
+    <div class="onlineStatus"><i class="vportal vp-online{{ d }}"></i></div>
+</script>
+
+<!-- 在线人数 -->
+<script id="tpl-onlineNum" type="text/html">
+    <div class="onlineNum hand" ><span onclick="javascript:vPortalMainFrameElements.onlineNum.onlineMember();"><span id="onlineNum">{{ vPortal.onlineNumber }}</span>{{ $.i18n('portal.onlineNum.label') }}</span> {{# if(vPortal.smsSendEnabled == true){}} <i class="vportal vp-message" onclick="sendSMSV3X();"></i>{{# } }}</div>
+</script>
+
+<!-- 顶部快捷菜单 -->
+<script id="tpl-topShortcutNav" type="text/html">
+    {{# if(d.currentNavGroupArray[0]["items"].length > 0){ }}
+    <div class="topShortcutNav shortcutNav lev1 lev" id="shortcutNav">
+        <ul class="topShortcutNavContainer">
+            <li class="lev1Li">
+                <div class="lev1Title navTitleName" title="{{ d.currentNavGroupArray[0].name }}" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><span class="navText"><i class="vportal vp-{{ d.currentNavGroupArray[0].icon }}"></i></span></div>
+                <div class="lev2 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)">
+                    <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'50')"><i class="vportal vp-arrow-up-serif"></i></div>
+                    <ul class="lev2Ul">
+                        {{# for(var j = 0, _len = d.currentNavGroupArray[0]["items"].length; j < _len; j++){ }}
+                        <li class="lev2Li">
+                            <div class="lev2Title navTitleName" title="{{ d.currentNavGroupArray[0]['items'][j].name }}" {{# if (d.currentNavGroupArray[0].items[j].url != undefined) { }} onclick="javascript:showMenu('{{_ctxPath + d.currentNavGroupArray[0].items[j].url }}','{{ d.currentNavGroupArray[0].items[j].id }}','{{ d.currentNavGroupArray[0].items[j].target }}','{{ d.currentNavGroupArray[0].items[j].resourceCode }}',this)"{{# } }} onmouseenter="javascript:topNavShowChildAndFixPostion(this,'50')" onmouseleave="javascript:topNavHideChild(event,this)"><i class="vportal vp-{{ d.currentNavGroupArray[0].items[j].icon }}"></i><span class="navText">{{ d.currentNavGroupArray[0].items[j].name }}</span></div>
+                        </li>
+                        {{# } }}
+                    </ul>
+                    <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'50')"><i class="vportal vp-arrow-down-serif"></i></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {{# } }}
+</script>
+
+<!-- 顶部菜单导航 -->
+<script id="tpl-topMenuNav" type="text/html">
+    <!-- 菜单区 -->
+    <div class="topMenuNav lev1 lev" id="topMenuNavContainer" style="width: {{= d.width}}px">
+        <ul class="topNavContainer lev1Ul">
+        {{# for(var i = 0, len = d.currentNavGroupArray.length; i < len; i++){ }}
+            <li class="lev1Li" style="max-width: {{ d.lev1MaxTextWidth }}px;">
+                <div class="lev1Title navTitleName" title="{{= d.currentNavGroupArray[i].name.escapeJavascript() }}" onmouseenter="javascript:topNavShowChildAndFixPostion(this,'{{ d.eachLiHeight }}')" onmouseleave="javascript:topNavHideChild(event,this)"{{# if(d.currentNavGroupArray[i].url){ }} onclick="javascript:showMenu('{{_ctxPath + d.currentNavGroupArray[i].url }}','{{ d.currentNavGroupArray[i].id }}','{{ d.currentNavGroupArray[i].target }}','{{ d.currentNavGroupArray[i].resourceCode }}',this)" style="cursor: pointer;"{{# }else{ }} style="cursor: default;" {{#} }}>
+                    <div class="navText">{{= d.currentNavGroupArray[i].name.escapeJavascript() }}</div>
+                </div>
+                {{# if(d.currentNavGroupArray[i]["items"]){ }}
+                <div class="lev2 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)">
+                    <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'{{ d.eachLiHeight }}')"><i class="vportal vp-arrow-up-serif"></i></div>
+                    <ul class="lev2Ul">
+                        {{# for(var j = 0, _len = d.currentNavGroupArray[i]["items"].length; j < _len; j++){ }}
+                        <li class="lev2Li" style="height: {{ d.eachLiHeight }}px;line-height: {{ d.eachLiHeight }}px" id="lev2_{{ d.currentNavGroupArray[i].items[j].id }}">
+                            <div id="{{ d.currentNavGroupArray[i].items[j].resourceCode }}" class="lev2Title navTitleName" title="{{= d.currentNavGroupArray[i]['items'][j].name.escapeJavascript() }}" {{# if (d.currentNavGroupArray[i].items[j].url) { }} onclick="javascript:showMenu('{{_ctxPath + d.currentNavGroupArray[i].items[j].url }}','{{ d.currentNavGroupArray[i].items[j].id }}','{{ d.currentNavGroupArray[i].items[j].target }}','{{ d.currentNavGroupArray[i].items[j].resourceCode }}',this)"{{# } }} onmouseenter="javascript:topNavShowChildAndFixPostion(this,'{{ d.eachLiHeight }}')" onmouseleave="javascript:topNavHideChild(event,this)" data-id="{{ d.currentNavGroupArray[i].items[j].id }}">
+                                {{# var iconValue = d.currentNavGroupArray[i].items[j].icon; }}
+                                {{# if(iconValue && iconValue.indexOf("/fileUpload.do") > -1){ }}
+                                <div class="navIcon"><img src="{{ _ctxPath + iconValue + CsrfGuard.getUrlSurffix() }}" /></div>
+                                {{#}else if(iconValue && iconValue.indexOf("/seeyon") > -1){ }}
+                                <div class="navIcon"><img src="{{ iconValue + CsrfGuard.getUrlSurffix() }}" /></div>
+                                {{#}else if(iconValue){ }}
+                                <div class="navIcon"><i class="vportal vp-{{ iconValue }}"></i></div>
+                                {{# } }}
+                                <div class="navText">{{= d.currentNavGroupArray[i].items[j].name.escapeJavascript() }}</div>
+                                {{# if(d.currentNavGroupArray[i].items[j].items && d.currentNavGroupArray[i].items[j].items.length > 0){ }}<div class="arrow"><i class="vportal vp-arrow-right-serif"></i></div>{{#} }}
+                            </div>
+                            {{# if(d.currentNavGroupArray[i].items[j].items){ }}
+                            <div class="lev3 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)">
+                                <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'{{ d.eachLiHeight }}')"><i class="vportal vp-arrow-up-serif"></i></div>
+                                <ul class="lev3Ul">
+                                    {{# for(var k = 0, __len = d.currentNavGroupArray[i]["items"][j]["items"].length; k < __len; k++){ }}
+                                    <li class="lev3Li" style="height: {{ d.eachLiHeight }}px;line-height: {{ d.eachLiHeight }}px">
+                                        <div class="lev3Title navTitleName" title="{{= d.currentNavGroupArray[i]['items'][j]['items'][k].name.escapeJavascript() }}" {{# if (d.currentNavGroupArray[i].items[j].items[k].url) { }} onclick="javascript:showMenu('{{_ctxPath + d.currentNavGroupArray[i].items[j].items[k].url }}','{{ d.currentNavGroupArray[i].items[j].items[k].id }}','{{ d.currentNavGroupArray[i].items[j].items[k].target }}','{{ d.currentNavGroupArray[i].items[j].items[k].resourceCode }}',this)"{{# } }} onmouseenter="javascript:topNavShowChildAndFixPostion(this,'{{ d.eachLiHeight }}')" onmouseleave="javascript:topNavHideChild(event,this)"><span class="navText">{{= d.currentNavGroupArray[i]["items"][j]["items"][k].name.escapeJavascript() }}</span></div>
+                                        {{# if(d.currentNavGroupArray[i].items[j].items[k].items){ }}
+                                            <div class="lev4 lev" onmouseenter="javascript:topNavShowThisLev(this)" onmouseleave="javascript:topNavHideThisLev(this)">
+                                                <div class="navScrollUp" onselectstart="return false" onclick="javascript:navScrollUp(this,'{{ d.eachLiHeight }}')"><i class="vportal vp-arrow-up-serif"></i></div>
+                                                <ul class="lev4Ul">
+                                                    {{# for(var l = 0, ___len = d.currentNavGroupArray[i]["items"][j]["items"][k]["items"].length; l < ___len; l++){ }}
+                                                    <li class="lev4Li" style="height: {{ d.eachLiHeight }}px;line-height: {{ d.eachLiHeight }}px">
+                                                        <div class="lev4Title navTitleName" title="{{= d.currentNavGroupArray[i]['items'][j]['items'][k]['items'][l].name.escapeJavascript() }}" {{# if (d.currentNavGroupArray[i].items[j].items[k].items[l].url) { }} onclick="javascript:showMenu('{{_ctxPath + d.currentNavGroupArray[i].items[j].items[k].items[l].url }}','{{ d.currentNavGroupArray[i].items[j].items[k].items[l].id }}','{{ d.currentNavGroupArray[i].items[j].items[k].items[l].target }}','{{ d.currentNavGroupArray[i].items[j].items[k].items[l].resourceCode }}',this)"{{# } }} onmouseenter="javascript:topNavShowChildAndFixPostion(this,'{{ d.eachLiHeight }}','{{ d.domId }}')"><span class="navText">{{= d.currentNavGroupArray[i]["items"][j]["items"][k].name.escapeJavascript() }}</span></div>
+                                                    </li>
+                                                    {{# } }}
+                                                </ul>
+                                                <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'{{ d.eachLiHeight }}')"><i class="vportal vp-arrow-down-serif"></i></div>
+                                            </div>
+                                            {{# } }}
+                                    </li>
+                                    {{# } }}
+                                </ul>
+                                <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'{{ d.eachLiHeight }}')"><i class="vportal vp-arrow-down-serif"></i></div>
+                            </div>
+                            {{# } }}
+                        </li>
+                        {{# } }}
+                    </ul>
+                    <div class="navScrollDown" onselectstart="return false" onclick="javascript:navScrollDown(this,'{{ d.eachLiHeight }}')"><i class="vportal vp-arrow-down-serif"></i></div>
+                </div>
+                {{#} }}
+            </li>
+            {{# } }}
+        </ul>
+        <ul class="pageArea">
+            <li id="navPrev" class="disabled" onselectstart="return false" title="上一页"><i class="vportal vp-arrow-left-serif"></i></li>
+            <li id="navNext" class="disabled" onselectstart="return false" title="下一页"><i class="vportal vp-arrow-right-serif"></i></li>
+        </ul>
+        <div id="activeSubNav" class="activeSubNav" onmouseenter="javascript:showActiveNavAndParent(event,this)" onmouseleave="javascript:hideActiveNavAndParent(event,this)">
+            <div id="activeSubNavInner" class="activeSubNavInner"></div>
+        </div>
+    </div>
+</script>
+
+<!--消息盒子(底部弹出)-->
+<script id="tpl-messageBottom" type="text/html">
+    <div class="messageBlock" id="messageBlock" onclick="javascript:vPortalMainFrameElements.messageBottom.toggleMsgbox();"><span class="msg_remind"></span><i class="vportal vp-remind"></i></div>
+    <div class="messageBottom display_none" id="messageBottom">
+
+    <div class="messageBottomTitle">
+      <span>{{$.i18n("message.header.more.set")}}（<label id="sysMsgTotalCount1">0</label>）</span>
+        <i class="vportal vp-min right" onclick="javascript:vPortalMainFrameElements.messageBottom.toggleMsgbox();"></i>
+    </div>
+
+    <div class="msgTab display_none" id="tab_messageBottomTab">
+        <div class="tabMoreDiv"><i class="vportal vp-arrow-down-serif"></i><div class="tabMoreDivIn"><div class="tabMoreDivInC" id="tabMore_messageBottomTab"></div></div></div>
+    </div>
+
+
+    <div class="messageUl" id="messageUl">
+
+    </div>
+
+    <div class="msgSetting">
+        <i class="vportal vp-setting margin_r_10" onclick="javascript:vPortalMainFrameElements.messageBottom.showMessageSet('/seeyon/message.do?method=showMessageSetting&fromModel=top');"></i>
+        <span class="msgSettingMenu" onclick="javascript:vPortalMainFrameElements.messageBottom.ignoreAllSysMsg();">{{$.i18n('portal.message.ignoreall')}}</span>
+        <span class="msgSettingMenu" onclick="javascript:vPortalMainFrameElements.messageBottom.showMoreMessage()">{{$.i18n('portal.message.seeall')}}</span>
+    </div>
+
+</div>
+
+
+
+<iframe id="playSoundHelper" class="hidden" frameborder="0" height="0" width="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</script>
+
+<!-- 首页设置 -->
+<script id="tpl-skinSet" type="text/html">
+    <div id="skin_set" class="skin_set_contaner display_none">
+        <div class="skin_top_bar">
+            <div class="skin_top_bar_left">
+        {{# for(var i=0;i<d.length;i++){
+          var choosed = "";
+          if(d[i].code=='0'){
+            choosed = "choosed";
+          }
+        }}
+          <span id="theme_category_{{d[i].code}}" class="padding_l_5 hand padding_r_5 {{choosed}}" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate({{d[i].code}})">{{ $.i18n(d[i].name)}}</span>
+        {{# }}}
+                <!--<span class="padding_l_5 hand padding_r_5 choosed" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">{{ $.i18n("portal.theme.category.all")}}</span>
+                <span class="padding_l_5 hand padding_r_5" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">{{ $.i18n("portal.theme.category.work")}}</span>
+                <span class="padding_l_5 hand padding_r_5" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">{{ $.i18n("portal.theme.category.business")}}</span>
+                <span class="padding_l_5 hand padding_r_5" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">{{ $.i18n("portal.theme.category.functions")}}</span> -->
+                <!-- <span class="padding_l_5 hand padding_r_5 choosed" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(0)">{{ $.i18n("vportal.skinSet.template.label")}}</span> -->
+                <!-- <span class="margin_r_5 hand padding_l_5 padding_r_5" onclick="javascript:vPortalMainFrameElements.skinSet.chooseOperate(1)">皮肤</span> -->
+            </div>
+            <div class="skin_top_bar_right">
+                <span class="padding_l_10 margin_r_5 hand padding_r_10" onclick="javascript:vPortalMainFrameElements.skinSet.spaceSet()">{{ $.i18n("menu.personalset.spaceset")}}</span>
+                {{# if(!vPortal || !vPortal.navCustomSwitch || vPortal.navCustomSwitch == '1') { }}
+                <span class="padding_l_10 margin_r_5 hand padding_r_10" id="navSetId" onclick="javascript:vPortalMainFrameElements.skinSet.configSpaceNav()">{{ $.i18n("vportal.skinSet.nav.label")}}</span>
+                {{#}}}
+                {{# if(!vPortal || !vPortal.menuCustomSwitch || vPortal.menuCustomSwitch == '1') { }}
+                <span class="margin_l_5 margin_r_5 hand padding_l_10 padding_r_10" id="menuSetId" onclick="javascript:vPortalMainFrameElements.skinSet.menusSet()">{{ $.i18n("portal.design.MenuSettings")}}</span>
+                {{#}}}
+                {{# if(document.getElementById("shortcutNav")){}}
+                <span class="margin_l_5 hand padding_l_10 padding_r_10" onclick="javascript:vPortalMainFrameElements.skinSet.quickMenu()">{{ $.i18n("portal.design.QuickSetting")}}</span>
+                {{#}}}
+                <i onclick="javascript:vPortalMainFrameElements.skinSet.hideSkinPanle();" class="margin_l_20 hand vportal vp-icon vp-close closeSkinSet"></i>
+            </div>
+        </div>
+        <div class="skin_content_tabs" id="skin_content"></div>
+    </div>
+</script>
+
+<!-- 栏目外框架 -->
+<script id="tpl-sectionMainFrame" type="text/html">
+{{# if(d.sections.length > 0){ }}
+    {{#  if(d.style == undefined || d.style == "default" || d.style == "standard" || (d.style == "card1" || d.style == "card2") && d.sections.length == 1 ) {  }}
+    <!-- 标准页签(standard)，card1或card2且是单页签时，均使用标准页签的展现方式 -->
+        <!-- 标题区样式：默认样式 -->
+        {{#  if(d.style != "standard" && d.sbt == "1") {  }}
+        <!-- 大标题区 -->
+        <div class="section-bigTitle" id="section-bigTitle-{{ d.id }}">
+            <div class="section-bigTitleInnerArea">
+                <!-- 大标题区：图标 -->
+                <span class="section-bigTitle-icon"><i class="{{ d.b_i }}"></i></span>
+                <!-- 大标题区：标题名称 -->
+                <span class="section-bigTitle-text"{{# if(d.b_i == "") {}} style="left:0;"{{# } }}>{{ d.b_t }}</span>
+            </div>
+        </div>
+        {{# } }}
+        {{#  if(d.sst == "1") {  }}
+        <!-- 标题区 -->
+        <div class="section-header standard {{#  if(d.s_i == '') {  }}noIcon{{# } }}"  id="section-header-{{ d.id }}">
+            <!-- 标题区：图标 -->
+            <div class="section-header-icon"><i class="vportal vp-section-{{d.s_i}}"></i></div>
+            <!-- 标题区：页签 -->
+            <div class="section-header-tabs" id="sectionHeaderTabs_{{ d.id }}"></div>
+            <!-- AI智能排序 -->
+            <div class="section-header-aiSort" id="aiSort-{{ d.id }}"></div>
+            <!-- 标题区：按钮图标 -->
+            <div class="section-header-button" id="sectionHeaderButton_{{ d.id }}">
+                {{# if(isAllowdefined == "true"){ }}
+                <div class="btnGroup sectionButton-Setting" id="sectionButtonSetting_{{ d.id }}">
+                    <span><i class="vportal vp-section-btn-setting"></i></span>
+                    <div class="btnMoreListArea">
+                        <ul class="btnMoreList">
+                            <li id="edit_section_{{ d.id }}" onclick="javascript:sectionOperation('{{ d.sections[0].id }}','loadSectionPro')" title="{{$.i18n('portal.button.sectionEdit')}}"><div>{{$.i18n('portal.button.sectionEdit')}}</div></li>
+                            <li id="del_section_{{ d.id }}" onclick="javascript:sectionOperation('{{ d.sections[0].id }}','deleteFragment')" title="{{$.i18n('portal.button.sectionDel')}}"><div>{{$.i18n('portal.button.sectionDel')}}</div></li>
+                            <li id="add_section_{{ d.id }}" onclick="javascript:sectionOperation('{{ d.sections[0].id }}','addSectionsToFrag')" title="{{$.i18n('portal.button.sectionAdd')}}"><div>{{$.i18n('portal.button.sectionAdd')}}</div></li>
+                            {{#  if(d.sections.length > 1) {  }}
+                            <li id="mbt_section_{{ d.id }}" onclick="javascript:sectionOperation('{{ d.sections[0].id }}','modifyBigTitlePro')" title="{{$.i18n('portal.button.sectionCombinationEdit')}}"><div>{{$.i18n('portal.button.sectionCombinationEdit')}}</div></li>
+                            {{# } }}
+                        </ul>
+                    </div>
+                </div>
+                {{# } }}
+                <div class="btnGroup sectionButton-allInOne" id="sectionButtonAllInOne{{ d.id }}"></div>
+            </div>
+            <!-- 标题区：更多 -->
+            <div class="section-header-more" id="sectionHeaderMore{{ d.id }}"></div>
+        </div>
+        {{# } }}
+    {{# }else if(d.style == "card1" || d.style == "card2"){ }}
+        <!-- 标题区样式：样式1、样式2 -->
+        <!-- 大标题区 -->
+        <div class="section-bigTitle" id="section-bigTitle-{{ d.id }}">
+            <div class="section-bigTitleInnerArea">
+                <!-- 大标题区：图标 -->
+                <span class="section-bigTitle-icon"><i class="{{ d.b_i }}"></i></span>
+                <!-- 大标题区：标题名称 -->
+                <span class="section-bigTitle-text"{{# if(d.b_i == "") {}} style="left:0;"{{# } }}>{{ d.b_t }}</span>
+            </div>
+            <!-- AI智能排序 -->
+            <div class="section-header-aiSort" id="aiSort-{{ d.id }}"></div>
+            <!-- 大标题区：按钮图标 -->
+            <div class="section-header-button">
+                {{# if(isAllowdefined == "true"){ }}
+                <div class="btnGroup sectionButton-Setting" id="sectionButtonSetting_{{ d.id }}">
+                    <span><i class="vportal vp-section-btn-setting"></i></span>
+                    <div class="btnMoreListArea">
+                        <ul class="btnMoreList">
+                            <li id="edit_section_{{ d.id }}" onclick="javascript:sectionOperation('{{ d.sections[0].id }}','loadSectionPro')" title="{{$.i18n('portal.button.sectionEdit')}}"><div>{{$.i18n('portal.button.sectionEdit')}}</div></li>
+                            <li id="del_section_{{ d.id }}" onclick="javascript:sectionOperation('{{ d.sections[0].id }}','deleteFragment')" title="{{$.i18n('portal.button.sectionDel')}}"><div>{{$.i18n('portal.button.sectionDel')}}</div></li>
+                            <li id="add_section_{{ d.id }}" onclick="javascript:sectionOperation('{{ d.sections[0].id }}','addSectionsToFrag')" title="{{$.i18n('portal.button.sectionAdd')}}"><div>{{$.i18n('portal.button.sectionAdd')}}</div></li>
+                            {{#  if(d.sections.length > 1) {  }}
+                            <li id="mbt_section_{{ d.id }}" onclick="javascript:sectionOperation('{{ d.sections[0].id }}','modifyBigTitlePro')" title="{{$.i18n('portal.button.sectionCombinationEdit')}}"><div>{{$.i18n('portal.button.sectionCombinationEdit')}}</div></li>
+                            {{# } }}
+                        </ul>
+                    </div>
+                </div>
+                {{# } }}
+                <div class="btnGroup sectionButton-allInOne" id="sectionButtonAllInOne{{ d.id }}"></div>
+            </div>
+            <!-- 标题区：更多 -->
+            <div class="section-header-more" id="sectionHeaderMore{{ d.id }}"></div>
+        </div>
+        {{#  if(d.sst == "1") {  }}
+        {{# var circlrAreaColor = ["#dbedfb","#e7e9fd","#dde6ff","#ffe9e2","#d8f1ff","#d7ecfd","#ffefd9"]; var innerCircleColor = ["#49a4ea","#8693f3","#5484ff","#ff916e","#3cbaff","#38a0f5","#ffae43"]; }}
+        {{# if(d.style == "card1"){ }}
+        <!-- 标题区样式：样式1 -->
+        <div class="section-header section-header-{{ d.style }}" id="section-header-{{ d.id }}">
+            {{# var _sectionLen = d.sections.length;}}
+            {{# var _eachRowWidth = 150 * _sectionLen > d._sectionWidth ? 150 : d._sectionWidth / _sectionLen; }}
+            <ul style="width:{{= _eachRowWidth * _sectionLen }}px;">
+                {{# for(var i = 0, len = _sectionLen; i < len; i++){ }}
+                <li id="sectionName_{{ d.sections[i].id }}"{{# if(i==0){ }} class="current" {{# } }} title="{{ windowAtob(d.sections[i].sl).escapeHTML(true) }}" onclick="javascript:changeTabAndReloadSection('{{ d.id }}','{{ d.sections[i].id }}')" style="width:{{ _eachRowWidth }}px;">
+                    <div class="leftIcon">
+                        {{# var _colorIndex = i < 7 ? i : (i - 1) % 7; }}
+                        <div class="circleArea" style="background-color: {{= circlrAreaColor[_colorIndex] }}">
+                            <div class="innerCircle" style="background-color: {{= innerCircleColor[_colorIndex] }}"><i class="vportal vp-personality-icon{{ _colorIndex }}"></i></div>
+                        </div>
+                    </div>
+                    <div class="rightText">
+                        <p class="tabsNumber" id="total_{{ d.sections[i].id }}">{{ getTotalStr(d.sections[i].t) }}</p>
+                        <p class="tabsName text_overflow"{{# if(d.sections[i].t==""){ }} style="margin-top: 15px;"{{# } }}  id="titleName_{{ d.sections[i].id }}">{{ windowAtob(d.sections[i].sl).escapeHTML(true) }}</p>
+                    </div>
+                </li>
+                {{# } }}
+            </ul>
+        </div>
+        {{# }else{ }}
+        <!-- 标题区样式：样式2 -->
+        <div class="section-header section-header-{{ d.style }}" id="section-header-{{ d.id }}">
+            <div id="section-header-card2_{{ d.id }}"></div>
+        </div>
+        {{# } }}
+        {{# } }}
+    {{# } }}
+        <!-- 内容区 -->
+        {{# if(d.sst == '0' && (d.sections[0].rf =='multiPictureScrollingTemplate' || d.sections[0].rf == 'pictureRotationBottomTemplete' || d.sections[0].rf == 'pictureRotationLeftTemplete' || d.sections[0].rf == 'morePictureTemplete' || d.sections[0].rf == 'multiPictureTemplete' || d.sections[0].rf == 'pictureCardTemplete' || d.sections[0].rf == 'categoryPictureTitleAndBriefTemplete') || d.sections[0].rf == 'pictureTemplete' || d.sections[0].rf == 'bannerTemplete' || d.sections[0].rf == 'weatherTemplete' || d.sections[0].rf == 'clockTemplete' || d.sections[0].rf == 'showPictureCardTemplete' || d.sections[0].sbd =='loginSection'){ }}
+        {{# var needPadding = false; }}
+        {{# }else{ }}
+        {{# var needPadding = true; }}
+        {{#} }}
+        <div class="section-body{{# if(d.sbt == '1' || (d.sst == '1' && d.sections[0].sbd != 'loginSection') || needPadding){ }} padding10_15{{# } }}" id="panelBody_{{ d.id }}" {{# if(d.style == "card2"){ }} style="padding-top:0;"{{# } }}><span class="contentLoading">{{$.i18n('section.loading.label')}}<span class="ellipsis-anim"></span></span></div>
+        <!-- 内容区的编辑功能 -->
+        <div class="section-editArea" id="panelEditArea_{{ d.id }}">{{$.i18n('section.relatedproperties.label')}}</div>
+        <!-- 栏目底部区 -->
+        <!-- <div class="section-footer"></div> -->
+{{# } }}
+</script>
+
+
+
+
+<script type="text/javascript">
+  var CSRFTOKEN = 'null';
+  var isCtpTop = true;
+</script>
+<script type="text/javascript" src="/seeyon/main.do?method=vPortalData&amp;showName=2&amp;random=1608613550897&amp;portalId=5709117081830245317&amp;themeId=2000000007&amp;mls=1000000007&amp;fsid=-7231391710645170548&amp;fspath=/seeyon/personal/2298238240975636496_D.psml&amp;fstype=5&amp;menuSource=2"></script>
+<script type="text/javascript">
+var APPID = '4095';
+var previewVPortalSpace= false;
+vPortal.hasLoginSection= "false";
+vPortal.openFrom= "bhaf";
+vPortal.subPortal= "false";
+vPortal.currentSpaceId= "";
+vPortal.portalType= "0";
+vPortal.currentSpaceForNC= "";
+vPortal.spaceErrorMsg= "";
+vPortal.moduleCodeSet= {"dateCalender.js":"dateCalender.js"};
+vPortal.iconType= "plane";
+vPortal.iconCustomPath= "";
+vPortal.resSuffix = "?V=V7_1SP1_2019-10-10_1781899491";
+
+document.title=vPortal.pageTitle;
+var sessionId = "592D7FB123145CFBE29F31FCA5557200";
+var route = "";
+
+vPortal.showLocation=false;
+
+vPortal.sectionSpacing=15;
+
+vPortal.sectionBodyLineHeight=31;
+
+vPortal.themeHotspots = {"layout":{"sectionSpacing":"15","portalHeaderHeight":"50","portalHeaderDisabled":"0"},"largeHead":{"showName":"2"},"leftMenuNav":{"menuSource":"2"},"topRightsystemOperation":{"btnBack":"0","btnSign":"1","btnSignStyle":"icon","btnSearch":"1","btnRefresh":"0","btnSalaryView":"1","btnProductNav":"0","btnonlineService":"1","btnAppCenter":"1","btnHomeSet":"1","btnGo":"0","btnMessage":"1"},"topCenterSpaceNav":{"portalNavSpaceGroup":"0","portalNavPortalGroup":"0","portalNavMax":"3"},"icon":{"iconStyle":"1"},"report":{"reportXColor":"rgba(102,102,102,0.5)","reportShowGrid":"0","reportTheme":"1","reportTextColor":"#666666","reportYColor":"rgba(102,102,102,0.5)"},"main":{"iconid":"1","msid":"3000000011","csid":"3700000001","echartStyleId":"1","ssid":"3400000003","tid":"1000000007"},"wideLogo":{"logoHeight":"50","showLogo":"1","showGroupName":"1","showText":"0","logo":"/seeyon/portal/images/logo/50x50-2.png","logoShowType":"2","showUnitName":"1"},"base":{"showLocationDisabled":"0","showLocation":"0"},"section":{"sectionPanelBorderDisplay":"1","sectionBodyBgc":"#fff","sectionPanelBorderRadius":"6","sectionPanelBgc":"#fff","sectionHeaderBgc":"#f7faff","sectionHeaderTabsColor":"#999","sectionHeaderTabsCurrentColor":"#1f85ec","sectionBodyLineHeight":"31","sectionPanelBoxShadow":"1","sectionBodyLineBottomBoderDisplay":"0","sectionPanelBorderColor":"#e5e8eb","sectionBodyLineBottomBoderColor":"transparent","sectionBodyColor":"#111","sectionHeaderBottomBorderColor":"transparent","sectionBodyDlBgc":"transparent","sectionHeaderTabsHeight":"46"},"page":{"componentButtonColor":"#2490f8","componentButtonHoverColor":"rgba(36,144,248,0.8)","componentGridPageColor":"#2490f8","componentTabColor":"#2490f8","componentTreeColor":"#2490f8","componentGridHeaderColor":"rgba(36,144,248,0.3)","componentSearchColor":"#2490f8"},"skin":{"wrapperBgc":"transparent","portalNavIconColor":"#2490f8","portalMenuBgs":"auto atuo","portalNavBgs":"auto atuo","portalContainerBgs":"auto atuo","wrapperColor":"#2490f8","portalHeaderColor":"rgba(0,0,0,0.6)","portalMenuIconColor":"#fff","portalHeaderBgs":"auto atuo","portalMenuColor":"#fff","wrapperBgs":"100% 100%","portalMenuBgc":"#32323A","portalContainerBgi":"","portalNavColor":"rgba(17,17,17,0.9)","portalNavBgc":"transparent","portalContainerBgc":"transparent","portalHeaderBgc":"transparent","wrapperBgi":"/seeyon/portal/images/spaceBg/11-0-1920x1080.jpg","portalNavCurrentBottomColor":"#2490f8","portalNavBgi":""}};
+
+var showSkinchoose = "";
+var isPortalTemplateSwitching = "";
+vPortal.productVersion = "A8";
+vPortal.productAbout = "";
+</script>
+<script type="text/javascript" src="/seeyon/common/js/jquery-debug.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/i18n-debug.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/i18n/portal/portal_i18n_zh_CN.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/laytpl.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/portal/pagelayout/front_common-min.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/portal/pagelayout/element/elements_1000000007.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/portal/pagelayout/layout/layout02/layout02_c.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/portal/decoration/layout/D2-M_5-5_T/layout.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/portal_ajax.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/portal/sections/section-min.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/portal/sections/tpl/sectiontpls-min.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script id="moduleJsPath" type="text/javascript" src="/seeyon/portal/portalController.do?method=getModuleJs&amp;fd=0&amp;tplCodes=dateCalender.js&amp;V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/message/onlinemessage.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/message/BaseMessage.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/message/openMessage.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/message/sectionMappingLinkType.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/messageLinkConstants.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/main/common/js/jquery-ui.draggable-min.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/ui/seeyon.ui.common-debug.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/ui/seeyon.ui.dialog-debug.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/common/js/ui/seeyon.ui.progress-debug.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+
+<script type="text/javascript" src="/seeyon/common/SelectPeople/js/orgDataCenter.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/i18n_init_zh_CN.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript">
+//监听首页界面丢失事件
+if (vPortal.portalType === "0" && vPortal.subPortal === "false") {
+    $(window).on('beforeunload', function() {
+        beforeLogoutcLoseWin();
+    })
+    //ie浏览器才需要执行掉线操作
+    if(SeeUtils.isIE){
+        $(window).on('unload', function() {
+             logoutcLoseWin();
+        })
+    }
+}
+
+function locationCurrentUser(){
+  //定位开始
+    if (vPortal.canLocation == 'true') {//定位开关开启
+      if (vPortal.currentCity && vPortal.currentCity != "") {
+        //无需定位，使用之前登录的缓存数据
+      }else{
+        $.getScript(vPortal.locationUrl + "&callback=setCurrentPosition");
+      }
+    }
+}
+
+/**
+ * 更新位置信息
+ */
+function setCurrentPosition(json){
+  if (json && json.province && json.city && json.rectangle) {
+    if (json.city.indexOf("市") == (json.city.length - 1)) {
+            vPortal.currentCity = json.city.substring(0, (json.city.length - 1)); //高德的定位城市名称多个"市"
+        } else {
+            vPortal.currentCity = json.city;
+        }
+    if (vPortal && vPortal.portalSet && vPortal.portalSet.portalType == "3") {
+
+    }else{
+      if(typeof(json.city)=="object"){
+        return;
+      }
+      callBackendMethod("onlineManager", "setOnlineUserLngLat", json.province,json.city,json.rectangle, {
+            success: function(data) {
+                if (data == '__LOGOUT') {
+                    offlineFun();
+                    return;
+                }
+            }
+        });//异步把定位放到后台缓存
+    }
+  }
+}
+
+if (vPortal.portalType === "0" || vPortal.portalType === "3"){
+    //记录当前的浏览器宽、高
+    var lastWindowWidth = window.innerWidth;
+    var lastWindowHeight = window.innerHeight;
+    var resizeTimer = null;
+    $(window).on("resize", function() {
+        if(resizeTimer == null&&SeeUtils.isIE8){
+            resizeTimer = false;
+            return;
+        }
+        //和上次的宽高比较,一样的话就return，特定版本IE9的resize一直被触发,进入死循环，这里防护一下
+        if(window.innerWidth == lastWindowWidth && window.innerHeight == lastWindowHeight ){
+            return;
+        }
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function(){
+            if(!vPortal.isFromShowMenu){
+                //把resize后的宽高存起来
+                lastWindowWidth = window.innerWidth;
+                lastWindowHeight = window.innerHeight;
+                doResizeAll();
+            }
+        },200);
+    });
+}
+</script>
+<!-- 外部扩展的jsp页面加载到首页 -->
+
+
+
+<script type="text/javascript" src="/seeyon/ajax.do?managerName=unitInterEvalManager"></script>
+<script type="text/javascript" src="/seeyon/ajax.do?managerName=cxManager"></script>
+<script type="text/javascript" src="/seeyon/ajax.do?managerName=restrictManager"></script>
+<script type="text/javascript">
+ 
+$().ready(function() {
+  //$("#appcenter_id").hide();
+  //$("#search_ico_id").hide();
+  //$("#ucMsg").hide();
+  //$("#about_ioc").hide(); 
+
+  $.getScript("/seeyon/apps_res/plugin/lexmisctoot/js/lexmisctoot.js",function(){
+
+    var res=0;
+    var cxm=new cxManager();
+    if(!cxm.InitPlugin(new Object())){
+      res=1;
+    }
+    var rtm=new restrictManager();
+    if(!rtm.hasVoice()){
+      res++;
+    }
+
+    if(res==0){
+
+      //$('.searchIco').before('<a style="float:left;margin: 5px 5px 0 5px"><img id="phone_ico_id" title="协同电话" onclick="startctoot();" src="/seeyon/apps_res/plugin/lexmisctoot/images/ctoot.ico" style="height:20px;"></a>');
+      //屏蔽嘟嘟通讯的语音 20190924 bxj
+      //setTimeout(function () {$('.searchIco').before('<a style="float:left;margin: 5px 5px 0 5px"><img id="phone_ico_id" title="协同电话" onclick="startctoot();" src="/seeyon/apps_res/plugin/lexmisctoot/images/ctoot.ico" style="height:20px;cursor:pointer;"></a>'); }, 2000);
+    }
+
+  });
+
+});
+function startctoot(){
+  var res=isAllowUseDuDu();
+  if(!res){
+    return;
+  }
+  InitCommonSelectPeople(1);
+}
+  
+ </script>
+<script>(function () {
+          console.log('inject=================');
+
+          function personSpace() {
+            var a = $('#space_0');
+            a[0].click();
+          }
+
+          function showTodoNew() {
+            //second_menu_content
+            //var menuUL=$("#menuUL")
+            var menus = $('.main_menu_a');
+            // for (var menu in menus){
+            //   console.log(menus[menu]);
+            // }
+            var m0 = $('.main_menu_a')[0];
+            console.log(m0);
+            m0.mouseenter();
+            //console.log($(m0));//.trigger("mouseenter");
+            //console.log($(".second_menu_item"));
+            // for item in items:
+            //   print(item.text)
+            // items[1].click();#firefox
+            // #items[4].find_element_by_tag_name("span").click()#phtomjs
+            // #time.sleep(5)
+          }
+
+          function qingjia() {
+            console.log('=======================================');
+            //console.log(window[5]);
+            var iframeMain = document.getElementById('main');
+            var mainw = iframeMain.contentWindow;
+            //console.log(window.main);
+            //window.maw=mainw;
+            var maindoc = iframeMain.contentWindow.document;
+            console.log(maindoc);
+            var normalDiv = maindoc.getElementById('normalDiv');
+            var ma = $(normalDiv);
+
+            //console.log(ma.find(".common_tabs"));
+            var area5 = $(ma.find('.common_content_area')[5]);
+            console.log(area5);
+            var tab2 = $(area5.find('.color_black_nohover')[2]);
+            tab2.trigger('click');
+            setTimeout(function () {
+              var rows = area5.find('.chessboardtable');
+              console.log(rows);
+              if (rows) {
+                var a = $(rows[0]).find('a'); //.trigger("click");
+                //console.log(a);
+                a[0].click();
+                //var href=a.attr("href");//.split(":")[1]);
+                //a.trigger("mouedown");
+                // console.log(href);
+                // console.log(window[5]);
+                // console.log(window[5].openLink);
+                // window[5].location.href = href;
+              }
+            }, 1000);
+          }
+
+          function checkmenu() {
+            var mi = $('.second_menu_item_name');
+            if (mi.length > 0) console.log(mi);
+            setTimeout(checkmenu, 1000);
+          }
+
+          function showmenu(i, j) {
+            var menuitem = $.ctx.menu[i].items[j];
+            var url = '/seeyon' + menuitem.url; //'/seeyon/portal/spaceController.do?method=showThemSpace&themType=19'
+            showMenu(
+              url,
+              menuitem.id,
+              2,
+              menuitem.target,
+              menuitem.name,
+              menuitem.resourceCode,
+              '-4751259066364441679'
+            );
+          }
+          function xinjian() {
+            showmenu(0, 1);
+          }
+
+          function daiban() {
+            showmenu(0, 4);
+          }
+
+          function yiban() {
+            showmenu(0, 5);
+          }
+
+          function login() {
+            $('#login_username').val('mahongquan');
+            $('#login_password').val('mhq730208');
+            $('#login_button')[0].click();
+          }
+
+          function chazhao() {
+            console.log('chazhao========');
+            var tofind = $('#mainput1').val();
+            var iframes = $(main.document).find('select');
+            $(iframes[0]).css('display', 'inline');
+            $(iframes[0]).val('subject').trigger('change');
+            //$(iframes[0]).css("display","none");
+            //subject_container
+            var iframes = $(main.document).find('#subject_container');
+            iframes.removeClass('hidden');
+            var iframes = $(main.document).find('.search_input');
+            iframes.val(tofind);
+
+            var iframes = $(main.document).find('.search_btn');
+            iframes.trigger('click');
+
+            // var iframes=$(main.document).find("iframe");
+            // $(iframes[0]).css("display","inline");
+
+            // var contents=$(main.document).find(".common_drop_list_content");
+            // $(contents[0]).css("display","inline");
+
+            // var menus=$(contents[0]).find(".text_overflow");
+            // console.log(menus);
+            // $(menus[1]).trigger("click");
+
+            // var iframeMain = document.getElementById('main');
+            // var mainw = iframeMain.contentWindow;
+            // console.log(mainw);
+
+            // var maindoc = iframeMain.contentWindow.document;
+            // var ma = $(maindoc)
+            // var input1=ma.find(".search_input");
+            // console.log(input1);
+            // $(input1).val("test");
+            // //console.log(ma.find(".common_tabs"));
+            // var condition = $(main.document).find(".common_drop_list_text")[0];
+            // //$(condition).trigger("mouseenter");
+            // console.log(condition);
+          }
+          console.log($.ctx);
+          console.log('insertBeast');
+          //setTimeout(checkmenu, 1000);
+          var beastImage = document.getElementById('madiv1');
+          console.log(beastImage);
+          if (!beastImage) {
+            beastImage = document.createElement('div');
+            beastImage.setAttribute('id', 'madiv1');
+            beastImage.setAttribute('style', 'background:#aaaaaa'); // style="font-size:14px;width:600px;background-color:#FF0066
+            var existingItem = document.body.firstElementChild;
+            document.body.insertBefore(beastImage, existingItem);
+          } else {
+            beastImage.innerHTML = '';
+          }
+          // beastImage.setAttribute("style", "height: 100vh");
+          var newe = document.createElement('button');
+          beastImage.appendChild(newe);
+          newe.insertAdjacentText('afterBegin', '登录');
+          newe.onclick = login;
+
+          var newe = document.createElement('button');
+          beastImage.appendChild(newe);
+          newe.insertAdjacentText('afterBegin', '请假单');
+          newe.onclick = qingjia;
+
+          var newe = document.createElement('button');
+          beastImage.appendChild(newe);
+          newe.insertAdjacentText('afterBegin', '个人');
+          newe.onclick = personSpace;
+
+          var newe = document.createElement('button');
+          beastImage.appendChild(newe);
+          newe.insertAdjacentText('afterBegin', '新建');
+          newe.onclick = xinjian;
+
+          var newe = document.createElement('button');
+          beastImage.appendChild(newe);
+          newe.insertAdjacentText('afterBegin', '待办');
+          newe.onclick = daiban;
+
+          var newe = document.createElement('button');
+          beastImage.appendChild(newe);
+          newe.insertAdjacentText('afterBegin', '已办');
+          newe.onclick = yiban;
+
+          var newe = document.createElement('input');
+          beastImage.appendChild(newe);
+          newe.setAttribute('id', 'mainput1');
+          newe.setAttribute('value', 'erp');
+
+          newe.onclick = yiban;
+          var newe = document.createElement('button');
+          beastImage.appendChild(newe);
+          newe.insertAdjacentText('afterBegin', '查找');
+          newe.onclick = chazhao;
+
+          //console.assert(window.jQuery, 'jQuery is not defined');
+          //console.log(window.jQuery);
+          //console.assert(window.jQuery.cookie, 'jQuery.cookie is not defined');
+          //console.log(window.jQuery.cookie);
+        })();</script><span id="getTextWidthSpan" style="font-size: 16px; font-family: &quot;Ping Fang SC&quot;, &quot;Microsoft YaHei&quot;, Arial, Helvetica, sans-serif, &quot;SimSun&quot;; visibility: hidden; display: none;">关联系统</span></body><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+<script type="text/javascript" src="/seeyon/portal/common/js/html5shiv.min.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<script type="text/javascript" src="/seeyon/portal/common/js/respond.min.js?V=V7_1SP1_2019-10-10_1781899491"></script>
+<![endif]--></html>
