@@ -37,27 +37,11 @@ function me() {
           console.log('inject=================');
 
           function personSpace() {
-            var a = $('#space_0');
-            a[0].click();
+            $("#spaceLi_-7231391710645170548").click()
           }
 
           function showTodoNew() {
-            //second_menu_content
-            //var menuUL=$("#menuUL")
-            var menus = $('.main_menu_a');
-            // for (var menu in menus){
-            //   console.log(menus[menu]);
-            // }
-            var m0 = $('.main_menu_a')[0];
-            console.log(m0);
-            m0.mouseenter();
-            //console.log($(m0));//.trigger("mouseenter");
-            //console.log($(".second_menu_item"));
-            // for item in items:
-            //   print(item.text)
-            // items[1].click();#firefox
-            // #items[4].find_element_by_tag_name("span").click()#phtomjs
-            // #time.sleep(5)
+            $("#F01_listPending").click()
           }
 
           function qingjia() {
@@ -118,7 +102,7 @@ function me() {
           }
 
           function daiban() {
-            showmenu(0, 4);
+            $("#F01_listPending").click()
           }
 
           function yiban() {

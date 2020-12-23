@@ -1,7 +1,7 @@
 {
   "scripts": {
     "p": "prettier  --single-quote --trailing-comma es5 --write content_scripts/oa.js",
-    "start":"web-ext run --verbose --firefox=\"C:/Program Files/Firefox Developer Edition/firefox.exe\""
+    "start":"web-ext run -u=\"http://oa.ncschina.com\" --verbose --firefox=\"C:/Program Files/Firefox Developer Edition/firefox.exe\""
   },
   "dependencies": {
     "web-ext": "^5.4.1"
