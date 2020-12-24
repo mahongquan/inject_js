@@ -419,20 +419,10 @@ function me() {
         function () {
           console.log('inject================');
           function chazhao() {
-            console.log('chazhao========');
-            var tofind = $('#mainput1').val();
-            var iframes = $(document).find('select');
-            $(iframes[0]).css('display', 'inline');
-            $(iframes[0]).val('subject').trigger('change');
-            //$(iframes[0]).css("display","none");
-            //subject_container
-            var iframes = $(document).find('#subject_container');
-            iframes.removeClass('hidden');
-            var iframes = $(document).find('.search_input');
-            iframes.val(tofind);
-
-            var iframes = $(document).find('.search_btn');
-            iframes.trigger('click');
+             var tofind = $('#mainput1').val();
+            $("#68738424_dropdown_content").children()[1].click();//title
+            $("#title").val(tofind)
+            searchobj.p.searchHandler();
           }
           function fujian() {
             var table = $('#listPending');
